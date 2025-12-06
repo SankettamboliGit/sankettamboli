@@ -1,13 +1,22 @@
 import { ArrowDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/profile.png";
+
 const Hero = () => {
-  return <section id="home" className="min-h-screen flex flex-col lg:flex-row">
+  return (
+    <section
+      id="home"
+      className="min-h-screen flex flex-col lg:flex-row"
+    >
       {/* Left Dark Panel */}
       <div className="lg:w-1/2 bg-foreground text-background flex flex-col justify-center px-8 md:px-16 lg:px-20 py-20 lg:py-0 min-h-[50vh] lg:min-h-screen">
         <div className="opacity-0 animate-fade-up">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none mb-4">SANKET</h1>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none text-muted-foreground/40">TAMBOLI</h1>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none mb-4">
+            Minimal
+          </h1>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none text-muted-foreground/40">
+            Portfolio
+          </h1>
         </div>
       </div>
 
@@ -17,7 +26,11 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="mb-8">
             <div className="w-20 h-20 rounded-full overflow-hidden border border-border bg-secondary">
-              <img src={profileImage} alt="Sanket Tamboli" className="w-full h-full object-cover" />
+              <img
+                src={profileImage}
+                alt="Sanket Tamboli"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -32,7 +45,10 @@ const Hero = () => {
           </p>
 
           {/* CTA Link */}
-          <a href="#projects" className="inline-flex items-center text-accent hover:underline text-sm font-medium group">
+          <a 
+            href="#projects" 
+            className="inline-flex items-center text-accent hover:underline text-sm font-medium group"
+          >
             Take me to the magic land
             <ArrowDown className="ml-1 h-3 w-3 -rotate-90 group-hover:translate-x-1 transition-transform" />
           </a>
@@ -54,6 +70,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
