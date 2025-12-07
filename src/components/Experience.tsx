@@ -37,9 +37,6 @@ const Experience = () => {
     <section id="experience" className="py-24 px-6 bg-card/50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
-          <span className="text-sm text-muted-foreground uppercase tracking-widest mb-4 block">
-            Experience
-          </span>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             Professional Journey
           </h2>
