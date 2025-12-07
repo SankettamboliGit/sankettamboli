@@ -51,9 +51,6 @@ const Services = () => {
     <section id="services" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
-          <span className="text-sm text-muted-foreground uppercase tracking-widest mb-4 block">
-            Services
-          </span>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             How I Can Help
           </h2>

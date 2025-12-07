@@ -107,9 +107,6 @@ const Projects = () => {
     <section id="projects" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
-          <span className="text-sm text-muted-foreground uppercase tracking-widest mb-4 block">
-            Projects
-          </span>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             Selected Work & Research
           </h2>

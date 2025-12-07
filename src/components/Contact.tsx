@@ -6,9 +6,6 @@ const Contact = () => {
     <section id="contact" className="py-24 px-6 bg-card/50">
       <div className="max-w-2xl mx-auto text-center">
         <div className="opacity-0 animate-fade-up">
-          <span className="text-sm text-muted-foreground uppercase tracking-widest mb-4 block">
-            Contact
-          </span>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
             Let's Connect
           </h2>
