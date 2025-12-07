@@ -3,14 +3,14 @@ import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col lg:flex-row">
+    <section id="home" className="min-h-screen flex flex-col lg:flex-row pt-20 lg:pt-0">
       {/* Left Dark Panel */}
       <div className="lg:w-1/2 bg-foreground text-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-20 lg:py-0 min-h-[50vh] lg:min-h-screen">
-        <div className="opacity-0 animate-fade-up text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none mb-4">
+        <div className="opacity-0 animate-fade-up text-center lg:mt-16">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-none mb-3">
             SANKET TAMBOLI
           </h1>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none text-muted-foreground/40">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-none text-muted-foreground/40">
             Portfolio
           </h1>
         </div>
@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="max-w-md opacity-0 animate-fade-up stagger-2 text-center flex flex-col items-center">
           {/* Profile Image */}
           <div className="mb-8">
-            <div className="w-20 h-20 rounded-full overflow-hidden border border-border bg-secondary">
+            <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border border-border bg-secondary">
               <img src={profileImage} alt="Sanket Tamboli" className="w-full h-full object-cover" />
             </div>
           </div>
