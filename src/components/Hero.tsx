@@ -3,10 +3,10 @@ import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col lg:flex-row pt-20 lg:pt-0">
+    <section id="home" className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Dark Panel */}
       <div className="lg:w-1/2 bg-foreground text-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-20 lg:py-0 min-h-[50vh] lg:min-h-screen">
-        <div className="opacity-0 animate-fade-up text-center lg:mt-16">
+        <div className="opacity-0 animate-fade-up text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-none mb-3">
             SANKET TAMBOLI
           </h1>
