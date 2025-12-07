@@ -44,32 +44,28 @@ const Navigation = () => {
         <li>
           <a
             href="#home"
-            className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+            className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full flex flex-col items-center ${
               activeSection === "home"
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Home
-            {activeSection === "home" && (
-              <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-foreground rounded-full" />
-            )}
+            <span className={`w-1 h-1 rounded-full mt-0.5 transition-opacity ${activeSection === "home" ? "bg-foreground opacity-100" : "opacity-0"}`} />
           </a>
         </li>
         {navItems.map((item) => (
           <li key={item.href}>
             <a
               href={item.href}
-              className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+              className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full flex flex-col items-center ${
                 activeSection === item.href.slice(1)
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.label}
-              {activeSection === item.href.slice(1) && (
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-foreground rounded-full" />
-              )}
+              <span className={`w-1 h-1 rounded-full mt-0.5 transition-opacity ${activeSection === item.href.slice(1) ? "bg-foreground opacity-100" : "opacity-0"}`} />
             </a>
           </li>
         ))}
