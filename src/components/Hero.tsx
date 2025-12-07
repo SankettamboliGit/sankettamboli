@@ -5,19 +5,19 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Dark Panel */}
-      <div className="lg:w-1/2 bg-foreground text-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-20 lg:py-0 min-h-[50vh] lg:min-h-screen">
-        <div className="opacity-0 animate-fade-up text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-none mb-3">
+      <div className="lg:w-[55%] bg-foreground text-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-32 lg:py-0 min-h-[60vh] lg:min-h-screen">
+        <div className="opacity-0 animate-fade-up text-center mt-20 lg:mt-24">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-none mb-4">
             SANKET TAMBOLI
           </h1>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-none text-muted-foreground/40">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-none text-muted-foreground/40">
             Portfolio
           </h1>
         </div>
       </div>
 
       {/* Right Light Panel */}
-      <div className="lg:w-1/2 bg-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0">
+      <div className="lg:w-[45%] bg-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0">
         <div className="max-w-md opacity-0 animate-fade-up stagger-2 text-center flex flex-col items-center">
           {/* Profile Image */}
           <div className="mb-8">
