@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Dark Panel */}
-      <div className="lg:w-[52%] bg-foreground text-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-28 lg:py-0 min-h-[55vh] lg:min-h-screen">
-        <div className="opacity-0 animate-fade-up text-center mt-12 lg:mt-16">
+      <div className="lg:w-1/2 bg-foreground text-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-24 lg:py-0 min-h-[50vh] lg:min-h-screen">
+        <div className="opacity-0 animate-fade-up text-center mt-8 lg:mt-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-none mb-4">
             SANKET TAMBOLI
           </h1>
@@ -17,7 +17,7 @@ const Hero = () => {
       </div>
 
       {/* Right Light Panel */}
-      <div className="lg:w-[48%] bg-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0">
+      <div className="lg:w-1/2 bg-background flex flex-col items-center justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0">
         <div className="max-w-md opacity-0 animate-fade-up stagger-2 text-center flex flex-col items-center">
           {/* Profile Image */}
           <div className="mb-8">
