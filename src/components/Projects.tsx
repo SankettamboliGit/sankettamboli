@@ -104,10 +104,10 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="projects" className="py-24 px-6 bg-secondary/30">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16 opacity-0 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+    <section id="projects" className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-secondary/30">
+      <div className="w-full max-w-3xl mx-auto">
+        <div className="text-center mb-12 md:mb-16 opacity-0 animate-fade-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
             Selected Work & Research
           </h2>
         </div>
@@ -117,31 +117,27 @@ const Projects = () => {
             <article
               key={project.title}
               onClick={() => setSelectedProject(project)}
-              className={`group bg-card border border-border rounded-xl p-6 md:p-8 hover:border-foreground/20 hover:shadow-lg transition-all duration-300 cursor-pointer opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)}`}
+              className={`group bg-card border border-border rounded-xl p-5 sm:p-6 md:p-8 hover:border-foreground/20 hover:shadow-lg transition-all duration-300 cursor-pointer opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)} text-center`}
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1">
-                  <span className="text-sm text-muted-foreground">
-                    {project.period}
+              <span className="text-xs sm:text-sm text-muted-foreground">
+                {project.period}
+              </span>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-1 mb-3 group-hover:text-foreground transition-colors inline-flex items-center justify-center gap-2 flex-wrap">
+                {project.title}
+                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4 max-w-xl mx-auto">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 text-xs bg-secondary text-muted-foreground rounded-full"
+                  >
+                    {tag}
                   </span>
-                  <h3 className="text-xl font-semibold mt-1 mb-3 group-hover:text-foreground transition-colors flex items-center gap-2">
-                    {project.title}
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs bg-secondary text-muted-foreground rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </article>
           ))}
@@ -149,24 +145,22 @@ const Projects = () => {
       </div>
 
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="max-w-lg sm:max-w-xl md:max-w-2xl max-h-[80vh] overflow-y-auto mx-4">
           <DialogHeader>
-            <div className="flex items-start justify-between">
-              <div>
-                <span className="text-sm text-muted-foreground">
-                  {selectedProject?.period}
-                </span>
-                <DialogTitle className="text-2xl font-semibold mt-1">
-                  {selectedProject?.title}
-                </DialogTitle>
-              </div>
+            <div className="text-center">
+              <span className="text-sm text-muted-foreground">
+                {selectedProject?.period}
+              </span>
+              <DialogTitle className="text-xl sm:text-2xl font-semibold mt-1">
+                {selectedProject?.title}
+              </DialogTitle>
             </div>
           </DialogHeader>
           <DialogDescription className="sr-only">
             Details about {selectedProject?.title}
           </DialogDescription>
           <div className="mt-4">
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {selectedProject?.tags.map((tag) => (
                 <span
                   key={tag}
@@ -176,13 +170,13 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-            <div className="prose prose-sm max-w-none text-foreground">
+            <div className="prose prose-sm max-w-none text-foreground text-center">
               {selectedProject?.fullDescription.split('\n').map((line, i) => {
                 if (line.startsWith('**') && line.endsWith('**')) {
                   return <h4 key={i} className="font-semibold text-foreground mt-4 mb-2">{line.replace(/\*\*/g, '')}</h4>;
                 }
                 if (line.startsWith('• ')) {
-                  return <p key={i} className="text-muted-foreground ml-4 mb-1">{line}</p>;
+                  return <p key={i} className="text-muted-foreground mb-1">{line}</p>;
                 }
                 if (line.trim() === '') {
                   return <br key={i} />;
