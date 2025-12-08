@@ -34,39 +34,51 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-card/50">
-      <div className="w-full max-w-3xl mx-auto">
-        <div className="text-center mb-12 md:mb-16 opacity-0 animate-fade-up">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+    <section id="experience" className="py-24 px-6 bg-card/50">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16 opacity-0 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             Professional Journey
           </h2>
         </div>
 
-        {/* Timeline - Centered vertical layout */}
-        <div className="relative flex flex-col items-center">
+        {/* Timeline */}
+        <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
 
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className={`relative w-full max-w-md mb-8 last:mb-0 opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`relative pl-8 md:pl-0 pb-12 last:pb-0 opacity-0 animate-fade-up stagger-${index + 1}`}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-foreground rounded-full top-6 z-10" />
+              <div
+                className={`md:w-1/2 ${
+                  index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"
+                }`}
+              >
+                {/* Timeline dot */}
+                <div
+                  className={`absolute left-0 md:left-1/2 w-3 h-3 bg-foreground rounded-full md:-translate-x-1/2 top-1.5`}
+                />
 
-              {/* Content */}
-              <div className="bg-card border border-border rounded-xl p-5 sm:p-6 mx-4 sm:mx-8 text-center">
-                <span className="text-xs sm:text-sm text-muted-foreground">
-                  {exp.period}
-                </span>
-                <h3 className="text-lg sm:text-xl font-semibold mt-1 mb-1">{exp.role}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{exp.company}</p>
-                <ul className="space-y-1.5 text-xs sm:text-sm text-muted-foreground">
-                  {exp.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
+                {/* Content */}
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <span className="text-sm text-muted-foreground">
+                    {exp.period}
+                  </span>
+                  <h3 className="text-xl font-semibold mt-1 mb-1">{exp.role}</h3>
+                  <p className="text-muted-foreground mb-4">{exp.company}</p>
+                  <ul
+                    className={`space-y-2 text-sm text-muted-foreground ${
+                      index % 2 === 0 ? "md:text-right" : ""
+                    }`}
+                  >
+                    {exp.description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}
