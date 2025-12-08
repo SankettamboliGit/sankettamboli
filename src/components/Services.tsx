@@ -48,25 +48,25 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16 opacity-0 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+    <section id="services" className="py-16 md:py-24 px-4 sm:px-6 md:px-8">
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="text-center mb-12 md:mb-16 opacity-0 animate-fade-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
             How I Can Help
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`bg-card border border-border rounded-xl p-6 hover:border-muted-foreground/30 transition-all duration-300 opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)}`}
+              className={`bg-card border border-border rounded-xl p-5 sm:p-6 hover:border-muted-foreground/30 transition-all duration-300 opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)} text-center`}
             >
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-foreground" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 mx-auto">
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">{service.title}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </div>
