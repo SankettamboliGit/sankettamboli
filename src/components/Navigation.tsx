@@ -15,6 +15,17 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
+      // Check home section first
+      const homeElement = document.getElementById("home");
+      if (homeElement) {
+        const homeRect = homeElement.getBoundingClientRect();
+        if (homeRect.bottom > 150) {
+          setActiveSection("home");
+          return;
+        }
+      }
+
+      // Then check other sections
       const sections = navItems.map((item) => item.href.slice(1));
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
