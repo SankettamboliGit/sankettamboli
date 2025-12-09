@@ -12,7 +12,7 @@ const Hero = () => {
       </div>
 
       {/* Centered Content */}
-      <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-xl mx-auto text-center flex flex-col items-center justify-center">
         {/* Profile Image with liquid glass ring */}
         <div className="mb-10 opacity-0 animate-fade-up">
           <div className="relative group">
@@ -44,32 +44,32 @@ const Hero = () => {
 
         {/* Tagline */}
         <h3 className="text-lg md:text-xl font-light mb-4 text-background/90 tracking-wide opacity-0 animate-fade-up stagger-2">
-          Hiring, Building, and Everything In Between
+          Operations · Talent Tech · Product Thinking
         </h3>
         
         {/* Bio */}
-        <p className="text-background/50 text-sm leading-relaxed mb-10 max-w-md opacity-0 animate-fade-up stagger-3">
-          I'm a people-systems thinker with a focus on clarity, simplicity, and
-          intentional design. My career has spanned recruitment operations,
-          tooling ecosystems, and deep research into minimal technology trends.
+        <p className="text-background/50 text-sm leading-relaxed mb-10 max-w-md mx-auto opacity-0 animate-fade-up stagger-3">
+          9+ years bridging user needs and technical execution. From optimizing SaaS platforms to building data-driven recruitment operations — I turn complex workflows into scalable systems.
         </p>
 
         {/* CTA Link - glass button */}
-        <a 
-          href="https://drive.google.com/file/d/17tWpdD7qb9ink8-dQ40yBWqVaWSX5afc/view?usp=sharing" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-5 py-2.5 backdrop-blur-xl bg-background/10 border border-background/20 text-background/80 hover:text-background hover:bg-background/20 hover:border-background/30 rounded-full text-xs font-medium group transition-all duration-500 opacity-0 animate-fade-up stagger-4 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)]"
-        >
-          Here's how my skills look on paper
-          <FileText className="ml-2 h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-        </a>
+        <div className="w-full flex justify-center opacity-0 animate-fade-up stagger-4">
+          <a 
+            href="https://drive.google.com/file/d/17tWpdD7qb9ink8-dQ40yBWqVaWSX5afc/view?usp=sharing" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-5 py-2.5 backdrop-blur-xl bg-background/10 border border-background/20 text-background/80 hover:text-background hover:bg-background/20 hover:border-background/30 rounded-full text-xs font-medium group transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)]"
+          >
+            Here's how my skills look on paper
+            <FileText className="ml-2 h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
+          </a>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up stagger-5">
+      {/* Scroll indicator - properly centered */}
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center opacity-0 animate-fade-up stagger-5">
         <a href="#about" className="flex flex-col items-center text-background/30 hover:text-background/50 transition-colors duration-300">
-          <span className="text-[10px] uppercase tracking-[0.2em] mb-2">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] mb-1">Scroll</span>
           <ChevronDown className="w-4 h-4 animate-bounce" style={{ animationDuration: '2s' }} />
         </a>
       </div>

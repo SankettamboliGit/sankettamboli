@@ -1,48 +1,46 @@
 const skillCategories = [
   {
-    title: "Product & Research",
+    title: "Operations & Leadership",
     skills: [
-      "Product Management",
-      "Product Strategy",
-      "Market Research",
-      "User Behavior Analysis",
-      "Feedback Systems",
-    ],
-  },
-  {
-    title: "AI & Data",
-    skills: [
-      "AI Product Management",
-      "Text-to-SQL",
-      "Databases & Query Writing",
-      "Analytics",
-      "Data Analysis",
-    ],
-  },
-  {
-    title: "Design & Tools",
-    skills: ["Figma", "Visio", "Excel (Advanced)"],
-  },
-  {
-    title: "Agile & Process",
-    skills: [
-      "Agile Methodologies",
-      "Scrum",
-      "Kanban",
-      "Scrumban",
+      "Team Management",
+      "Stakeholder Management",
+      "Vendor Negotiation",
       "Lean Operations",
-      "Continuous Improvement",
+      "Resource Planning",
+      "Strategic Communications",
     ],
   },
   {
-    title: "Recruitment & Operations",
+    title: "Talent Acquisition & HR",
     skills: [
-      "ATS Management",
-      "Sourcing Strategy",
-      "Talent Acquisition",
-      "Team Training",
-      "Workflow Optimization",
+      "Global Talent Acquisition",
+      "Technical Recruiting",
+      "Sourcing & Screening",
+      "Onboarding Compliance",
+      "Employee Engagement",
+      "Performance Management",
     ],
+  },
+  {
+    title: "ATS Management",
+    skills: ["Ceipal", "JobDiva", "Conrep", "Greythr"],
+  },
+  {
+    title: "Product & Agile Strategy",
+    skills: [
+      "Agile Scrum",
+      "Kanban",
+      "SAFe",
+      "Lean Six Sigma",
+      "AI Product Management",
+      "Product Strategy",
+      "User Feedback",
+      "A/B Testing",
+    ],
+  },
+  {
+    title: "Data, Tools & Design",
+    skills: ["Data Analysis", "Figma", "Notion", "Notebook LLM"],
   },
 ];
 
