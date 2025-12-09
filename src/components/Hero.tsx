@@ -4,25 +4,16 @@ import profileImage from "@/assets/profile.png";
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen bg-foreground flex flex-col items-center justify-center px-6 md:px-12 py-24 relative overflow-hidden">
-      {/* Abstract background - liquid glass inspired */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-accent/8 to-transparent rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '4s' }} />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tl from-background/10 to-transparent rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent/3 to-transparent rounded-full blur-3xl" />
-      </div>
-
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-xl mx-auto text-center flex flex-col items-center justify-center">
-        {/* Profile Image with liquid glass ring */}
+        {/* Profile Image with subtle ring */}
         <div className="mb-10 opacity-0 animate-fade-up">
           <div className="relative group">
-            {/* Outer glow - liquid effect */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent/30 via-background/10 to-accent/20 rounded-full blur-xl opacity-60 group-hover:opacity-90 transition-all duration-700 group-hover:scale-110" />
+            {/* Subtle outer glow */}
+            <div className="absolute -inset-3 bg-background/10 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-all duration-700" />
             {/* Glass ring */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-background/30 via-accent/20 to-background/30 rounded-full backdrop-blur-sm" />
-            {/* Inner ring with gradient border */}
-            <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full p-[2px] bg-gradient-to-br from-accent/60 via-background/40 to-accent/60">
-              <div className="w-full h-full rounded-full overflow-hidden bg-foreground backdrop-blur-xl">
+            <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full p-[2px] bg-background/20">
+              <div className="w-full h-full rounded-full overflow-hidden bg-foreground">
                 <img src={profileImage} alt="Sanket Tamboli" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -39,8 +30,8 @@ const Hero = () => {
           </h2>
         </div>
 
-        {/* Divider line - glass effect */}
-        <div className="w-20 h-[1px] bg-gradient-to-r from-transparent via-accent/60 to-transparent mb-8 opacity-0 animate-fade-up stagger-2" />
+        {/* Divider line */}
+        <div className="w-16 h-[1px] bg-background/20 mb-8 opacity-0 animate-fade-up stagger-2" />
 
         {/* Tagline */}
         <h3 className="text-lg md:text-xl font-light mb-4 text-background/90 tracking-wide opacity-0 animate-fade-up stagger-2">

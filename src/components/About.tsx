@@ -3,11 +3,6 @@ import { MapPin, GraduationCap, Award } from "lucide-react";
 const About = () => {
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden">
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-muted/50 rounded-full blur-2xl" />
-      </div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
@@ -30,10 +25,10 @@ const About = () => {
           {/* Info Cards - Glassmorphism style */}
           <div className="space-y-4 opacity-0 animate-fade-up stagger-2">
             {/* Location */}
-            <div className="backdrop-blur-xl bg-card/80 border border-border/50 rounded-2xl p-6 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.15)] transition-all duration-500">
+            <div className="bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-sm flex items-center justify-center border border-accent/20">
-                  <MapPin className="w-4 h-4 text-accent" />
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <MapPin className="w-4 h-4 text-foreground" />
                 </div>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">Location</span>
               </div>
@@ -41,10 +36,10 @@ const About = () => {
             </div>
 
             {/* Education */}
-            <div className="backdrop-blur-xl bg-card/80 border border-border/50 rounded-2xl p-6 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.15)] transition-all duration-500">
+            <div className="bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-sm flex items-center justify-center border border-accent/20">
-                  <GraduationCap className="w-4 h-4 text-accent" />
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <GraduationCap className="w-4 h-4 text-foreground" />
                 </div>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">Education</span>
               </div>
@@ -65,16 +60,16 @@ const About = () => {
             </div>
 
             {/* Certificates */}
-            <div className="backdrop-blur-xl bg-card/80 border border-border/50 rounded-2xl p-6 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.15)] transition-all duration-500">
+            <div className="bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-sm flex items-center justify-center border border-accent/20">
-                  <Award className="w-4 h-4 text-accent" />
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <Award className="w-4 h-4 text-foreground" />
                 </div>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">Certificates</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {["Lean Six Sigma White Belt", "AI Product Management", "Agile Scrum Master", "Product Management"].map((cert) => (
-                  <span key={cert} className="text-xs px-2.5 py-1 bg-secondary/50 text-secondary-foreground rounded-full border border-border/30">
+                  <span key={cert} className="text-xs px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full border border-border">
                     {cert}
                   </span>
                 ))}
