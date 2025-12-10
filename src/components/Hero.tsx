@@ -40,7 +40,7 @@ const Hero = () => {
         
         {/* Bio */}
         <p className="text-background/50 text-sm leading-relaxed mb-10 max-w-md mx-auto opacity-0 animate-fade-up stagger-3">
-          9+ years bridging user needs and technical execution. From optimizing SaaS platforms to building data-driven recruitment operations — I turn complex workflows into scalable systems.
+          Translating user needs into product decisions. 9+ years of operations experience with a passion for building intuitive, scalable solutions.
         </p>
 
         {/* CTA Link - glass button */}
