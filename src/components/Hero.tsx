@@ -46,7 +46,7 @@ const Hero = () => {
         {/* CTA Link - glass button */}
         <div className="w-full flex justify-center opacity-0 animate-fade-up stagger-4">
           <a 
-            href="https://drive.google.com/file/d/1pTvvkilUx2pRsUt2PP_wHhAdqBVt02Wv/view?usp=sharing"
+            href="https://drive.google.com/file/d/1CozgNLDwsi8hUY0Ead2Efa9Ibf5BNKqk/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-5 py-2.5 backdrop-blur-xl bg-background/10 border border-background/20 text-background/80 hover:text-background hover:bg-background/20 hover:border-background/30 rounded-full text-xs font-medium group transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)]"
