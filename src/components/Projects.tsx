@@ -27,7 +27,7 @@ const projects = [
 A clean, professional portfolio that demonstrates the potential of AI-first development workflows.`,
   },
   {
-    title: "Ceipal ATS — Product Operations",
+    title: "SaaS Platform — Product Operations",
     period: "2021 – Present",
     description:
       "End-to-end ATS configuration, workflow tuning, backend issue reporting, data exports, and integration management with job boards.",
