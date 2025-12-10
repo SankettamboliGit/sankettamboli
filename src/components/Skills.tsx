@@ -1,46 +1,42 @@
 const skillCategories = [
   {
-    title: "Operations & Leadership",
+    title: "Product Management",
     skills: [
-      "Team Management",
-      "Stakeholder Management",
-      "Vendor Negotiation",
-      "Lean Operations",
-      "Resource Planning",
-      "Strategic Communications",
-    ],
-  },
-  {
-    title: "Talent Acquisition & HR",
-    skills: [
-      "Global Talent Acquisition",
-      "Technical Recruiting",
-      "Sourcing & Screening",
-      "Onboarding Compliance",
-      "Employee Engagement",
-      "Performance Management",
-    ],
-  },
-  {
-    title: "ATS Management",
-    skills: ["Ceipal", "JobDiva", "Conrep", "Greythr"],
-  },
-  {
-    title: "Product & Agile Strategy",
-    skills: [
-      "Agile Scrum",
-      "Kanban",
-      "SAFe",
-      "Lean Six Sigma",
-      "AI Product Management",
       "Product Strategy",
-      "User Feedback",
-      "A/B Testing",
+      "Roadmap Planning",
+      "Feature Prioritization",
+      "PRD Writing",
+      "User Stories",
+      "Go-to-Market Strategy",
     ],
   },
   {
-    title: "Data, Tools & Design",
-    skills: ["Data Analysis", "Figma", "Notion", "Notebook LLM"],
+    title: "User Research & Discovery",
+    skills: [
+      "User Interviews",
+      "Usability Testing",
+      "A/B Testing",
+      "Journey Mapping",
+      "Competitive Analysis",
+      "User Feedback Synthesis",
+    ],
+  },
+  {
+    title: "Agile & Frameworks",
+    skills: ["Agile Scrum", "Kanban", "SAFe", "Lean Six Sigma", "Design Thinking"],
+  },
+  {
+    title: "Data & Analytics",
+    skills: [
+      "Data-Driven Decisions",
+      "KPI Tracking",
+      "Metrics Analysis",
+      "Stakeholder Reporting",
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: ["Figma", "Notion", "Jira", "Miro", "SaaS Platforms", "AI Tools"],
   },
 ];
 

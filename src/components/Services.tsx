@@ -1,48 +1,48 @@
 import {
-  Search,
-  BarChart3,
-  Workflow,
-  FileSearch,
+  Compass,
+  Map,
   Users,
+  BarChart3,
+  Layers,
   Lightbulb,
 } from "lucide-react";
 
 const services = [
   {
-    icon: Search,
-    title: "Product Research & Competitive Analysis",
+    icon: Compass,
+    title: "Discovery Workshops",
     description:
-      "Deep dives into markets, competitors, and emerging trends to inform product decisions.",
+      "Facilitated sessions to uncover user pain points, define problems, and align stakeholders on product vision.",
   },
   {
-    icon: BarChart3,
-    title: "Market Research (Tech + Behavioral)",
+    icon: Map,
+    title: "Product Roadmap Planning",
     description:
-      "Understanding user psychology and market dynamics in the technology space.",
-  },
-  {
-    icon: Lightbulb,
-    title: "AI Product Use-Case Analysis",
-    description:
-      "Identifying and evaluating AI integration opportunities for products and workflows.",
-  },
-  {
-    icon: Workflow,
-    title: "Workflow Optimization",
-    description:
-      "Streamlining processes and eliminating friction in operational systems.",
-  },
-  {
-    icon: FileSearch,
-    title: "ATS / Operations Systems Setup",
-    description:
-      "Configuration and optimization of applicant tracking and HR systems.",
+      "Strategic roadmap development balancing business goals, user needs, and technical feasibility.",
   },
   {
     icon: Users,
-    title: "User Needs Discovery & Documentation",
+    title: "User Research & Interviews",
     description:
-      "Uncovering and articulating user requirements for product development.",
+      "Qualitative and quantitative research to validate assumptions and inform product decisions.",
+  },
+  {
+    icon: BarChart3,
+    title: "Data-Driven Prioritization",
+    description:
+      "Framework-based feature prioritization using metrics, user feedback, and business impact analysis.",
+  },
+  {
+    icon: Layers,
+    title: "Product Requirements & Specs",
+    description:
+      "Clear PRDs, user stories, and acceptance criteria that bridge business needs and engineering execution.",
+  },
+  {
+    icon: Lightbulb,
+    title: "AI Product Strategy",
+    description:
+      "Identifying AI/ML integration opportunities to enhance product value and user experience.",
   },
 ];
 
