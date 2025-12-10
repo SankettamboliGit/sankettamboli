@@ -10,93 +10,55 @@ import {
 
 const projects = [
   {
-    title: "Ceipal ATS — Product Operations & Continuous Improvement",
+    title: "AI-First Web Portfolio",
+    period: "2025",
+    description:
+      "Designed and built a minimal, responsive portfolio using AI-assisted vibe coding — leveraging Lovable, prompt engineering, and iterative refinement.",
+    tags: ["AI", "Web Development", "Product Design"],
+    fullDescription: `A personal project showcasing the intersection of AI tools and product thinking.
+
+**Approach:**
+• Leveraged Lovable for AI-assisted development
+• Applied prompt engineering for iterative design refinement
+• Built with React, TypeScript, and Tailwind CSS
+• Focused on minimal, responsive, and accessible design
+
+**Outcome:**
+A clean, professional portfolio that demonstrates the potential of AI-first development workflows.`,
+  },
+  {
+    title: "Ceipal ATS — Product Operations",
     period: "2021 – Present",
     description:
-      "Handling Ceipal end to end — configuration, workflow tuning, backend issue reporting, data exports, reporting logic, integrations with job boards, and procurement decisions.",
+      "End-to-end ATS configuration, workflow tuning, backend issue reporting, data exports, and integration management with job boards.",
     tags: ["ATS", "Operations", "Product Thinking"],
-    fullDescription: `As Operations Manager at Akshar Staffing, I've been responsible for the complete lifecycle of Ceipal ATS implementation and optimization.
+    fullDescription: `Complete lifecycle management of Ceipal ATS implementation and optimization.
 
 **Key Responsibilities:**
 • End-to-end ATS configuration and workflow tuning
-• Backend issue identification and reporting to Ceipal support
-• Custom data exports and reporting logic development
+• Backend issue identification and reporting
+• Custom data exports and reporting logic
 • Integration management with major job boards
-• Procurement decisions for sourcing tools
 
 **Impact:**
-This hands-on experience has given me deep insight into how recruitment technology products work from a user and admin perspective, informing my product thinking approach.`,
+Deep insight into recruitment technology from user and admin perspectives, informing product thinking approach.`,
   },
   {
-    title: "Minimal Technology Research",
-    period: "Ongoing",
-    description:
-      "A global self-driven research initiative analyzing user psychology, hardware trade-offs, distraction-free design philosophies, and emerging minimalist tech adoption across continents.",
-    tags: ["Research", "Minimal Tech", "Light Phone"],
-    fullDescription: `A comprehensive research initiative exploring the growing movement toward intentional, distraction-free technology.
-
-**Research Areas:**
-• User psychology behind choosing minimal devices
-• Hardware trade-offs in dumb phone design
-• Distraction-free design philosophies
-• Global adoption patterns of minimalist tech
-• The Light Phone ecosystem and alternatives
-
-**Key Insights:**
-Understanding why users deliberately choose friction and limitations has shaped my perspective on product design and the value of intentional constraints.`,
-  },
-  {
-    title: 'The "Ultimate Dumb Phone" — Personal Concept',
-    period: "Concept",
-    description:
-      "A self-directed vision study exploring ultra-minimal hardware + software design, physical interfaces, battery architecture, and essential-only features.",
-    tags: ["Product Design", "Hardware", "Concept"],
-    fullDescription: `A personal product concept study imagining the ideal minimal mobile device.
-
-**Design Exploration:**
-• Ultra-minimal hardware form factor
-• E-ink and physical interface considerations
-• Battery architecture for week-long usage
-• Essential-only feature set definition
-• Software UX for intentional interactions
-
-**Philosophy:**
-The concept centers on the question: "What is the minimum viable phone?" — exploring how constraints can enhance rather than limit the user experience.`,
-  },
-  {
-    title: "Tooling Ecosystem Management & Procurement",
+    title: "Tooling Ecosystem & Procurement",
     period: "2021 – Present",
     description:
-      "Assessing sourcing portals through ROI, usage behavior, conversion metrics, and cost-per-hire analysis; eliminating redundancy and improving efficiency.",
-    tags: ["Procurement", "ROI Analysis", "Operations"],
-    fullDescription: `Strategic assessment and optimization of the recruitment tooling ecosystem.
+      "Strategic assessment of sourcing tools through ROI analysis, usage tracking, and cost-per-hire metrics to optimize the recruitment tech stack.",
+    tags: ["Procurement", "ROI Analysis", "Strategy"],
+    fullDescription: `Strategic optimization of the recruitment tooling ecosystem.
 
 **Methodology:**
 • ROI analysis for each sourcing portal
 • Usage behavior tracking and optimization
 • Conversion metrics and cost-per-hire analysis
-• Redundancy elimination across tools
 • Vendor negotiation and relationship management
 
 **Results:**
-Developed a data-driven framework for evaluating recruitment tools that balances cost, efficiency, and team adoption.`,
-  },
-  {
-    title: "Vibe Coding & Human Attention Research",
-    period: "Ongoing",
-    description:
-      "Behavioral study on why users choose slow, simple, intentional tech — and how friction becomes a feature, not a flaw.",
-    tags: ["Behavioral Research", "UX", "Attention"],
-    fullDescription: `An ongoing behavioral research project exploring the intersection of technology and human attention.
-
-**Research Questions:**
-• Why do users deliberately choose slower technology?
-• How does friction enhance rather than hinder UX?
-• What role does intentionality play in tech satisfaction?
-• How can products leverage constraints positively?
-
-**Applications:**
-This research informs product design decisions around simplicity, intentionality, and the counterintuitive value of limitations.`,
+Data-driven framework for evaluating recruitment tools balancing cost, efficiency, and adoption.`,
   },
 ];
 

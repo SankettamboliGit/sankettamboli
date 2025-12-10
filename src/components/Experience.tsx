@@ -5,10 +5,8 @@ const experiences = [
     period: "Oct 2021 – Present",
     location: "Vadodara, GJ",
     description: [
-      "Managed daily operations and capacity planning for a team of 5-7 recruiters across India and U.S. markets",
-      "Developed incentive plans and retention strategies, reducing attrition and driving higher outputs",
-      "Built dynamic revenue reports and growth projections for stakeholder visibility",
-      "Owned maintenance and configuration of internal SaaS platform with user feedback optimization",
+      "Streamlined ATS workflows and optimized platform configurations to improve team efficiency",
+      "Applied product thinking to identify pain points and implement user-centric improvements",
     ],
   },
   {
@@ -16,9 +14,7 @@ const experiences = [
     company: "Diverse Lynx",
     period: "Apr 2021 – Oct 2021",
     description: [
-      "Full end-to-end recruitment lifecycle for IT professionals (W2, C2C, permanent)",
-      "Multi-channel sourcing using boolean search, LinkedIn, and job boards",
-      "Led operational delivery ensuring adherence to timelines and quality standards",
+      "Collaborated cross-functionally to align hiring strategies with business objectives",
     ],
   },
   {
@@ -26,9 +22,7 @@ const experiences = [
     company: "Rang Technologies",
     period: "Mar 2017 – Apr 2021",
     description: [
-      "Aligned professionals with strategic roles at Fortune 500 clients",
-      "Built robust talent pipelines for contract, contract-to-hire, and direct placements",
-      "Managed candidate data across MSP/VMS client portals",
+      "Developed data-driven approaches to pipeline optimization and stakeholder reporting",
     ],
   },
 ];
