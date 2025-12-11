@@ -17,8 +17,9 @@ const Index = () => {
         <About />
         <Experience />
         <Skills />
-        <Projects />
+        {/* Swapped Order: Services (Methodology) first, then Projects (Case Studies) */}
         <Services />
+        <Projects />
         <Contact />
       </main>
       <Footer />
