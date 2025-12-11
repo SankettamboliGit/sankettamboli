@@ -12,54 +12,57 @@ const projects = [
   {
     title: "AI-First Web Portfolio",
     period: "2025",
-    description:
-      "Designed and built a minimal, responsive portfolio using AI-assisted vibe coding — leveraging Lovable, prompt engineering, and iterative refinement.",
-    tags: ["AI", "Web Development", "Product Design"],
-    fullDescription: `A personal project showcasing the intersection of AI tools and product thinking.
-
-**Approach:**
-• Leveraged Lovable for AI-assisted development
-• Applied prompt engineering for iterative design refinement
-• Built with React, TypeScript, and Tailwind CSS
-• Focused on minimal, responsive, and accessible design
-
-**Outcome:**
-A clean, professional portfolio that demonstrates the potential of AI-first development workflows.`,
+    category: "Product Engineering",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop",
+    description: "Designed and built a minimal, responsive portfolio using AI-assisted vibe coding.",
+    tags: ["React", "Generative AI", "Product Design", "Tailwind"],
+    caseStudy: {
+      problem: "Traditional portfolio development is slow and often requires heavy manual coding, creating a barrier between design intent and final product.",
+      solution: "Leveraged Lovable and natural language prompting to bridge the gap between 'Product Vision' and 'Technical Execution' in under 48 hours.",
+      process: [
+        "Defined core user journey for hiring managers (Scan -> Read -> Contact).",
+        "Utilized iterative prompting to refine UI components without writing manual CSS.",
+        "Implemented a 'clean data' structure to ensure easy content updates."
+      ],
+      outcome: "A fully responsive, accessible, and aesthetic portfolio deployed in record time, demonstrating technical literacy and AI-native workflow mastery."
+    }
   },
   {
-    title: "SaaS Platform — Product Operations",
+    title: "SaaS Platform Optimization",
     period: "2021 – Present",
-    description:
-      "End-to-end ATS configuration, workflow tuning, backend issue reporting, data exports, and integration management with job boards.",
-    tags: ["ATS", "Operations", "Product Thinking"],
-    fullDescription: `Complete lifecycle management of Ceipal ATS implementation and optimization.
-
-**Key Responsibilities:**
-• End-to-end ATS configuration and workflow tuning
-• Backend issue identification and reporting
-• Custom data exports and reporting logic
-• Integration management with major job boards
-
-**Impact:**
-Deep insight into recruitment technology from user and admin perspectives, informing product thinking approach.`,
+    category: "Product Operations",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
+    description: "End-to-end ATS configuration and workflow tuning for high-volume recruitment teams.",
+    tags: ["SaaS Operations", "Workflow Automation", "User Research", "Data Analysis"],
+    caseStudy: {
+      problem: "The recruitment team faced 24/7 operational bottlenecks due to rigid ATS configurations and lack of data visibility.",
+      solution: "Owned the complete configuration of the internal SaaS platform (Ceipal), treating internal recruiters as 'users' to optimize their daily workflows.",
+      process: [
+        "Conducted user interviews with 5-7 recruiters to identify friction points.",
+        "Redesigned backend workflow reporting to flag issues automatically.",
+        "Built custom data export logic to integrate with external job boards."
+      ],
+      outcome: "Reduced time-to-fill metrics and significantly improved data integrity, creating a scalable system for distributed teams."
+    }
   },
   {
-    title: "Tooling Ecosystem & Procurement",
+    title: "Tooling Ecosystem Strategy",
     period: "2021 – Present",
-    description:
-      "Strategic assessment of sourcing tools through ROI analysis, usage tracking, and cost-per-hire metrics to optimize the recruitment tech stack.",
-    tags: ["Procurement", "ROI Analysis", "Strategy"],
-    fullDescription: `Strategic optimization of the recruitment tooling ecosystem.
-
-**Methodology:**
-• ROI analysis for each sourcing portal
-• Usage behavior tracking and optimization
-• Conversion metrics and cost-per-hire analysis
-• Vendor negotiation and relationship management
-
-**Results:**
-Data-driven framework for evaluating recruitment tools balancing cost, efficiency, and adoption.`,
-  },
+    category: "Strategy & Procurement",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    description: "Strategic ROI assessment of sourcing tools to optimize the recruitment tech stack.",
+    tags: ["ROI Analysis", "Vendor Management", "Strategy", "Procurement"],
+    caseStudy: {
+      problem: "The organization lacked a data-driven framework for evaluating the effectiveness of expensive sourcing tools (Monster, LinkedIn, etc.).",
+      solution: "Developed a rigorous 'Cost-Per-Hire' and 'Usage ROI' framework to validate tool effectiveness.",
+      process: [
+        "Tracked usage behavior across all vendor platforms.",
+        "Analyzed conversion metrics vs. subscription costs.",
+        "Negotiated vendor contracts based on actual utilization data."
+      ],
+      outcome: "Optimized the recruitment tech stack, balancing cost efficiency with user adoption and maximizing ROI."
+    }
+  }
 ];
 
 const Projects = () => {
@@ -138,20 +141,33 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-            <div className="prose prose-sm max-w-none text-foreground">
-              {selectedProject?.fullDescription.split('\n').map((line, i) => {
-                if (line.startsWith('**') && line.endsWith('**')) {
-                  return <h4 key={i} className="font-semibold text-foreground mt-4 mb-2">{line.replace(/\*\*/g, '')}</h4>;
-                }
-                if (line.startsWith('• ')) {
-                  return <p key={i} className="text-muted-foreground ml-4 mb-1">{line}</p>;
-                }
-                if (line.trim() === '') {
-                  return <br key={i} />;
-                }
-                return <p key={i} className="text-muted-foreground mb-2">{line}</p>;
-              })}
-            </div>
+            {selectedProject?.caseStudy && (
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">The Problem</h4>
+                  <p className="text-muted-foreground">{selectedProject.caseStudy.problem}</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">The Solution</h4>
+                  <p className="text-muted-foreground">{selectedProject.caseStudy.solution}</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Process</h4>
+                  <ul className="space-y-2">
+                    {selectedProject.caseStudy.process.map((step, i) => (
+                      <li key={i} className="text-muted-foreground flex items-start gap-2">
+                        <span className="text-foreground/60">•</span>
+                        {step}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Outcome</h4>
+                  <p className="text-muted-foreground">{selectedProject.caseStudy.outcome}</p>
+                </div>
+              </div>
+            )}
           </div>
         </DialogContent>
       </Dialog>
