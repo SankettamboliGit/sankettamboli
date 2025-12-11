@@ -14,7 +14,8 @@ const projects = [
     title: "AI-First Web Portfolio",
     category: "Product Engineering",
     period: "2025",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop", 
+    // Image: Coding/Laptop setup
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop", 
     description: "Designed and deployed a fully responsive web application in under 48 hours using Generative AI.",
     tags: ["React", "Generative AI", "Rapid Prototyping", "Tailwind CSS"],
     caseStudy: {
@@ -32,7 +33,8 @@ const projects = [
     title: "SaaS Platform Optimization",
     category: "Product Operations",
     period: "2021 – Present",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    // Image: User Flow/Wireframe abstract
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop",
     description: "Owned the maintenance and configuration of internal ATS, optimizing it through user feedback loops.",
     tags: ["SaaS Operations", "User Feedback", "Data Integrity", "ATS"],
     caseStudy: {
@@ -50,7 +52,8 @@ const projects = [
     title: "Revenue Intelligence Dashboard",
     category: "Data Product",
     period: "2022 – Present",
-    image: "https://images.unsplash.com/photo-1543286386-713df548e9cc?q=80&w=2000&auto=format&fit=crop",
+    // Image: Financial Charts/Analytics
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     description: "Built dynamic revenue reports and growth projections to visualize financial trends and prevent leakage.",
     tags: ["Business Intelligence", "Revenue Ops", "Data Visualization", "Strategy"],
     caseStudy: {
@@ -68,6 +71,7 @@ const projects = [
     title: "Gamification & Behavioral Design",
     category: "Product Strategy",
     period: "2021 – Present",
+    // Image: Team collaboration/Strategy
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
     description: "Developed incentive plans and retention roadmaps to gamify performance and reduce attrition.",
     tags: ["Gamification", "Behavioral Design", "Retention Strategy", "Leadership"],
@@ -86,7 +90,8 @@ const projects = [
     title: "Talent Pipeline Architecture",
     category: "Supply Chain Ops",
     period: "2021 – Present",
-    image: "https://images.unsplash.com/photo-1558494949-ef2a27883e26?q=80&w=2000&auto=format&fit=crop",
+    // Image: Global Network/Connections
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop",
     description: "Orchestrated the creation of scalable candidate pipelines for niche industry domains.",
     tags: ["Pipeline Strategy", "Supply Chain", "Market Analysis", "Sourcing"],
     caseStudy: {
