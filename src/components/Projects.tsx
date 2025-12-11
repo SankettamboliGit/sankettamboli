@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Target, Lightbulb, CheckCircle2, Trophy, LineChart, Users } from "lucide-react";
+import { ArrowUpRight, Target, Lightbulb, CheckCircle2, Trophy } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,6 @@ const projects = [
     title: "AI-First Web Portfolio",
     category: "Product Engineering",
     period: "2025",
-    // Abstract tech placeholder
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop", 
     description: "Designed and deployed a fully responsive web application in under 48 hours using Generative AI.",
     tags: ["React", "Generative AI", "Rapid Prototyping", "Tailwind CSS"],
@@ -22,9 +21,9 @@ const projects = [
       problem: "Traditional development cycles create a lag between 'Product Vision' and 'Technical Execution', often requiring manual syntax that slows down iteration.",
       solution: "Leveraged Lovable.dev and natural language prompting to bypass manual coding, translating product requirements directly into production-ready React code.",
       process: [
-        [cite_start]"Rapid Prototyping: Deployed a responsive app in under 48 hours[cite: 677].",
-        [cite_start]"Iterative Design: Managed AI feedback loops to refine UI/UX components in real-time[cite: 678].",
-        [cite_start]"Tech Stack: Built on React, Tailwind CSS, and Vite to ensure scalability and performance[cite: 678]."
+        "Rapid Prototyping: Deployed a responsive app in under 48 hours.",
+        "Iterative Design: Managed AI feedback loops to refine UI/UX components in real-time.",
+        "Tech Stack: Built on React, Tailwind CSS, and Vite to ensure scalability and performance."
       ],
       outcome: "Demonstrated the ability to bridge the gap between user needs and technical execution without writing manual syntax."
     }
@@ -33,17 +32,16 @@ const projects = [
     title: "SaaS Platform Optimization",
     category: "Product Operations",
     period: "2021 – Present",
-    // Abstract dashboard placeholder
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     description: "Owned the maintenance and configuration of internal ATS, optimizing it through user feedback loops.",
     tags: ["SaaS Operations", "User Feedback", "Data Integrity", "ATS"],
     caseStudy: {
-      [cite_start]problem: "Operational bottlenecks and data inconsistencies were hindering the leadership's ability to make accurate strategic decisions[cite: 686].",
-      [cite_start]solution: "Owned the end-to-end maintenance and configuration of the internal SaaS platform (ATS), acting as the bridge between the system and the users (recruiters)[cite: 683].",
+      problem: "Operational bottlenecks and data inconsistencies were hindering the leadership's ability to make accurate strategic decisions.",
+      solution: "Owned the end-to-end maintenance and configuration of the internal SaaS platform (ATS), acting as the bridge between the system and the users (recruiters).",
       process: [
-        [cite_start]"Implemented rigorous user feedback loops to identify pain points and enhance user experience[cite: 683].",
-        [cite_start]"Created custom metrics within the platform to identify usage trends[cite: 687].",
-        [cite_start]"Enforced a 'clean data' environment by auditing process adherence[cite: 687]."
+        "Implemented rigorous user feedback loops to identify pain points and enhance user experience.",
+        "Created custom metrics within the platform to identify usage trends.",
+        "Enforced a 'clean data' environment by auditing process adherence."
       ],
       outcome: "Delivered actionable insights to leadership and ensured a reliable data environment for strategic decision-making."
     }
@@ -52,17 +50,16 @@ const projects = [
     title: "Revenue Intelligence Dashboard",
     category: "Data Product",
     period: "2022 – Present",
-    // Abstract chart placeholder
     image: "https://images.unsplash.com/photo-1543286386-713df548e9cc?q=80&w=2000&auto=format&fit=crop",
     description: "Built dynamic revenue reports and growth projections to visualize financial trends and prevent leakage.",
     tags: ["Business Intelligence", "Revenue Ops", "Data Visualization", "Strategy"],
     caseStudy: {
-      [cite_start]problem: "Stakeholders lacked visibility into real-time financial trends, leading to undetected revenue leakages and unclear growth trajectories[cite: 686].",
+      problem: "Stakeholders lacked visibility into real-time financial trends, leading to undetected revenue leakages and unclear growth trajectories.",
       solution: "Designed and deployed a suite of dynamic revenue reports and growth projection matrices to visualize financial health.",
       process: [
         "Identified key leakage points in the billing and delivery cycle.",
-        [cite_start]"Built visualization dashboards to track financial trends against operational output[cite: 686].",
-        [cite_start]"Translate complex financial data into a strategic growth roadmap for leadership[cite: 686]."
+        "Built visualization dashboards to track financial trends against operational output.",
+        "Translate complex financial data into a strategic growth roadmap for leadership."
       ],
       outcome: "Enabled stakeholders to clearly identify revenue leakages and operational drawbacks, resulting in immediate corrective actions."
     }
@@ -71,36 +68,34 @@ const projects = [
     title: "Gamification & Behavioral Design",
     category: "Product Strategy",
     period: "2021 – Present",
-    // Abstract teamwork/strategy placeholder
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
     description: "Developed incentive plans and retention roadmaps to gamify performance and reduce attrition.",
     tags: ["Gamification", "Behavioral Design", "Retention Strategy", "Leadership"],
     caseStudy: {
-      [cite_start]problem: "High attrition rates and undefined skill gaps were affecting the team's ability to meet monthly output targets[cite: 689].",
+      problem: "High attrition rates and undefined skill gaps were affecting the team's ability to meet monthly output targets.",
       solution: "Designed and implemented a comprehensive 'Gamification' strategy involving incentive plans and mentorship frameworks.",
       process: [
-        [cite_start]"Developed retention roadmaps and reward strategies to boost engagement[cite: 689].",
-        [cite_start]"Designed Performance Improvement Plans (PIPs) to transform underperforming members[cite: 690].",
-        [cite_start]"Managed capacity planning for a distributed team across India and US markets[cite: 682]."
+        "Developed retention roadmaps and reward strategies to boost engagement.",
+        "Designed Performance Improvement Plans (PIPs) to transform underperforming members.",
+        "Managed capacity planning for a distributed team across India and US markets."
       ],
-      [cite_start]outcome: "Significantly reduced attrition and drove higher monthly outputs, transforming the team into productive contributors[cite: 689]."
+      outcome: "Significantly reduced attrition and drove higher monthly outputs, transforming the team into productive contributors."
     }
   },
   {
     title: "Talent Pipeline Architecture",
     category: "Supply Chain Ops",
     period: "2021 – Present",
-    // Abstract network/process placeholder
     image: "https://images.unsplash.com/photo-1558494949-ef2a27883e26?q=80&w=2000&auto=format&fit=crop",
     description: "Orchestrated the creation of scalable candidate pipelines for niche industry domains.",
     tags: ["Pipeline Strategy", "Supply Chain", "Market Analysis", "Sourcing"],
     caseStudy: {
-      [cite_start]problem: "Reactive sourcing methods were leading to long lead times and missed opportunities in niche industry domains[cite: 691].",
+      problem: "Reactive sourcing methods were leading to long lead times and missed opportunities in niche industry domains.",
       solution: "Shifted from 'Just-in-Time' sourcing to a 'Inventory-Based' pipeline strategy, creating a ready-to-deploy talent pool.",
       process: [
-        [cite_start]"Analyzed market data to advise on feasibility and reduce requirement churn[cite: 685].",
-        [cite_start]"Directed teams to design scalable pipelines for both active and passive talent[cite: 691].",
-        [cite_start]"Facilitated cross-functional communication to align execution with broader business goals[cite: 684]."
+        "Analyzed market data to advise on feasibility and reduce requirement churn.",
+        "Directed teams to design scalable pipelines for both active and passive talent.",
+        "Facilitated cross-functional communication to align execution with broader business goals."
       ],
       outcome: "Ensured continuous availability of talent, reducing time-to-fill and smoothing operational peaks and troughs."
     }
