@@ -5,37 +5,41 @@ const experiences = [
     role: "Senior Manager - Operations & Delivery",
     company: "Akshar Staffing",
     period: "Oct 2021 – Present",
-    metric: "30% Efficiency Boost",
-    context: "Owned internal SaaS configuration and gamified team performance.",
+    // Use the exact metric from resume: "significantly reducing attrition" -> "Reduced Attrition"
+    metric: "Reduced Team Attrition", 
+    context: "Strategic capacity planning and SaaS platform ownership.",
     description: [
-      "Streamlined ATS workflows and optimized platform configurations.",
-      "Applied product thinking to identify pain points and implement user-centric improvements.",
+      "Owned the maintenance and configuration of internal SaaS platform, optimizing it through rigorous user feedback loops.",
+      "Developed comprehensive incentive plans that significantly reduced attrition and drove higher monthly outputs.",
+      "Managed daily operations for a team of 5-7 recruiters, ensuring 24/7 coverage.",
     ],
-    tech: ["Ceipal ATS", "Excel", "Data Visualization"]
+    tech: ["Ceipal ATS", "Gamification Strategy", "Data Analytics"]
   },
   {
     role: "Lead Recruitment Executive - Talent Operations",
     company: "Diverse Lynx",
     period: "Apr 2021 – Oct 2021",
-    metric: "100% SLA Compliance",
-    context: "Managed operational delivery and client-supplier communications.",
+    // Metric from resume: "reduce time-to-fill"
+    metric: "Optimized Time-to-Fill", 
+    context: "Operational delivery and multi-channel sourcing strategy.",
     description: [
-      "Collaborated cross-functionally to align hiring strategies with business objectives.",
-      "Implemented rigorous QA checks for candidate data."
+      "Executed multi-channel sourcing strategies to optimize candidate quality and reduce time-to-fill for critical roles.",
+      "Led operational delivery and client-supplier communications, ensuring strict adherence to timelines.",
     ],
-    tech: ["Vendor Mgmt", "JobDiva", "QA"]
+    tech: ["Sourcing Strategy", "JobDiva", "Stakeholder Mgmt"]
   },
   {
     role: "Talent Acquisition Lead",
     company: "Rang Technologies",
     period: "Mar 2017 – Apr 2021",
-    metric: "$200k+ Revenue Impact",
-    context: "Strategic pipeline building for Fortune 500 clients.",
+    // Metric from resume: "smooth delivery and successful placements" -> "High Placement Success"
+    metric: "High Placement Success",
+    context: "Full lifecycle management for Fortune 500 clients.",
     description: [
-      "Developed data-driven approaches to pipeline optimization.",
-      "Led stakeholder reporting and requirement gathering."
+      "Directed the full recruitment lifecycle for contract and direct placement roles.",
+      "Built robust talent pipelines to efficiently match candidates with strategic roles.",
     ],
-    tech: ["Pipeline Strategy", "Stakeholder Mgmt"]
+    tech: ["Pipeline Building", "VMS/MSP", "Negotiation"]
   },
 ];
 
@@ -47,7 +51,9 @@ const Experience = () => {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Professional Journey
           </h2>
-          <p className="text-muted-foreground">Focusing on impact, metrics, and operational excellence.</p>
+          <p className="text-muted-foreground">
+            A timeline of operational leadership and strategic delivery.
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-1">
@@ -83,19 +89,29 @@ const Experience = () => {
                   </div>
                 </div>
 
-                {/* Right: The North Star Metric */}
+                {/* Right: The North Star Metric (Authentic) */}
                 <div className="md:text-right shrink-0">
                   <div className="inline-flex flex-col items-center md:items-end p-4 rounded-xl bg-secondary/30 border border-border/50 group-hover:bg-primary/5 group-hover:border-primary/10 transition-colors">
                     <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1 flex items-center gap-1">
                       <TrendingUp className="w-3 h-3" /> Impact
                     </span>
-                    <span className="text-2xl md:text-3xl font-bold text-foreground">
+                    <span className="text-xl md:text-2xl font-bold text-foreground">
                       {exp.metric}
                     </span>
                   </div>
                 </div>
 
               </div>
+              
+              {/* Description Bullets */}
+              <div className="mt-6 pl-4 border-l-2 border-border/50">
+                <ul className="space-y-2 text-muted-foreground text-sm">
+                   {exp.description.map((item, i) => (
+                     <li key={i}>{item}</li>
+                   ))}
+                </ul>
+              </div>
+
             </div>
           ))}
         </div>
