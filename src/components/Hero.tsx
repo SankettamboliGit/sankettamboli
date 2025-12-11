@@ -7,17 +7,14 @@ const Hero = () => {
       
       {/* 1. Dynamic Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Glowing Orb Top Left */}
         <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px] opacity-30 animate-pulse" />
-        {/* Glowing Orb Bottom Right */}
         <div className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-[120px] opacity-30" />
-        {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)" />
       </div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center">
         
-        {/* 2. Status Badge - "Available for Product Roles" */}
+        {/* 2. Status Badge */}
         <div className="mb-8 opacity-0 animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/5 border border-white/10 backdrop-blur-md shadow-2xl">
             <span className="relative flex h-2 w-2">
@@ -30,16 +27,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* 3. Main Profile Visual with "Floating Stats" */}
-        <div className="relative mb-12 opacity-0 animate-fade-up stagger-1 group">
+        {/* 3. Main Profile Visual - Increased Margin to prevent overlap */}
+        <div className="relative mb-24 opacity-0 animate-fade-up stagger-1 group">
           {/* Central Image */}
-          <div className="relative w-32 h-32 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-br from-white/20 to-transparent backdrop-blur-xl">
+          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-white/20 to-transparent backdrop-blur-xl">
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-background/10 relative z-10">
                <img src={profileImage} alt="Sanket Tamboli" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" />
             </div>
             
             {/* Floating Glass Card - Left (Experience) */}
-            <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl -translate-x-4 group-hover:translate-x-0 transition-transform duration-500">
+            <div className="absolute -left-16 md:-left-24 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl -translate-x-4 group-hover:translate-x-0 transition-transform duration-500 z-20">
                <div className="p-2 bg-background/20 rounded-lg">
                  <Zap className="w-4 h-4 text-yellow-300" />
                </div>
@@ -50,7 +47,7 @@ const Hero = () => {
             </div>
 
             {/* Floating Glass Card - Right (Certification) */}
-            <div className="absolute -right-12 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl translate-x-4 group-hover:translate-x-0 transition-transform duration-500">
+            <div className="absolute -right-16 md:-right-24 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl translate-x-4 group-hover:translate-x-0 transition-transform duration-500 z-20">
                <div className="p-2 bg-background/20 rounded-lg">
                  <CheckCircle2 className="w-4 h-4 text-green-300" />
                </div>
@@ -62,9 +59,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* 4. Power Headline */}
-        <div className="opacity-0 animate-fade-up stagger-2 space-y-6 mb-12 max-w-4xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+        {/* 4. Power Headline - Size Reduced */}
+        <div className="opacity-0 animate-fade-up stagger-2 space-y-6 mb-12 max-w-4xl relative z-0">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.2]">
             Transforming Ambiguity into <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-purple-200 animate-pulse">
               Scalable Product Strategy
