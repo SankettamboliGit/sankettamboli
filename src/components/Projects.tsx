@@ -6,64 +6,63 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 
-// Updated Data Structure with Case Studies
 const projects = [
   {
     title: "AI-First Web Portfolio",
     category: "Product Engineering",
     period: "2025",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop",
-    description: "Designed and built a minimal, responsive portfolio using AI-assisted vibe coding.",
-    tags: ["React", "Generative AI", "Product Design", "Tailwind"],
+    // Abstract gradient placeholder - looks professional without real screenshots
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop", 
+    description: "Designed and deployed a fully responsive web application in under 48 hours using Generative AI.",
+    tags: ["React", "Generative AI", "Rapid Prototyping", "Tailwind CSS"],
     caseStudy: {
-      problem: "Traditional portfolio development is slow and often requires heavy manual coding, creating a barrier between design intent and final product.",
-      solution: "Leveraged Lovable and natural language prompting to bridge the gap between 'Product Vision' and 'Technical Execution' in under 48 hours.",
+      problem: "Traditional development cycles create a lag between 'Product Vision' and 'Technical Execution', often requiring manual syntax that slows down iteration.",
+      solution: "Leveraged Lovable.dev and natural language prompting to bypass manual coding, translating product requirements directly into production-ready React code.",
       process: [
-        "Defined core user journey for hiring managers (Scan -> Read -> Contact).",
-        "Utilized iterative prompting to refine UI components without writing manual CSS.",
-        "Implemented a 'clean data' structure to ensure easy content updates."
+        "Rapid Prototyping: Deployed a responsive app in under 48 hours.",
+        "Iterative Design: Managed AI feedback loops to refine UI/UX components in real-time.",
+        "Tech Stack: Built on React, Tailwind CSS, and Vite to ensure scalability and performance."
       ],
-      outcome: "A fully responsive, accessible, and aesthetic portfolio deployed in record time, demonstrating technical literacy and AI-native workflow mastery."
+      outcome: "Demonstrated the ability to bridge the gap between user needs and technical execution without writing manual syntax, achieving a fully functional product launch in record time."
     }
   },
   {
     title: "SaaS Platform Optimization",
     category: "Product Operations",
     period: "2021 – Present",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
-    description: "End-to-end ATS configuration and workflow tuning for high-volume recruitment teams.",
-    tags: ["SaaS Operations", "Workflow Automation", "User Research", "Data Analysis"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    description: "Owned the maintenance and configuration of internal ATS, optimizing it through user feedback loops.",
+    tags: ["SaaS Operations", "User Feedback", "Data Integrity", "ATS"],
     caseStudy: {
-      problem: "The recruitment team faced 24/7 operational bottlenecks due to rigid ATS configurations and lack of data visibility.",
-      solution: "Owned the complete configuration of the internal SaaS platform (Ceipal), treating internal recruiters as 'users' to optimize their daily workflows.",
+      problem: "Operational bottlenecks and data inconsistencies were hindering the leadership's ability to make accurate strategic decisions.",
+      solution: "Owned the end-to-end maintenance and configuration of the internal SaaS platform (ATS), acting as the bridge between the system and the users (recruiters).",
       process: [
-        "Conducted user interviews with 5-7 recruiters to identify friction points.",
-        "Redesigned backend workflow reporting to flag issues automatically.",
-        "Built custom data export logic to integrate with external job boards."
+        "Implemented rigorous user feedback loops to identify pain points and enhance user experience.",
+        "Created custom metrics within the platform to identify usage trends.",
+        "Enforced a 'clean data' environment by auditing process adherence."
       ],
-      outcome: "Reduced time-to-fill metrics and significantly improved data integrity, creating a scalable system for distributed teams."
+      outcome: "Delivered actionable insights to leadership and ensured a reliable data environment for strategic decision-making."
     }
   },
   {
-    title: "Tooling Ecosystem Strategy",
-    category: "Strategy & Procurement",
+    title: "Performance & Retention Strategy",
+    category: "Strategy & Leadership",
     period: "2021 – Present",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
-    description: "Strategic ROI assessment of sourcing tools to optimize the recruitment tech stack.",
-    tags: ["ROI Analysis", "Vendor Management", "Strategy", "Procurement"],
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
+    description: "Developed incentive plans and retention roadmaps to gamify performance and reduce attrition.",
+    tags: ["Retention Strategy", "Incentive Planning", "Capacity Planning", "Leadership"],
     caseStudy: {
-      problem: "The organization lacked a data-driven framework for evaluating the effectiveness of expensive sourcing tools (Monster, LinkedIn, etc.).",
-      solution: "Developed a rigorous 'Cost-Per-Hire' and 'Usage ROI' framework to validate tool effectiveness.",
+      problem: "High attrition rates and undefined skill gaps were affecting the team's ability to meet monthly output targets.",
+      solution: "Designed and implemented a comprehensive 'Gamification' strategy involving incentive plans and mentorship frameworks.",
       process: [
-        "Tracked usage behavior across all vendor platforms.",
-        "Analyzed conversion metrics vs. subscription costs.",
-        "Negotiated vendor contracts based on actual utilization data."
+        "Developed retention roadmaps and reward strategies to boost engagement.",
+        "Designed Performance Improvement Plans (PIPs) to transform underperforming members.",
+        "Managed capacity planning for a distributed team across India and US markets."
       ],
-      outcome: "Optimized the recruitment tech stack, balancing cost efficiency with user adoption and maximizing ROI."
+      outcome: "Significantly reduced attrition and drove higher monthly outputs, transforming the team into productive contributors."
     }
   }
 ];
@@ -76,10 +75,10 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Selected Work & Research
+            Selected Work & Case Studies
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A deep dive into how I solve problems, bridge gaps, and deliver value.
+            Real-world examples of how I translate user needs into scalable solutions.
           </p>
         </div>
 
@@ -130,7 +129,7 @@ const Projects = () => {
 
       {/* Full Screen Case Study Modal */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 gap-0">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 gap-0 border-none">
           <DialogHeader className="p-0">
             {/* Modal Hero Image */}
             <div className="relative w-full h-48 md:h-64 bg-muted">
@@ -152,7 +151,7 @@ const Projects = () => {
             </DialogDescription>
           </DialogHeader>
 
-          <div className="p-6 md:p-8 space-y-8">
+          <div className="p-6 md:p-8 space-y-8 bg-background">
             {selectedProject && (
               <>
                 {/* Intro */}
@@ -212,7 +211,7 @@ const Projects = () => {
                     <Trophy className="w-5 h-5" />
                     <h5 className="font-semibold">The Outcome</h5>
                   </div>
-                  <p className="text-foreground/80 leading-relaxed">
+                  <p className="text-foreground/80 leading-relaxed font-medium">
                     {selectedProject.caseStudy.outcome}
                   </p>
                 </div>
