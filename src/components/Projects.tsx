@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, Target, Lightbulb, ListChecks, TrendingUp, CheckCircle2, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -70,42 +70,66 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 px-6 bg-secondary/30">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             Selected Work & Research
           </h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            A collection of projects showcasing product thinking, strategic operations, and technical execution.
+          </p>
         </div>
 
-        <div className="space-y-4">
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <article
               key={project.title}
               onClick={() => setSelectedProject(project)}
-              className={`group bg-card border border-border rounded-xl p-6 md:p-8 hover:border-foreground/20 hover:shadow-lg transition-all duration-300 cursor-pointer opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)}`}
+              className={`group bg-card border border-border rounded-2xl overflow-hidden hover:border-foreground/20 hover:shadow-xl transition-all duration-500 cursor-pointer opacity-0 animate-fade-up`}
+              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1">
-                  <span className="text-sm text-muted-foreground">
-                    {project.period}
-                  </span>
-                  <h3 className="text-xl font-semibold mt-1 mb-3 group-hover:text-foreground transition-colors flex items-center gap-2">
-                    {project.title}
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs bg-secondary text-muted-foreground rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+              {/* Image Container */}
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Category Badge */}
+                <span className="absolute top-3 left-3 px-3 py-1 text-xs font-medium bg-background/90 backdrop-blur-sm text-foreground rounded-full border border-border/50">
+                  {project.category}
+                </span>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-500" />
+              </div>
+
+              {/* Content */}
+              <div className="p-5">
+                <span className="text-xs text-muted-foreground font-medium">
+                  {project.period}
+                </span>
+                <h3 className="text-lg font-semibold mt-1 mb-2 group-hover:text-foreground transition-colors flex items-center gap-2">
+                  {project.title}
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 text-xs bg-secondary text-muted-foreground rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="px-2.5 py-1 text-xs bg-secondary text-muted-foreground rounded-full">
+                      +{project.tags.length - 3}
+                    </span>
+                  )}
                 </div>
               </div>
             </article>
@@ -113,62 +137,117 @@ const Projects = () => {
         </div>
       </div>
 
+      {/* Full Case Study Modal */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-          <DialogHeader>
-            <div className="flex items-start justify-between">
-              <div>
-                <span className="text-sm text-muted-foreground">
-                  {selectedProject?.period}
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 gap-0">
+          {/* Hero Image Banner */}
+          {selectedProject && (
+            <>
+              <div className="relative w-full aspect-[21/9] overflow-hidden">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                
+                {/* Category Badge on Image */}
+                <span className="absolute top-4 left-4 px-3 py-1.5 text-xs font-medium bg-background/90 backdrop-blur-sm text-foreground rounded-full border border-border/50">
+                  {selectedProject.category}
                 </span>
-                <DialogTitle className="text-2xl font-semibold mt-1">
-                  {selectedProject?.title}
-                </DialogTitle>
               </div>
-            </div>
-          </DialogHeader>
-          <DialogDescription className="sr-only">
-            Details about {selectedProject?.title}
-          </DialogDescription>
-          <div className="mt-4">
-            <div className="flex flex-wrap gap-2 mb-6">
-              {selectedProject?.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-xs bg-secondary text-muted-foreground rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            {selectedProject?.caseStudy && (
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">The Problem</h4>
-                  <p className="text-muted-foreground">{selectedProject.caseStudy.problem}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">The Solution</h4>
-                  <p className="text-muted-foreground">{selectedProject.caseStudy.solution}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Process</h4>
-                  <ul className="space-y-2">
-                    {selectedProject.caseStudy.process.map((step, i) => (
-                      <li key={i} className="text-muted-foreground flex items-start gap-2">
-                        <span className="text-foreground/60">•</span>
-                        {step}
-                      </li>
+
+              {/* Content */}
+              <div className="px-6 md:px-10 pb-10">
+                {/* Header */}
+                <DialogHeader className="pt-6 pb-4 border-b border-border">
+                  <span className="text-sm text-muted-foreground font-medium">
+                    {selectedProject.period}
+                  </span>
+                  <DialogTitle className="text-2xl md:text-3xl font-bold mt-1">
+                    {selectedProject.title}
+                  </DialogTitle>
+                  <DialogDescription className="text-base text-muted-foreground mt-2">
+                    {selectedProject.description}
+                  </DialogDescription>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {selectedProject.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
+                      >
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Outcome</h4>
-                  <p className="text-muted-foreground">{selectedProject.caseStudy.outcome}</p>
+                  </div>
+                </DialogHeader>
+
+                {/* Case Study Sections */}
+                <div className="mt-8 space-y-8">
+                  {/* The Challenge */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-secondary rounded-lg">
+                        <Target className="w-5 h-5 text-foreground" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-foreground">The Challenge</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed pl-12">
+                      {selectedProject.caseStudy.problem}
+                    </p>
+                  </div>
+
+                  {/* The Solution */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-secondary rounded-lg">
+                        <Lightbulb className="w-5 h-5 text-foreground" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-foreground">The Solution</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed pl-12">
+                      {selectedProject.caseStudy.solution}
+                    </p>
+                  </div>
+
+                  {/* Key Process */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-secondary rounded-lg">
+                        <ListChecks className="w-5 h-5 text-foreground" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-foreground">Key Process</h4>
+                    </div>
+                    <ul className="space-y-3 pl-12">
+                      {selectedProject.caseStudy.process.map((step, i) => (
+                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                          <CheckCircle2 className="w-5 h-5 text-foreground/70 mt-0.5 flex-shrink-0" />
+                          <span className="leading-relaxed">{step}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* The Outcome */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-secondary rounded-lg">
+                        <TrendingUp className="w-5 h-5 text-foreground" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-foreground">The Outcome</h4>
+                    </div>
+                    <div className="ml-12 p-4 bg-foreground/5 border border-foreground/10 rounded-xl">
+                      <p className="text-foreground font-medium leading-relaxed">
+                        {selectedProject.caseStudy.outcome}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            )}
-          </div>
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </section>
