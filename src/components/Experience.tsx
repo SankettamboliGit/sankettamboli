@@ -1,117 +1,146 @@
-import { Briefcase, TrendingUp } from "lucide-react";
+import { Briefcase, TrendingUp, Users, Clock, Database, Globe } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 const experiences = [
   {
     role: "Senior Manager - Operations & Delivery",
     company: "Akshar Staffing",
     period: "Oct 2021 – Present",
-    // Use the exact metric from resume: "significantly reducing attrition" -> "Reduced Attrition"
-    metric: "Reduced Team Attrition", 
-    context: "Strategic capacity planning and SaaS platform ownership.",
-    description: [
-      "Owned the maintenance and configuration of internal SaaS platform, optimizing it through rigorous user feedback loops.",
-      "Developed comprehensive incentive plans that significantly reduced attrition and drove higher monthly outputs.",
-      "Managed daily operations for a team of 5-7 recruiters, ensuring 24/7 coverage.",
+    location: "Vadodara, GJ",
+    // Primary Impact Metric
+    impact: "Reduced Team Attrition",
+    impactIcon: <Users className="w-4 h-4 text-green-500" />,
+    // Detailed Metrics from Resume
+    metrics: [
+      { label: "Coverage", value: "24/7 Global Ops" },
+      { label: "Data Quality", value: "100% 'Clean Data'" },
+      { label: "Team Size", value: "5-7 Recruiters" }
     ],
-    tech: ["Ceipal ATS", "Gamification Strategy", "Data Analytics"]
+    description: [
+      "Owned the maintenance and configuration of internal ATS, optimizing it through rigorous user feedback loops.",
+      "Developed comprehensive incentive plans that significantly reduced attrition and drove higher monthly outputs.",
+      "Managed capacity planning for distributed teams across India and US markets.",
+    ],
+    skills: ["SaaS Ops", "Gamification", "Capacity Planning"]
   },
   {
     role: "Lead Recruitment Executive - Talent Operations",
     company: "Diverse Lynx",
     period: "Apr 2021 – Oct 2021",
-    // Metric from resume: "reduce time-to-fill"
-    metric: "Optimized Time-to-Fill", 
-    context: "Operational delivery and multi-channel sourcing strategy.",
+    impact: "Optimized Time-to-Fill",
+    impactIcon: <Clock className="w-4 h-4 text-blue-500" />,
+    metrics: [
+      { label: "Delivery", value: "100% SLA Adherence" },
+      { label: "Sourcing", value: "Multi-Channel" }
+    ],
     description: [
       "Executed multi-channel sourcing strategies to optimize candidate quality and reduce time-to-fill for critical roles.",
-      "Led operational delivery and client-supplier communications, ensuring strict adherence to timelines.",
+      "Collaborated cross-functionally to align hiring strategies with business objectives.",
     ],
-    tech: ["Sourcing Strategy", "JobDiva", "Stakeholder Mgmt"]
+    skills: ["Sourcing Strategy", "Stakeholder Mgmt", "JobDiva"]
   },
   {
     role: "Talent Acquisition Lead",
     company: "Rang Technologies",
     period: "Mar 2017 – Apr 2021",
-    // Metric from resume: "smooth delivery and successful placements" -> "High Placement Success"
-    metric: "High Placement Success",
-    context: "Full lifecycle management for Fortune 500 clients.",
-    description: [
-      "Directed the full recruitment lifecycle for contract and direct placement roles.",
-      "Built robust talent pipelines to efficiently match candidates with strategic roles.",
+    impact: "Fortune 500 Placements",
+    impactIcon: <Globe className="w-4 h-4 text-purple-500" />,
+    metrics: [
+      { label: "Pipeline", value: "Inventory-Based" },
+      { label: "Clients", value: "Direct/VMS/MSP" }
     ],
-    tech: ["Pipeline Building", "VMS/MSP", "Negotiation"]
+    description: [
+      "Built robust talent pipelines to efficiently match candidates with strategic roles.",
+      "Developed data-driven approaches to pipeline optimization and stakeholder reporting.",
+    ],
+    skills: ["Pipeline Architecture", "Negotiation", "Market Analysis"]
   },
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-6 bg-card/50">
+    <section id="experience" className="py-24 px-6 relative overflow-hidden">
+       {/* Background Decoration */}
+      <div className="absolute top-0 left-0 w-full h-full bg-secondary/30 -z-10" />
+      
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Professional Journey
           </h2>
-          <p className="text-muted-foreground">
-            A timeline of operational leadership and strategic delivery.
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+             9+ years of operational leadership, measured by impact and efficiency.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-1">
+        <div className="relative space-y-8">
+          {/* Connecting Line (Desktop) */}
+          <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-px bg-border md:-translate-x-1/2 hidden md:block" />
+
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className={`group relative bg-background border border-border rounded-2xl p-6 md:p-8 hover:border-primary/20 transition-all duration-300 opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`relative flex flex-col md:flex-row items-center gap-8 opacity-0 animate-fade-up stagger-${index + 1} ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                
-                {/* Left: Role Info */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
-                    <span className="flex items-center gap-1.5">
-                      <Briefcase className="w-4 h-4" />
-                      {exp.period}
-                    </span>
-                    <span>•</span>
-                    <span>{exp.company}</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-2">{exp.role}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed max-w-2xl">
-                    {exp.context}
-                  </p>
-                  
-                  {/* Tech Stack Pills */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {exp.tech.map(t => (
-                      <span key={t} className="px-2.5 py-1 rounded-md bg-secondary text-xs text-secondary-foreground font-medium">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              {/* Timeline Dot */}
+              <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full md:-translate-x-1/2 z-10 hidden md:block border-4 border-background shadow-sm" />
 
-                {/* Right: The North Star Metric (Authentic) */}
-                <div className="md:text-right shrink-0">
-                  <div className="inline-flex flex-col items-center md:items-end p-4 rounded-xl bg-secondary/30 border border-border/50 group-hover:bg-primary/5 group-hover:border-primary/10 transition-colors">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1 flex items-center gap-1">
-                      <TrendingUp className="w-3 h-3" /> Impact
-                    </span>
-                    <span className="text-xl md:text-2xl font-bold text-foreground">
-                      {exp.metric}
-                    </span>
-                  </div>
-                </div>
+              {/* Content Card */}
+              <div className="w-full md:w-[calc(50%-2rem)]">
+                <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border-muted/60">
+                  <CardContent className="p-6">
+                    {/* Header */}
+                    <div className="flex flex-col gap-1 mb-4">
+                      <div className="flex justify-between items-start">
+                         <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
+                           <Briefcase className="w-3 h-3" /> {exp.period}
+                         </span>
+                         {/* Mobile Impact Badge */}
+                         <Badge variant="outline" className="flex gap-1 items-center bg-primary/5 text-primary border-primary/20">
+                            {exp.impactIcon} {exp.impact}
+                         </Badge>
+                      </div>
+                      <h3 className="text-xl font-bold">{exp.role}</h3>
+                      <p className="text-muted-foreground font-medium">{exp.company}</p>
+                    </div>
 
+                    {/* Description */}
+                    <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                      {exp.description.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Metrics Grid */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                        {exp.metrics.map((m, i) => (
+                          <div key={i} className="bg-secondary/50 rounded-lg p-2 border border-border/50">
+                             <p className="text-[10px] uppercase text-muted-foreground font-semibold">{m.label}</p>
+                             <p className="text-sm font-bold text-foreground">{m.value}</p>
+                          </div>
+                        ))}
+                    </div>
+
+                    {/* Skills Footer */}
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+                      {exp.skills.map(skill => (
+                        <Badge key={skill} variant="secondary" className="text-xs font-normal">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
               
-              {/* Description Bullets */}
-              <div className="mt-6 pl-4 border-l-2 border-border/50">
-                <ul className="space-y-2 text-muted-foreground text-sm">
-                   {exp.description.map((item, i) => (
-                     <li key={i}>{item}</li>
-                   ))}
-                </ul>
-              </div>
-
+              {/* Spacer for the other side of the timeline */}
+              <div className="w-full md:w-[calc(50%-2rem)] hidden md:block" />
             </div>
           ))}
         </div>
