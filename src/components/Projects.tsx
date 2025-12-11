@@ -1,18 +1,21 @@
 import { useState } from "react";
-import { ArrowUpRight, Target, Lightbulb, ListChecks, TrendingUp, CheckCircle2, X } from "lucide-react";
+import { ArrowUpRight, Target, Lightbulb, CheckCircle2, Trophy, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
+  DialogClose,
 } from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
 
+// Updated Data Structure with Case Studies
 const projects = [
   {
     title: "AI-First Web Portfolio",
-    period: "2025",
     category: "Product Engineering",
+    period: "2025",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop",
     description: "Designed and built a minimal, responsive portfolio using AI-assisted vibe coding.",
     tags: ["React", "Generative AI", "Product Design", "Tailwind"],
@@ -29,8 +32,8 @@ const projects = [
   },
   {
     title: "SaaS Platform Optimization",
-    period: "2021 – Present",
     category: "Product Operations",
+    period: "2021 – Present",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
     description: "End-to-end ATS configuration and workflow tuning for high-volume recruitment teams.",
     tags: ["SaaS Operations", "Workflow Automation", "User Research", "Data Analysis"],
@@ -47,8 +50,8 @@ const projects = [
   },
   {
     title: "Tooling Ecosystem Strategy",
-    period: "2021 – Present",
     category: "Strategy & Procurement",
+    period: "2021 – Present",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     description: "Strategic ROI assessment of sourcing tools to optimize the recruitment tech stack.",
     tags: ["ROI Analysis", "Vendor Management", "Strategy", "Procurement"],
@@ -72,64 +75,52 @@ const Projects = () => {
     <section id="projects" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 opacity-0 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Selected Work & Research
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A collection of projects showcasing product thinking, strategic operations, and technical execution.
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A deep dive into how I solve problems, bridge gaps, and deliver value.
           </p>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <article
               key={project.title}
               onClick={() => setSelectedProject(project)}
-              className={`group bg-card border border-border rounded-2xl overflow-hidden hover:border-foreground/20 hover:shadow-xl transition-all duration-500 cursor-pointer opacity-0 animate-fade-up`}
-              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+              className={`group bg-card border border-border rounded-xl overflow-hidden hover:border-foreground/20 hover:shadow-xl transition-all duration-300 cursor-pointer opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)}`}
             >
-              {/* Image Container */}
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={project.image}
+              {/* Card Image */}
+              <div className="aspect-video w-full overflow-hidden relative">
+                <img 
+                  src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Category Badge */}
-                <span className="absolute top-3 left-3 px-3 py-1 text-xs font-medium bg-background/90 backdrop-blur-sm text-foreground rounded-full border border-border/50">
-                  {project.category}
-                </span>
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-500" />
+                <div className="absolute top-3 left-3">
+                  <Badge variant="secondary" className="backdrop-blur-md bg-background/80">
+                    {project.category}
+                  </Badge>
+                </div>
               </div>
 
-              {/* Content */}
-              <div className="p-5">
-                <span className="text-xs text-muted-foreground font-medium">
-                  {project.period}
-                </span>
-                <h3 className="text-lg font-semibold mt-1 mb-2 group-hover:text-foreground transition-colors flex items-center gap-2">
-                  {project.title}
-                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
+              {/* Card Content */}
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-y-1 translate-x-1" />
+                </div>
+                <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 text-xs bg-secondary text-muted-foreground rounded-full"
-                    >
+                    <Badge key={tag} variant="outline" className="text-xs">
                       {tag}
-                    </span>
+                    </Badge>
                   ))}
-                  {project.tags.length > 3 && (
-                    <span className="px-2.5 py-1 text-xs bg-secondary text-muted-foreground rounded-full">
-                      +{project.tags.length - 3}
-                    </span>
-                  )}
                 </div>
               </div>
             </article>
@@ -137,117 +128,97 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Full Case Study Modal */}
+      {/* Full Screen Case Study Modal */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 gap-0">
-          {/* Hero Image Banner */}
-          {selectedProject && (
-            <>
-              <div className="relative w-full aspect-[21/9] overflow-hidden">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
+          <DialogHeader className="p-0">
+            {/* Modal Hero Image */}
+            <div className="relative w-full h-48 md:h-64 bg-muted">
+               <img 
+                  src={selectedProject?.image} 
+                  alt={selectedProject?.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                
-                {/* Category Badge on Image */}
-                <span className="absolute top-4 left-4 px-3 py-1.5 text-xs font-medium bg-background/90 backdrop-blur-sm text-foreground rounded-full border border-border/50">
-                  {selectedProject.category}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="px-6 md:px-10 pb-10">
-                {/* Header */}
-                <DialogHeader className="pt-6 pb-4 border-b border-border">
-                  <span className="text-sm text-muted-foreground font-medium">
-                    {selectedProject.period}
-                  </span>
-                  <DialogTitle className="text-2xl md:text-3xl font-bold mt-1">
-                    {selectedProject.title}
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <Badge className="mb-3">{selectedProject?.category}</Badge>
+                  <DialogTitle className="text-3xl md:text-4xl font-bold text-foreground">
+                    {selectedProject?.title}
                   </DialogTitle>
-                  <DialogDescription className="text-base text-muted-foreground mt-2">
-                    {selectedProject.description}
-                  </DialogDescription>
-                  
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {selectedProject.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1.5 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </DialogHeader>
+                </div>
+            </div>
+            <DialogDescription className="sr-only">
+              Case study details for {selectedProject?.title}
+            </DialogDescription>
+          </DialogHeader>
 
-                {/* Case Study Sections */}
-                <div className="mt-8 space-y-8">
-                  {/* The Challenge */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-secondary rounded-lg">
-                        <Target className="w-5 h-5 text-foreground" />
-                      </div>
-                      <h4 className="text-lg font-semibold text-foreground">The Challenge</h4>
+          <div className="p-6 md:p-8 space-y-8">
+            {selectedProject && (
+              <>
+                {/* Intro */}
+                <div>
+                   <h4 className="text-lg font-medium mb-2">Project Overview</h4>
+                   <p className="text-muted-foreground leading-relaxed">
+                     {selectedProject.description}
+                   </p>
+                   <div className="flex flex-wrap gap-2 mt-4">
+                      {selectedProject.tags.map(tag => (
+                        <Badge key={tag} variant="secondary">{tag}</Badge>
+                      ))}
+                   </div>
+                </div>
+
+                {/* Challenge & Solution Grid */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-secondary/20 p-5 rounded-lg border border-border/50">
+                    <div className="flex items-center gap-2 mb-3 text-red-500/80">
+                      <Target className="w-5 h-5" />
+                      <h5 className="font-semibold text-foreground">The Challenge</h5>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed pl-12">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {selectedProject.caseStudy.problem}
                     </p>
                   </div>
-
-                  {/* The Solution */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-secondary rounded-lg">
-                        <Lightbulb className="w-5 h-5 text-foreground" />
-                      </div>
-                      <h4 className="text-lg font-semibold text-foreground">The Solution</h4>
+                  <div className="bg-secondary/20 p-5 rounded-lg border border-border/50">
+                    <div className="flex items-center gap-2 mb-3 text-blue-500/80">
+                      <Lightbulb className="w-5 h-5" />
+                      <h5 className="font-semibold text-foreground">The Solution</h5>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed pl-12">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {selectedProject.caseStudy.solution}
                     </p>
                   </div>
-
-                  {/* Key Process */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-secondary rounded-lg">
-                        <ListChecks className="w-5 h-5 text-foreground" />
-                      </div>
-                      <h4 className="text-lg font-semibold text-foreground">Key Process</h4>
-                    </div>
-                    <ul className="space-y-3 pl-12">
-                      {selectedProject.caseStudy.process.map((step, i) => (
-                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                          <CheckCircle2 className="w-5 h-5 text-foreground/70 mt-0.5 flex-shrink-0" />
-                          <span className="leading-relaxed">{step}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* The Outcome */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-secondary rounded-lg">
-                        <TrendingUp className="w-5 h-5 text-foreground" />
-                      </div>
-                      <h4 className="text-lg font-semibold text-foreground">The Outcome</h4>
-                    </div>
-                    <div className="ml-12 p-4 bg-foreground/5 border border-foreground/10 rounded-xl">
-                      <p className="text-foreground font-medium leading-relaxed">
-                        {selectedProject.caseStudy.outcome}
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </>
-          )}
+
+                {/* Process */}
+                <div>
+                  <h5 className="font-semibold mb-4 flex items-center gap-2">
+                    <div className="w-1 h-6 bg-primary rounded-full" />
+                    Key Process Steps
+                  </h5>
+                  <ul className="space-y-3">
+                    {selectedProject.caseStudy.process.map((step, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0 mt-0.5" />
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Outcome */}
+                <div className="bg-primary/5 border border-primary/10 rounded-xl p-6">
+                  <div className="flex items-center gap-3 mb-2 text-primary">
+                    <Trophy className="w-5 h-5" />
+                    <h5 className="font-semibold">The Outcome</h5>
+                  </div>
+                  <p className="text-foreground/80 leading-relaxed">
+                    {selectedProject.caseStudy.outcome}
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
     </section>
