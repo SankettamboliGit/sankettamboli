@@ -19,7 +19,7 @@ const skillCategories = [
     role: "The 'Brain' (Deep Expertise)",
     description: "Translating ambiguous business goals into clear, executable roadmaps.",
     tags: ["Discovery", "Roadmapping", "GTM"],
-    className: "md:col-span-2 md:row-span-2 bg-gradient-to-br from-purple-500/10 via-background to-background border-purple-500/20",
+    className: "md:col-span-2 md:row-span-2 bg-purple-500/5 border-purple-500/20",
     details: {
       philosophy: "Strategy without execution is hallucination. I focus on 'Viable' over 'Visionary'.",
       frameworks: [
@@ -38,7 +38,7 @@ const skillCategories = [
     role: "The 'Hands' (Broad Skills)",
     description: "Prototyping ideas with code to validate feasibility early.",
     tags: ["React", "AI Engineering", "API Design"],
-    className: "md:col-span-1 bg-gradient-to-br from-blue-500/10 via-background to-background border-blue-500/20",
+    className: "md:col-span-1 bg-blue-500/5 border-blue-500/20",
     details: {
       philosophy: "A PM should know enough to empathize with engineers and challenge estimates, but not enough to write production code.",
       frameworks: [
@@ -57,7 +57,7 @@ const skillCategories = [
     role: "The 'Backbone' (Core)",
     description: "Optimizing the 'Machine' that builds the product.",
     tags: ["Process Design", "Stakeholder Mgmt", "Agile"],
-    className: "md:col-span-1 bg-gradient-to-br from-orange-500/10 via-background to-background border-orange-500/20",
+    className: "md:col-span-1 bg-orange-500/5 border-orange-500/20",
     details: {
       philosophy: "Process should be a guardrail, not a gate. Good ops makes the right thing the easy thing to do.",
       frameworks: [
@@ -75,7 +75,7 @@ const skillCategories = [
     icon: <Database className="w-6 h-6 text-green-500" />,
     description: "Measuring Impact",
     tags: ["SQL Basics", "KPI Tracking", "A/B Testing"],
-    className: "md:col-span-1 bg-gradient-to-br from-green-500/10 via-background to-background border-green-500/20",
+    className: "md:col-span-1 bg-green-500/5 border-green-500/20",
     details: {
       philosophy: "Data aims the gun; intuition pulls the trigger. I use data to inform decisions, not make them for me.",
       frameworks: [
@@ -93,7 +93,7 @@ const skillCategories = [
     icon: <LayoutTemplate className="w-6 h-6 text-pink-500" />,
     description: "User Centricity",
     tags: ["Figma", "User Journey", "Wireframing"],
-    className: "md:col-span-2 bg-gradient-to-br from-pink-500/10 via-background to-background border-pink-500/20",
+    className: "md:col-span-2 bg-pink-500/5 border-pink-500/20",
     details: {
       philosophy: "You are not the user. I fight for the user's perspective in every technical discussion.",
       frameworks: [
@@ -116,7 +116,7 @@ const Skills = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-16 opacity-0 animate-fade-up">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             The T-Shaped Skillset
           </h2>
@@ -127,11 +127,11 @@ const Skills = () => {
 
         {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
-          {skillCategories.map((category, index) => (
+          {skillCategories.map((category) => (
             <div
               key={category.id}
               onClick={() => setSelectedSkill(category)}
-              className={`p-6 rounded-3xl border border-border/50 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between group ${category.className} opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`p-6 rounded-3xl border hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between group ${category.className}`}
             >
               <div className="flex items-start justify-between mb-6">
                  <div className="p-3 bg-background/80 backdrop-blur-sm rounded-2xl border border-border shadow-sm group-hover:scale-110 transition-transform duration-500">
@@ -169,7 +169,7 @@ const Skills = () => {
 
       {/* The "Deep Dive" Modal */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
-        <DialogContent className="max-w-2xl bg-card border-border shadow-2xl">
+        <DialogContent className="max-w-2xl bg-card border-border shadow-2xl overflow-y-auto max-h-[85vh]">
           <DialogHeader className="mb-4">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-secondary rounded-xl">
