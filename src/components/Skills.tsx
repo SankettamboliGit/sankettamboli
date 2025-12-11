@@ -1,4 +1,4 @@
-import { Brain, Code2, Settings, PenTool, LayoutTemplate, Database } from "lucide-react";
+import { Brain, Code2, Settings, Database } from "lucide-react";
 
 const skillCategories = [
   {
