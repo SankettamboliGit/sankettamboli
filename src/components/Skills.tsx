@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { Brain, Code2, Settings, Database, LayoutTemplate, ChevronRight, Layers, Zap, Users, X } from "lucide-react";
+import { 
+  Brain, Code2, Settings, Database, LayoutTemplate, 
+  ChevronRight, Layers, Zap, Users, X, 
+  Terminal, BarChart, Workflow, PenTool, Target
+} from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +15,64 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
-// Updated Data: Now includes 'cardImage' for the outer grid view
+// --- Custom Visual Components for Card Headers ---
+
+const StrategyVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-purple-500/10 to-background flex items-center justify-center relative overflow-hidden group-hover:from-purple-500/20 transition-colors duration-500">
+    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#8b5cf6_1px,transparent_1px)] [background-size:16px_16px]" />
+    <Target className="w-16 h-16 text-purple-500/40 absolute -right-4 -bottom-4 group-hover:scale-110 transition-transform duration-500" />
+    <div className="flex gap-4">
+      <div className="w-8 h-8 rounded-full border-2 border-purple-500/30 animate-pulse" />
+      <div className="w-8 h-8 rounded-full border-2 border-purple-500/30 animate-pulse delay-75" />
+      <div className="w-8 h-8 rounded-full border-2 border-purple-500/30 animate-pulse delay-150" />
+    </div>
+  </div>
+);
+
+const TechVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-background flex items-center justify-center relative overflow-hidden group-hover:from-blue-500/20 transition-colors duration-500">
+    <Terminal className="w-20 h-20 text-blue-500/10 absolute top-2 right-2" />
+    <div className="space-y-2 p-4 w-full opacity-60">
+      <div className="h-2 w-2/3 bg-blue-500/30 rounded animate-pulse" />
+      <div className="h-2 w-3/4 bg-blue-500/20 rounded delay-75" />
+      <div className="h-2 w-1/2 bg-blue-500/20 rounded delay-150" />
+    </div>
+  </div>
+);
+
+const OpsVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-orange-500/10 to-background flex items-center justify-center relative overflow-hidden group-hover:from-orange-500/20 transition-colors duration-500">
+    <Workflow className="w-24 h-24 text-orange-500/10 absolute -left-4 -top-4 group-hover:rotate-12 transition-transform duration-700" />
+    <div className="relative z-10 flex gap-1">
+      <div className="w-3 h-12 bg-orange-500/20 rounded-full" />
+      <div className="w-3 h-16 bg-orange-500/30 rounded-full" />
+      <div className="w-3 h-10 bg-orange-500/20 rounded-full" />
+    </div>
+  </div>
+);
+
+const DataVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-background flex items-end justify-center pb-4 gap-2 relative overflow-hidden group-hover:from-green-500/20 transition-colors duration-500">
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#22c55e1a_1px,transparent_1px),linear-gradient(to_bottom,#22c55e1a_1px,transparent_1px)] bg-[size:14px_14px]" />
+    <div className="w-4 h-8 bg-green-500/30 rounded-t-sm group-hover:h-12 transition-all duration-500" />
+    <div className="w-4 h-12 bg-green-500/40 rounded-t-sm group-hover:h-16 transition-all duration-500 delay-75" />
+    <div className="w-4 h-16 bg-green-500/50 rounded-t-sm group-hover:h-10 transition-all duration-500 delay-100" />
+    <div className="w-4 h-10 bg-green-500/30 rounded-t-sm group-hover:h-14 transition-all duration-500 delay-150" />
+  </div>
+);
+
+const DesignVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-pink-500/10 to-background flex items-center justify-center relative overflow-hidden group-hover:from-pink-500/20 transition-colors duration-500">
+    <PenTool className="w-16 h-16 text-pink-500/10 absolute bottom-2 right-2" />
+    <div className="flex gap-4 items-center">
+      <div className="w-10 h-10 border-2 border-pink-500/30 rounded-lg transform rotate-12 group-hover:rotate-45 transition-transform duration-500" />
+      <div className="w-12 h-12 bg-pink-500/20 rounded-full backdrop-blur-sm group-hover:scale-110 transition-transform duration-500" />
+    </div>
+  </div>
+);
+
+// --- Data Structure ---
+
 const skillCategories = [
   {
     id: "strategy",
@@ -20,8 +81,7 @@ const skillCategories = [
     role: "The 'Brain'",
     description: "Translating ambiguous goals into executable roadmaps.",
     tags: ["Discovery", "Roadmapping", "GTM"],
-    // Image for the Grid Card
-    cardImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
+    visual: <StrategyVisual />,
     className: "md:col-span-2 bg-card border-purple-500/20 hover:border-purple-500/50",
     details: {
       philosophy: "Strategy without execution is hallucination.",
@@ -41,7 +101,7 @@ const skillCategories = [
     role: "The 'Hands'",
     description: "Prototyping ideas to validate feasibility.",
     tags: ["React", "AI Engineering", "API Design"],
-    cardImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    visual: <TechVisual />,
     className: "md:col-span-1 bg-card border-blue-500/20 hover:border-blue-500/50",
     details: {
       philosophy: "Know enough to challenge estimates, not write prod code.",
@@ -61,7 +121,7 @@ const skillCategories = [
     role: "The 'Backbone'",
     description: "Optimizing the 'Machine' that builds the product.",
     tags: ["Process Design", "Stakeholder Mgmt"],
-    cardImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+    visual: <OpsVisual />,
     className: "md:col-span-1 bg-card border-orange-500/20 hover:border-orange-500/50",
     details: {
       philosophy: "Good ops makes the right thing the easy thing to do.",
@@ -80,7 +140,7 @@ const skillCategories = [
     icon: <Database className="w-5 h-5 text-green-500" />,
     description: "Measuring Impact",
     tags: ["SQL Basics", "KPI Tracking"],
-    cardImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    visual: <DataVisual />,
     className: "md:col-span-1 bg-card border-green-500/20 hover:border-green-500/50",
     details: {
       philosophy: "Data aims the gun; intuition pulls the trigger.",
@@ -99,7 +159,7 @@ const skillCategories = [
     icon: <LayoutTemplate className="w-5 h-5 text-pink-500" />,
     description: "User Centricity",
     tags: ["Figma", "User Journey", "Wireframing"],
-    cardImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop",
+    visual: <DesignVisual />,
     className: "md:col-span-2 bg-card border-pink-500/20 hover:border-pink-500/50",
     details: {
       philosophy: "I fight for the user's perspective in every discussion.",
@@ -132,7 +192,7 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* The Grid - No Animations, Rich Visuals */}
+        {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skillCategories.map((category) => (
             <div
@@ -140,17 +200,12 @@ const Skills = () => {
               onClick={() => setSelectedSkill(category)}
               className={`relative overflow-hidden rounded-3xl border transition-all duration-300 cursor-pointer group hover:shadow-xl hover:-translate-y-1 ${category.className}`}
             >
-              {/* Card Image Header */}
-              <div className="h-32 w-full relative overflow-hidden">
-                <img 
-                  src={category.cardImage} 
-                  alt={category.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+              {/* Animated CSS Header */}
+              <div className="h-32 w-full relative overflow-hidden border-b border-border/50">
+                {category.visual}
                 
                 {/* Icon Badge */}
-                <div className="absolute bottom-4 left-6">
+                <div className="absolute bottom-3 left-6">
                    <div className="p-2 bg-background/90 backdrop-blur-sm rounded-xl border border-border shadow-sm">
                       {category.icon}
                    </div>
@@ -158,7 +213,7 @@ const Skills = () => {
               </div>
 
               {/* Card Content */}
-              <div className="p-6 pt-2">
+              <div className="p-6 pt-4">
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
@@ -171,7 +226,7 @@ const Skills = () => {
                   </p>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {category.tags.map((tag) => (
                     <span
                       key={tag}
@@ -187,23 +242,19 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* The "Deep Dive" Modal - Sized for Laptops */}
+      {/* The "Deep Dive" Modal */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
         <DialogContent className="max-w-lg p-0 border-none shadow-2xl bg-card overflow-hidden max-h-[90vh] flex flex-col">
           
-          {/* Modal Header Image */}
+          {/* Modal Header with Visual */}
           <div className="relative h-32 w-full shrink-0">
-            <img 
-              src={selectedSkill?.cardImage} 
-              alt={selectedSkill?.title} 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+            {selectedSkill?.visual}
+            
             <div className="absolute bottom-4 left-6 flex items-center gap-3">
-              <div className="p-2 bg-background/90 rounded-lg backdrop-blur-sm shadow-sm">
+              <div className="p-2 bg-background/90 rounded-lg backdrop-blur-sm shadow-sm border border-border">
                  {selectedSkill?.icon}
               </div>
-              <div>
+              <div className="bg-background/50 backdrop-blur-md px-3 py-1 rounded-lg">
                 <DialogTitle className="text-xl font-bold text-foreground">{selectedSkill?.title}</DialogTitle>
                 <DialogDescription className="text-xs font-medium text-primary">
                   {selectedSkill?.role}
