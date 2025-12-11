@@ -3,17 +3,16 @@ import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
-    // CHANGE 1: Removed 'min-h-screen'. Using 'py-32' to let content flow naturally without squishing.
     <section id="home" className="relative w-full bg-foreground flex flex-col items-center justify-start py-32 md:py-40 px-6 md:px-12 overflow-hidden">
       
-      {/* Background Effects (unchanged) */}
+      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px] opacity-30 animate-pulse" />
         <div className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-[120px] opacity-30" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)" />
       </div>
 
-      {/* Main Content Container - Using strict gap to prevent overlap */}
+      {/* Main Content Container */}
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-12">
         
         {/* Top Group: Status + Image */}
@@ -32,15 +31,16 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Profile Image - Hard coded dimensions to prevent layout shifts */}
+          {/* Profile Image Group */}
           <div className="relative animate-fade-up stagger-1 z-20">
+            {/* Central Image Container */}
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-white/20 to-transparent backdrop-blur-xl">
-              <div className="w-full h-full rounded-full overflow-hidden border-4 border-background/10 bg-black/20">
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-background/10 bg-black/20 relative z-10">
                  <img src={profileImage} alt="Sanket Tamboli" className="w-full h-full object-cover scale-110" />
               </div>
               
-              {/* Floating Cards - Positioned further out to avoid any central clash */}
-              <div className="absolute -left-24 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl z-30 min-w-[140px]">
+              {/* Floating Cards - Pushed out to -left-52 (13rem) to prevent ANY overlap */}
+              <div className="absolute -left-52 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl z-30 min-w-[140px]">
                  <div className="p-2 bg-background/20 rounded-lg">
                    <Zap className="w-4 h-4 text-yellow-300" />
                  </div>
@@ -50,7 +50,7 @@ const Hero = () => {
                  </div>
               </div>
 
-              <div className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl z-30 min-w-[140px]">
+              <div className="absolute -right-52 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 shadow-xl z-30 min-w-[140px]">
                  <div className="p-2 bg-background/20 rounded-lg">
                    <CheckCircle2 className="w-4 h-4 text-green-300" />
                  </div>
@@ -63,7 +63,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Text Section - SIZE REDUCED significantly */}
+        {/* Text Section */}
         <div className="animate-fade-up stagger-2 space-y-6 relative z-10">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Transforming Ambiguity into <br className="hidden md:block" />
