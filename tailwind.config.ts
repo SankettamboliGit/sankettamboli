@@ -50,9 +50,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        subtle: "hsl(var(--text-subtle))",
-        line: "hsl(var(--line))",
-        elevated: "hsl(var(--surface-elevated))",
+        subtle: "hsl(var(--muted-foreground))",
+        line: "hsl(var(--border))",
+        elevated: "hsl(var(--card))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
