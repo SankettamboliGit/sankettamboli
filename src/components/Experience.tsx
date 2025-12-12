@@ -33,7 +33,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-32 px-6 relative">
+    <section id="experience" className="py-24 md:py-32 px-6 bg-[#030303] relative">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24 animate-fade-up">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Professional Journey</h2>
@@ -41,13 +41,10 @@ const Experience = () => {
         </div>
 
         <div className="relative space-y-12">
-          {/* Vertical Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent md:-translate-x-1/2" />
 
           {experiences.map((exp, index) => (
             <div key={index} className={`relative flex flex-col md:flex-row gap-10 ${index % 2 === 0 ? "md:flex-row-reverse" : ""} animate-fade-up stagger-${index + 1}`}>
-              
-              {/* Glowing Dot */}
               <div className={`absolute left-[29px] md:left-1/2 w-4 h-4 rounded-full bg-[#030303] border-[3px] ${exp.color} md:-translate-x-1/2 mt-8 z-10 shadow-[0_0_15px_currentColor] text-white`} />
 
               <div className="w-full md:w-[calc(50%-2.5rem)] pl-20 md:pl-0">
