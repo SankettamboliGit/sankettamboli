@@ -2,7 +2,7 @@ import { useState } from "react";
 import { 
   Brain, Code2, Settings, Database, LayoutTemplate, 
   ChevronRight, Layers, Zap, Users, X, 
-  Terminal, BarChart, Workflow, PenTool, Target
+  Terminal, Workflow, PenTool, Target
 } from "lucide-react";
 import {
   Dialog,
@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
-// --- Custom Visual Components (Dark Mode "Glass" Editions) ---
+// --- Custom Visual Components ---
 
 const StrategyVisual = () => (
   <div className="w-full h-full bg-gradient-to-br from-purple-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-purple-500/20 transition-colors duration-500">
@@ -315,4 +315,28 @@ const Skills = () => {
                   </h4>
                   <div className="flex items-center gap-3">
                     <Progress value={selectedSkill?.details.masteryLevel} className="h-1.5 flex-1 bg-white/10" />
-                    <span className="text-xs font-bold text-
+                    <span className="text-xs font-bold text-white">{selectedSkill?.details.masteryLevel}%</span>
+                  </div>
+               </div>
+               <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">
+                    Tools Stack
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedSkill?.details.tools.map(tool => (
+                      <Badge key={tool} variant="secondary" className="text-[10px] px-3 py-1 bg-white/5 text-white/70 border-white/5 hover:bg-white/10 font-normal">
+                        {tool}
+                      </Badge>
+                    ))}
+                  </div>
+               </div>
+            </div>
+
+          </div>
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
+};
+
+export default Skills;
