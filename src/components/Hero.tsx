@@ -77,7 +77,7 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Buttons - Now UNIFORM in animation and weight */}
         <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-up stagger-3">
           <a 
             href="#projects"
@@ -90,7 +90,7 @@ const Hero = () => {
             href="https://drive.google.com/file/d/1CozgNLDwsi8hUY0Ead2Efa9Ibf5BNKqk/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3 bg-transparent border border-white/20 text-white hover:bg-white/10 rounded-full text-sm font-semibold transition-all backdrop-blur-sm"
+            className="inline-flex items-center justify-center px-8 py-3 bg-transparent border border-white/20 text-white hover:bg-white/10 rounded-full text-sm font-bold transition-all backdrop-blur-sm shadow-[0_0_15px_-3px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_-3px_rgba(255,255,255,0.2)] hover:-translate-y-1"
           >
             Download Resume
             <FileText className="ml-2 h-4 w-4" />
