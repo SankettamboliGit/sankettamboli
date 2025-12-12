@@ -34,8 +34,8 @@ const Contact = () => {
             <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-white/5">
               {copied ? <Check className="w-6 h-6 text-green-400" /> : <Mail className="w-6 h-6 text-white" />}
             </div>
-            {/* UPDATED TEXT STYLE: Clean Sans-Serif, Premium Look */}
-            <p className="text-white font-sans font-medium text-base mb-1 break-all px-2 opacity-90">{email}</p>
+            {/* Clean Sans-Serif Typography */}
+            <p className="text-white font-medium text-base mb-1 break-all px-2 opacity-90">{email}</p>
             <p className="text-white/30 text-[10px] uppercase tracking-wider font-bold group-hover:text-white/50 transition-colors">Copy Email</p>
           </button>
 
@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
             
             <div className="flex items-center gap-2 mb-1">
-              <p className="text-white font-sans font-medium text-base">LinkedIn</p>
+              <p className="text-white font-medium text-base">LinkedIn</p>
               <ArrowUpRight className="w-4 h-4 text-blue-400 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </div>
             <p className="text-white/30 text-[10px] uppercase tracking-wider font-bold group-hover:text-white/50 transition-colors">Connect</p>
@@ -65,8 +65,7 @@ const Contact = () => {
             <div className="p-3 bg-green-500/10 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-green-500/10">
               <Phone className="w-6 h-6 text-green-400" />
             </div>
-            {/* UPDATED TEXT STYLE: Clean Sans-Serif */}
-            <p className="text-white font-sans font-medium text-base mb-1">{phone}</p>
+            <p className="text-white font-medium text-base mb-1">{phone}</p>
             <p className="text-white/30 text-[10px] uppercase tracking-wider font-bold group-hover:text-white/50 transition-colors">Call Me</p>
           </a>
 
