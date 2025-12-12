@@ -2,7 +2,7 @@ import { useState } from "react";
 import { 
   Brain, Code2, Settings, Database, LayoutTemplate, 
   ChevronRight, Layers, Zap, Users, X, 
-  Terminal, Workflow, PenTool, Target
+  Terminal, Workflow, PenTool, Target, ArrowUpRight
 } from "lucide-react";
 import {
   Dialog,
