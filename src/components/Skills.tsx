@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
-// --- Visuals (Unchanged) ---
+// --- Visuals ---
 const StrategyVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-purple-500/5 to-transparent">
     <div className="p-3 rounded-full bg-purple-500/10 shadow-[0_0_30px_rgba(168,85,247,0.2)] border border-purple-500/20">
@@ -52,7 +52,7 @@ const DesignVisual = () => (
   </div>
 );
 
-// --- Data with Enhanced Insights ---
+// --- Data ---
 
 const skillCategories = [
   {
@@ -126,7 +126,7 @@ const skillCategories = [
         { name: "North Star", desc: "Aligning all teams to a single value indicator." },
         { name: "Funnel Ops", desc: "Identifying and fixing drop-offs in the user journey." }
       ],
-      insight: "I focus on leading indicators (usage) rather than lagging ones (revenue) for product health.",
+      insight: "I focus on leading indicators (usage) rather than lagging ones (revenue).",
       masteryLevel: 80,
       tools: ["Mixpanel", "Tableau"]
     }
@@ -200,7 +200,6 @@ const Skills = () => {
                 <p className="text-xs font-medium text-white/60 leading-relaxed mb-4 line-clamp-2">
                    {category.description}
                 </p>
-                
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {category.tags.map((tag) => (
                     <span
@@ -217,7 +216,6 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* FIXED MODAL: [&>button]:hidden removes the double X */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
         <DialogContent className="max-w-lg p-0 border-white/10 bg-black/90 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-2xl text-white [&>button]:hidden">
           <div className="relative h-28 w-full shrink-0 bg-gradient-to-b from-white/5 to-transparent">
