@@ -10,14 +10,13 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#030303] text-foreground">
       <Navigation />
       <main>
         <Hero />
         <About />
         <Experience />
         <Skills />
-        {/* Swapped Order: Services (Methodology) first, then Projects (Case Studies) */}
         <Services />
         <Projects />
         <Contact />
