@@ -1,4 +1,4 @@
-import { FileText, ChevronDown, Zap } from "lucide-react";
+import { FileText, ChevronDown, Zap, Award, Brain, CheckCircle2 } from "lucide-react";
 import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-12">
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-10">
         
         {/* Status Pill */}
         <div className="animate-fade-up opacity-0" style={{ animationDelay: '0ms' }}>
@@ -40,30 +40,38 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Experience Badge - FIXED POSITIONING */}
-          {/* Moved to -right-24 to prevent overlap */}
-          <div className="absolute -right-24 top-12 hidden md:flex items-center gap-2 px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default">
-            <div className="p-1 rounded-full bg-yellow-500/20">
-               <Zap className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+          {/* Right Badge: Experience */}
+          <div className="absolute -right-6 md:-right-12 top-8 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
+            <div className="p-1.5 rounded-full bg-yellow-500/20 text-yellow-400">
+               <Zap className="w-3.5 h-3.5 fill-yellow-400" />
             </div>
             <div className="text-left">
                <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider leading-none mb-0.5">Experience</span>
                <span className="block text-sm font-bold text-white leading-none">9+ Years</span>
             </div>
           </div>
+
+          {/* Left Badge: Certifications (NEW) */}
+          <div className="absolute -left-6 md:-left-16 bottom-4 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
+            <div className="p-1.5 rounded-full bg-blue-500/20 text-blue-400">
+               <Brain className="w-3.5 h-3.5" />
+            </div>
+            <div className="text-left">
+               <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider leading-none mb-0.5">Certified</span>
+               <span className="block text-xs font-bold text-white leading-none">AI • Agile • PM</span>
+            </div>
+          </div>
         </div>
 
-        {/* Headline */}
-        <div className="space-y-6 max-w-3xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
+        {/* Headline - Updated to be Quirky & Modern */}
+        <div className="space-y-6 max-w-4xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            Bridging the gap between <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200">
-              Vision & Execution.
-            </span>
+            Translating <span className="text-white/40 italic font-serif">"Vague Ideas"</span> <br />
+            into <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-white to-blue-300">Shipped Reality.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-2xl mx-auto">
-            Product Operations Manager specializing in SaaS optimization, AI prototyping, and data-driven delivery strategies.
+            I don't just manage products; I engineer the flow. A Product Operations Manager obsessed with SaaS optimization and AI prototyping.
           </p>
         </div>
 
@@ -73,7 +81,7 @@ const Hero = () => {
             href="#projects"
             className="w-full sm:w-auto px-8 py-3.5 bg-white text-black rounded-full font-bold text-sm hover:bg-gray-200 transition-all shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:scale-105 flex items-center justify-center"
           >
-            View Work
+            See How I Think
           </a>
           <a 
             href="https://drive.google.com/file/d/1CozgNLDwsi8hUY0Ead2Efa9Ibf5BNKqk/view?usp=sharing"
