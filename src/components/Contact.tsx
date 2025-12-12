@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Linkedin, ArrowUpRight, Copy, Check } from "lucide-react";
+import { Mail, Phone, Copy, Check, Linkedin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { toast } from "sonner"; // Assuming you have sonner or use-toast
+import { toast } from "sonner";
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
@@ -11,93 +10,58 @@ const Contact = () => {
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
-    toast.success("Email copied to clipboard!");
+    toast.success("Copied!");
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative overflow-hidden">
-      {/* Background Image - Abstract Map */}
-      <div className="absolute inset-0 opacity-5">
-         <img 
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop" 
-            alt="Background" 
-            className="w-full h-full object-cover grayscale"
-         />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-transparent" />
+    <section id="contact" className="py-32 px-6 bg-[#030303] relative overflow-hidden">
+      {/* Ambient Footer Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-purple-900/20 blur-[120px] pointer-events-none rounded-full" />
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="opacity-0 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Ready to Build Something Scalable?
-          </h2>
-          <p className="text-muted-foreground mb-12 max-w-lg mx-auto text-lg">
-            I'm currently open to <strong>Product Operations</strong> and <strong>Product Management</strong> roles. Let's discuss how I can help optimize your ecosystem.
-          </p>
-        </div>
+      <div className="max-w-3xl mx-auto text-center relative z-10">
+        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+          Ready to optimize?
+        </h2>
+        <p className="text-white/50 text-lg mb-12 max-w-xl mx-auto">
+          Open to Product Operations and Product Management roles. Let's build scalable systems together.
+        </p>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12 opacity-0 animate-fade-up stagger-2 max-w-2xl mx-auto">
-          
-          {/* Email Card with Copy Function */}
-          <Card className="p-6 hover:border-primary/50 transition-all duration-300 group cursor-pointer relative overflow-hidden" onClick={handleCopy}>
-            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="flex flex-col items-center gap-3 relative z-10">
-                <div className="p-3 bg-secondary rounded-full group-hover:bg-background transition-colors">
-                    {copied ? <Check className="w-5 h-5 text-green-500" /> : <Mail className="w-5 h-5 text-foreground" />}
-                </div>
-                <div>
-                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">Email Me</p>
-                    <p className="text-sm font-medium break-all">{email}</p>
-                </div>
-                <div className="absolute top-4 right-4 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                    <Copy className="w-3 h-3" /> Copy
-                </div>
-            </div>
-          </Card>
-
-          {/* Phone Card */}
-          <a href="tel:+919998271731" className="block">
-            <Card className="p-6 h-full hover:border-primary/50 transition-all duration-300 group relative overflow-hidden flex flex-col items-center justify-center">
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="flex flex-col items-center gap-3 relative z-10">
-                    <div className="p-3 bg-secondary rounded-full group-hover:bg-background transition-colors">
-                        <Phone className="w-5 h-5 text-foreground" />
-                    </div>
-                    <div>
-                        <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">Call Me</p>
-                        <p className="text-sm font-medium">+91 9998271731</p>
-                    </div>
-                </div>
-            </Card>
-          </a>
-
-        </div>
-
-        {/* Call to Action */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up stagger-3">
-          <Button
-            size="lg"
-            className="rounded-full px-8 h-12 text-base shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-shadow"
-            asChild
+        <div className="flex flex-col md:flex-row gap-6 justify-center mb-16">
+          {/* Email Copy Button */}
+          <button 
+            onClick={handleCopy}
+            className="group flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-md text-left w-full md:w-auto"
           >
-            <a
-              href="https://linkedin.com/in/sanket-tamboli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="mr-2 h-5 w-5" />
-              Connect on LinkedIn
-              <ArrowUpRight className="ml-2 h-4 w-4 opacity-50" />
-            </a>
-          </Button>
+            <div className="p-3 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
+              {copied ? <Check className="w-5 h-5 text-green-400" /> : <Mail className="w-5 h-5 text-white" />}
+            </div>
+            <div>
+              <p className="text-xs text-white/40 uppercase tracking-wider font-bold">Email</p>
+              <p className="text-white font-medium">{email}</p>
+            </div>
+            <Copy className="w-4 h-4 text-white/20 ml-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </button>
+
+          {/* LinkedIn Button */}
+          <a 
+            href="https://linkedin.com/in/sanket-tamboli"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 bg-blue-600/10 border border-blue-500/20 px-6 py-4 rounded-2xl hover:bg-blue-600/20 transition-all backdrop-blur-md text-left w-full md:w-auto"
+          >
+            <div className="p-3 bg-blue-500/20 rounded-full text-blue-400">
+              <Linkedin className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-xs text-blue-400/60 uppercase tracking-wider font-bold">Social</p>
+              <p className="text-blue-100 font-medium">Connect on LinkedIn</p>
+            </div>
+            <ArrowUpRight className="w-4 h-4 text-blue-400 ml-4 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </a>
         </div>
 
-        {/* Location Footer */}
-        <div className="flex items-center justify-center gap-2 mt-16 text-sm text-muted-foreground opacity-0 animate-fade-up stagger-4">
-          <MapPin className="w-4 h-4 text-primary" />
-          <span>Based in Vadodara, Gujarat • Open to Remote & Hybrid</span>
-        </div>
+        <p className="text-white/20 text-sm">Based in Vadodara, Gujarat • Open to Remote</p>
       </div>
     </section>
   );
