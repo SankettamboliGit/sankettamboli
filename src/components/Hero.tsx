@@ -3,16 +3,15 @@ import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
-    // FIX 1: Changed 'min-h-screen' to 'pt-40 pb-20' to enforce proper vertical spacing without squishing.
     <section id="home" className="relative w-full flex flex-col items-center justify-start pt-40 pb-24 px-6 overflow-hidden">
       
-      {/* Background Ambient Glow (Subtler) */}
+      {/* Background Ambient Glow */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-10">
+      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-12">
         
-        {/* Status Pill - Adjusted spacing */}
+        {/* Status Pill */}
         <div className="animate-fade-up opacity-0" style={{ animationDelay: '0ms' }}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-sm hover:bg-white/10 transition-colors cursor-default">
             <span className="relative flex h-2 w-2">
@@ -25,10 +24,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* FIX 2: Bitmoji Pedestal */}
-        {/* We removed the heavy foreground blur. Now it sits on a clean glass circle. */}
+        {/* Profile Group */}
         <div className="relative group animate-fade-up opacity-0" style={{ animationDelay: '100ms' }}>
-          {/* Glowing Halo BEHIND the image */}
+          {/* Glowing Halo */}
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-full blur-2xl transform group-hover:scale-110 transition-transform duration-700" />
           
           {/* Glass Container */}
@@ -42,15 +40,20 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Experience Badge - Cleanly positioned */}
-          <div className="absolute -right-6 top-6 hidden md:flex items-center gap-2 px-3 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-lg shadow-xl animate-fade-in">
-            <Zap className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-            <span className="text-[10px] font-bold text-white uppercase tracking-wider">9+ Years</span>
+          {/* Experience Badge - FIXED POSITIONING */}
+          {/* Moved to -right-24 to prevent overlap */}
+          <div className="absolute -right-24 top-12 hidden md:flex items-center gap-2 px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default">
+            <div className="p-1 rounded-full bg-yellow-500/20">
+               <Zap className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+            </div>
+            <div className="text-left">
+               <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider leading-none mb-0.5">Experience</span>
+               <span className="block text-sm font-bold text-white leading-none">9+ Years</span>
+            </div>
           </div>
         </div>
 
-        {/* FIX 3: Typography Sizing & Alignment */}
-        {/* Reduced from text-8xl to text-6xl for better balance. Added strict max-width. */}
+        {/* Headline */}
         <div className="space-y-6 max-w-3xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
             Bridging the gap between <br />
@@ -64,7 +67,7 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Buttons - Perfectly aligned */}
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto animate-fade-up opacity-0" style={{ animationDelay: '300ms' }}>
           <a 
             href="#projects"
