@@ -6,86 +6,36 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    /* Apple-style Dark Mode Palette */
+    --background: 0 0% 1%; /* #030303 - Deepest Black */
+    --foreground: 0 0% 98%; /* White */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
-
-    --primary: 0 0% 8%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 8%;
-
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 8%;
-
-    --radius: 0.5rem;
-
-    /* Custom tokens */
-    --text-subtle: 0 0% 50%;
-    --text-muted: 0 0% 40%;
-    --surface-elevated: 0 0% 98%;
-    --line: 0 0% 90%;
-    --hero-dark: 0 0% 8%;
-    --hero-dark-foreground: 0 0% 100%;
-    
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 8%;
-    --sidebar-primary: 0 0% 8%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 8%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 0% 8%;
-  }
-
-  .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 8%;
+    --card: 0 0% 4%; /* Slightly lighter black for cards */
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
+    --popover: 0 0% 4%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 0 0% 98%; /* White primary */
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 0 0% 12%;
+    --secondary: 0 0% 12%; /* Dark Grey for subtle elements */
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%; /* Muted text is grey */
 
-    --accent: 0 0% 15%;
+    --accent: 0 0% 12%;
     --accent-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-    --text-subtle: 0 0% 55%;
-    --text-muted: 0 0% 65%;
-    --surface-elevated: 0 0% 10%;
-    --line: 0 0% 18%;
-    --hero-dark: 0 0% 5%;
-    --hero-dark-foreground: 0 0% 98%;
+    --border: 0 0% 12%; /* Very subtle borders */
+    --input: 0 0% 12%;
+    --ring: 0 0% 83%;
+
+    --radius: 1.5rem; /* Larger, friendlier roundness */
   }
 }
 
@@ -93,37 +43,21 @@
   * {
     @apply border-border;
   }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-purple-500/30 selection:text-white;
+    /* Global Ambient Light - The "Aurora" */
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.08), transparent 25%), 
+      radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.08), transparent 25%);
+    background-attachment: fixed;
   }
 }
 
 @layer utilities {
-  .text-subtle {
-    color: hsl(var(--text-subtle));
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
   
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-slide-in {
-    animation: slideIn 0.5s ease-out forwards;
-  }
-
   .stagger-1 { animation-delay: 0.1s; }
   .stagger-2 { animation-delay: 0.2s; }
   .stagger-3 { animation-delay: 0.3s; }
@@ -134,48 +68,25 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Custom scrollbar */
+/* Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: #030303;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
-  border-radius: 3px;
+  background: #333;
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: #555;
 }
