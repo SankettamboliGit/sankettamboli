@@ -3,7 +3,7 @@ import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative w-full flex flex-col items-center justify-start pt-32 pb-20 px-6 overflow-hidden">
+    <section id="home" className="relative w-full flex flex-col items-center justify-start pt-40 pb-24 px-6 overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
@@ -24,72 +24,70 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* PROFILE ROW - Guaranteed No Overlap */}
-        <div className="flex items-center justify-center gap-6 md:gap-12 animate-fade-up opacity-0" style={{ animationDelay: '100ms' }}>
+        {/* PROFILE GROUP - Perfectly Balanced */}
+        <div className="relative group animate-fade-up opacity-0" style={{ animationDelay: '100ms' }}>
           
-          {/* Left Badge: Certifications (Desktop Only) */}
-          <div className="hidden md:flex flex-col items-end gap-1 text-right">
-            <div className="px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl flex items-center gap-3 hover:scale-105 transition-transform">
-               <div className="text-right">
-                 <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider">Certified</span>
-                 <span className="block text-xs font-bold text-white">AI • Agile • PM</span>
-               </div>
-               <div className="p-1.5 rounded-full bg-blue-500/20 text-blue-400">
-                 <Brain className="w-4 h-4" />
-               </div>
-            </div>
-          </div>
-
+          {/* Glowing Halo */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-full blur-2xl transform group-hover:scale-110 transition-transform duration-700" />
+          
           {/* Center: Profile Image */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-full blur-2xl transform group-hover:scale-110 transition-transform duration-700" />
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1.5 bg-white/5 border border-white/10 backdrop-blur-sm shadow-2xl z-10">
-              <div className="w-full h-full rounded-full overflow-hidden bg-black/20 relative">
-                 <img 
-                   src={profileImage} 
-                   alt="Sanket Tamboli" 
-                   className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-500" 
-                 />
-              </div>
+          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-2 bg-white/5 border border-white/10 backdrop-blur-sm shadow-2xl z-10">
+            <div className="w-full h-full rounded-full overflow-hidden bg-black/20 relative">
+               <img 
+                 src={profileImage} 
+                 alt="Sanket Tamboli" 
+                 className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-500" 
+               />
             </div>
           </div>
 
-          {/* Right Badge: Experience (Desktop Only) */}
-          <div className="hidden md:flex flex-col items-start gap-1 text-left">
-            <div className="px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl flex items-center gap-3 hover:scale-105 transition-transform">
-               <div className="p-1.5 rounded-full bg-yellow-500/20 text-yellow-400">
-                 <Zap className="w-4 h-4 fill-yellow-400" />
-               </div>
-               <div>
-                 <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider">Experience</span>
-                 <span className="block text-xs font-bold text-white">9+ Years</span>
-               </div>
+          {/* LEFT BADGE: Certifications (Pushed far left) */}
+          <div className="absolute top-1/2 -translate-y-1/2 -left-48 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
+            <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400">
+               <Brain className="w-4 h-4" />
+            </div>
+            <div className="text-left">
+               <span className="block text-[10px] text-white/40 uppercase font-bold tracking-wider leading-none mb-1">Certified</span>
+               <span className="block text-xs font-bold text-white leading-none">AI • Agile • PM</span>
             </div>
           </div>
 
+          {/* RIGHT BADGE: Experience (Pushed far right) */}
+          <div className="absolute top-1/2 -translate-y-1/2 -right-40 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
+            <div className="p-2 rounded-xl bg-yellow-500/10 text-yellow-400">
+               <Zap className="w-4 h-4 fill-yellow-400" />
+            </div>
+            <div className="text-left">
+               <span className="block text-[10px] text-white/40 uppercase font-bold tracking-wider leading-none mb-1">Experience</span>
+               <span className="block text-xs font-bold text-white leading-none">9+ Years</span>
+            </div>
+          </div>
         </div>
 
-        {/* Mobile Badges (Visible only on small screens below image) */}
-        <div className="flex md:hidden gap-4 -mt-6 animate-fade-up opacity-0" style={{ animationDelay: '150ms' }}>
-           <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg flex items-center gap-2">
-              <Brain className="w-3 h-3 text-blue-400" />
-              <span className="text-[10px] font-bold text-white">Certified</span>
+        {/* Mobile Badges (Stacked below image for small screens) */}
+        <div className="flex md:hidden gap-3 -mt-6 animate-fade-up opacity-0" style={{ animationDelay: '150ms' }}>
+           <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl flex items-center gap-2 backdrop-blur-md">
+              <Brain className="w-4 h-4 text-blue-400" />
+              <span className="text-xs font-bold text-white">Certified</span>
            </div>
-           <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg flex items-center gap-2">
-              <Zap className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-              <span className="text-[10px] font-bold text-white">9+ Years</span>
+           <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl flex items-center gap-2 backdrop-blur-md">
+              <Zap className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <span className="text-xs font-bold text-white">9+ Years</span>
            </div>
         </div>
 
-        {/* Headline */}
+        {/* Headline - Classy & Modern */}
         <div className="space-y-6 max-w-4xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            Translating <span className="text-white/40 italic font-serif">"Vague Ideas"</span> <br />
-            into <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-white to-blue-300">Shipped Reality.</span>
+            Transforming Ambiguity into <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200">
+              Scalable Product Strategy.
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-2xl mx-auto">
-            I don't just manage products; I engineer the flow. A Product Operations Manager obsessed with SaaS optimization and AI prototyping.
+            I bridge the gap between <strong>User Needs</strong> and <strong>Technical Execution</strong>. 
+            A Product Operations Manager specializing in SaaS optimization and data-driven delivery.
           </p>
         </div>
 
@@ -99,7 +97,7 @@ const Hero = () => {
             href="#projects"
             className="w-full sm:w-auto px-8 py-3.5 bg-white text-black rounded-full font-bold text-sm hover:bg-gray-200 transition-all shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:scale-105 flex items-center justify-center"
           >
-            See How I Think
+            View Work
           </a>
           <a 
             href="https://drive.google.com/file/d/1CozgNLDwsi8hUY0Ead2Efa9Ibf5BNKqk/view?usp=sharing"
