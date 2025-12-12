@@ -155,9 +155,9 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Case Study Modal */}
+      {/* Case Study Modal - FIXED: [&>button]:hidden removes the double X */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-3xl p-0 border-white/10 bg-black/90 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-[2rem] text-white">
+        <DialogContent className="max-w-3xl p-0 border-white/10 bg-black/90 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-[2rem] text-white [&>button]:hidden">
           <DialogHeader className="p-0">
             <div className="relative w-full h-56 md:h-72">
                <img 
