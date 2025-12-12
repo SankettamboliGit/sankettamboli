@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { 
   Brain, Code2, Settings, Database, LayoutTemplate, 
-  ChevronRight, Layers, Zap, Users, X, ArrowUpRight
+  ChevronRight, Layers, Zap, Users, X, 
+  Terminal, BarChart, Workflow, PenTool, Target
 } from "lucide-react";
 import {
   Dialog,
@@ -14,46 +15,99 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
+// --- Custom Visual Components (Dark Mode "Glass" Editions) ---
+
+const StrategyVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-purple-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-purple-500/20 transition-colors duration-500">
+    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#a855f7_1px,transparent_1px)] [background-size:16px_16px]" />
+    <Target className="w-16 h-16 text-purple-500/30 absolute -right-4 -bottom-4 group-hover:scale-110 transition-transform duration-500" />
+    <div className="flex gap-3">
+      <div className="w-6 h-6 rounded-full border-2 border-purple-500/40 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.3)] animate-pulse" />
+      <div className="w-6 h-6 rounded-full border-2 border-purple-500/40 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.3)] animate-pulse delay-75" />
+      <div className="w-6 h-6 rounded-full border-2 border-purple-500/40 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.3)] animate-pulse delay-150" />
+    </div>
+  </div>
+);
+
+const TechVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-blue-500/20 transition-colors duration-500">
+    <Terminal className="w-20 h-20 text-blue-500/20 absolute top-2 right-2" />
+    <div className="space-y-2 p-5 w-full">
+      <div className="h-1.5 w-2/3 bg-blue-400/30 rounded animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.2)]" />
+      <div className="h-1.5 w-3/4 bg-blue-400/20 rounded delay-75" />
+      <div className="h-1.5 w-1/2 bg-blue-400/20 rounded delay-150" />
+    </div>
+  </div>
+);
+
+const OpsVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-orange-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-orange-500/20 transition-colors duration-500">
+    <Workflow className="w-24 h-24 text-orange-500/10 absolute -left-4 -top-4 group-hover:rotate-12 transition-transform duration-700" />
+    <div className="relative z-10 flex gap-1.5 items-end">
+      <div className="w-2 h-8 bg-orange-500/30 rounded-full" />
+      <div className="w-2 h-12 bg-orange-500/50 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.3)]" />
+      <div className="w-2 h-6 bg-orange-500/30 rounded-full" />
+    </div>
+  </div>
+);
+
+const DataVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-emerald-500/10 to-transparent flex items-end justify-center pb-6 gap-2 relative overflow-hidden group-hover:from-emerald-500/20 transition-colors duration-500">
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b9811a_1px,transparent_1px),linear-gradient(to_bottom,#10b9811a_1px,transparent_1px)] bg-[size:14px_14px]" />
+    <div className="w-3 h-6 bg-emerald-500/30 rounded-t group-hover:h-10 transition-all duration-500" />
+    <div className="w-3 h-12 bg-emerald-500/50 rounded-t shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover:h-16 transition-all duration-500 delay-75" />
+    <div className="w-3 h-8 bg-emerald-500/30 rounded-t group-hover:h-12 transition-all duration-500 delay-150" />
+  </div>
+);
+
+const DesignVisual = () => (
+  <div className="w-full h-full bg-gradient-to-br from-pink-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-pink-500/20 transition-colors duration-500">
+    <PenTool className="w-16 h-16 text-pink-500/10 absolute bottom-2 right-2" />
+    <div className="flex gap-4 items-center">
+      <div className="w-10 h-10 border-2 border-pink-500/40 rounded-lg transform rotate-12 group-hover:rotate-45 transition-transform duration-500 shadow-[0_0_15px_rgba(236,72,153,0.2)]" />
+      <div className="w-10 h-10 bg-pink-500/20 rounded-full backdrop-blur-sm group-hover:scale-110 transition-transform duration-500" />
+    </div>
+  </div>
+);
+
+// --- Data Structure ---
+
 const skillCategories = [
   {
     id: "strategy",
     title: "Product Strategy",
-    icon: <Brain className="w-6 h-6" />,
+    icon: <Brain className="w-5 h-5" />,
     role: "The Brain",
-    description: "Turning ambiguity into clear, winning roadmaps.",
+    description: "Turning ambiguity into clear, executable roadmaps.",
     tags: ["Discovery", "Roadmapping", "GTM"],
-    // Purple Ambient Gradient
-    gradient: "from-purple-500/20 via-purple-500/5 to-transparent",
-    orbColor: "bg-purple-500",
+    visual: <StrategyVisual />,
     className: "md:col-span-2",
     details: {
-      philosophy: "Strategy without execution is hallucination. I focus on 'Viable' over 'Visionary'.",
+      philosophy: "Strategy without execution is hallucination.",
       frameworks: [
-        { name: "Opportunity Tree", desc: "Mapping outcomes to opportunities, not just features." },
-        { name: "RICE Scoring", desc: "Quantifying prioritization to remove bias." },
-        { name: "Lean Canvas", desc: "Validating business models fast." }
+        { name: "Opportunity Tree", desc: "Mapping outcomes to opportunities." },
+        { name: "RICE Scoring", desc: "Quantifying prioritization." },
+        { name: "Lean Canvas", desc: "Validating business models." }
       ],
       masteryLevel: 95,
-      tools: ["Productboard", "Miro", "Jira Discovery"]
+      tools: ["Productboard", "Miro", "Jira"]
     }
   },
   {
     id: "tech",
     title: "Technical Literacy",
-    icon: <Code2 className="w-6 h-6" />,
+    icon: <Code2 className="w-5 h-5" />,
     role: "The Hands",
-    description: "Prototyping with code to validate feasibility.",
-    tags: ["React", "AI Engineering"],
-    // Blue Ambient Gradient
-    gradient: "from-blue-500/20 via-blue-500/5 to-transparent",
-    orbColor: "bg-blue-500",
+    description: "Prototyping ideas to validate feasibility.",
+    tags: ["React", "AI Engineering", "API Design"],
+    visual: <TechVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "A PM should know enough to empathize with engineers, not enough to write prod code.",
+      philosophy: "Know enough to challenge estimates, not write prod code.",
       frameworks: [
-        { name: "Rapid Prototyping", desc: "Using Lovable/v0 for 'throwaway' MVPs." },
-        { name: "Prompt Engineering", desc: "Structuring LLM contexts." },
-        { name: "Component Thinking", desc: "Atomic UI systems." }
+        { name: "Rapid Prototyping", desc: "Building 'throwaway' MVPs." },
+        { name: "Prompt Eng.", desc: "Structuring LLM context." },
+        { name: "Component Design", desc: "Atomic UI systems." }
       ],
       masteryLevel: 75,
       tools: ["VS Code", "Lovable", "GitHub"]
@@ -62,42 +116,38 @@ const skillCategories = [
   {
     id: "ops",
     title: "Operational Excellence",
-    icon: <Settings className="w-6 h-6" />,
+    icon: <Settings className="w-5 h-5" />,
     role: "The Backbone",
     description: "Optimizing the 'Machine' that builds the product.",
     tags: ["Process Design", "Stakeholder Mgmt"],
-    // Orange Ambient Gradient
-    gradient: "from-orange-500/20 via-orange-500/5 to-transparent",
-    orbColor: "bg-orange-500",
+    visual: <OpsVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Process should be a guardrail, not a gate. Good ops makes the right thing easy.",
+      philosophy: "Good ops makes the right thing the easy thing to do.",
       frameworks: [
-        { name: "Six Sigma (Lean)", desc: "Removing waste (Muda)." },
-        { name: "Stakeholder Mapping", desc: "identifying champions early." },
-        { name: "SLA Definition", desc: "Setting clear delivery expectations." }
+        { name: "Six Sigma", desc: "Removing waste (Muda)." },
+        { name: "Stakeholder Map", desc: "Identifying champions." },
+        { name: "SLA Definition", desc: "Setting clear expectations." }
       ],
       masteryLevel: 90,
-      tools: ["Notion", "Linear", "Excel (Advanced)"]
+      tools: ["Notion", "Linear", "Excel"]
     }
   },
   {
     id: "data",
     title: "Data & Analytics",
-    icon: <Database className="w-6 h-6" />,
+    icon: <Database className="w-5 h-5" />,
     description: "Measuring Impact",
-    role: "The Compass",
     tags: ["SQL Basics", "KPI Tracking"],
-    // Green Ambient Gradient
-    gradient: "from-emerald-500/20 via-emerald-500/5 to-transparent",
-    orbColor: "bg-emerald-500",
+    visual: <DataVisual />,
     className: "md:col-span-1",
+    role: "The Compass",
     details: {
       philosophy: "Data aims the gun; intuition pulls the trigger.",
       frameworks: [
-        { name: "North Star Metric", desc: "Aligning features to value." },
-        { name: "Cohort Analysis", desc: "Retention by user join date." },
-        { name: "Funnel Optimization", desc: "Fixing drop-offs." }
+        { name: "North Star", desc: "Single value indicator." },
+        { name: "Cohort Analysis", desc: "Retention by user group." },
+        { name: "Funnel Ops", desc: "Identifying drop-offs." }
       ],
       masteryLevel: 80,
       tools: ["Mixpanel", "Amplitude", "Tableau"]
@@ -106,20 +156,18 @@ const skillCategories = [
   {
     id: "design",
     title: "Design & UX",
-    icon: <LayoutTemplate className="w-6 h-6" />,
+    icon: <LayoutTemplate className="w-5 h-5" />,
     description: "User Centricity",
+    tags: ["Figma", "User Journey", "Wireframing"],
+    visual: <DesignVisual />,
     role: "The Empathy",
-    tags: ["Figma", "User Journey"],
-    // Pink Ambient Gradient
-    gradient: "from-pink-500/20 via-pink-500/5 to-transparent",
-    orbColor: "bg-pink-500",
     className: "md:col-span-2",
     details: {
-      philosophy: "You are not the user. I fight for the user's perspective.",
+      philosophy: "I fight for the user's perspective in every discussion.",
       frameworks: [
-        { name: "Double Diamond", desc: "Diverging and converging." },
+        { name: "Double Diamond", desc: "Diverge/Converge process." },
         { name: "Jobs to be Done", desc: "Focusing on intent." },
-        { name: "Heuristic Evaluation", desc: "Auditing interfaces." }
+        { name: "Heuristic Eval", desc: "Auditing usability." }
       ],
       masteryLevel: 85,
       tools: ["Figma", "Whimsical", "Maze"]
@@ -131,186 +179,140 @@ const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState<typeof skillCategories[0] | null>(null);
 
   return (
-    <section id="skills" className="py-32 px-6 relative bg-foreground overflow-hidden">
+    <section id="skills" className="py-32 px-6 bg-[#030303] relative overflow-hidden">
       
-      {/* 1. Global Ambient Light (The "Liquid" Background) */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[128px] pointer-events-none" />
+      {/* Background Ambience */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 animate-fade-up">
           <Badge variant="outline" className="mb-4 border-white/20 text-white/70 backdrop-blur-md px-4 py-1">
             Competency Matrix
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white">
             The T-Shaped Skillset
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto text-lg leading-relaxed">
-            Combining deep operational expertise with broad technical strategy. <br className="hidden md:block" />
-            Click any card to explore my frameworks.
+          <p className="text-white/50 max-w-2xl mx-auto text-lg">
+            Combining deep operational expertise with broad technical strategy. <br className="hidden md:block"/> Click any card to explore my frameworks.
           </p>
         </div>
 
-        {/* 2. The Liquid Grid */}
+        {/* The Liquid Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skillCategories.map((category) => (
             <div
               key={category.id}
               onClick={() => setSelectedSkill(category)}
               className={`
-                group relative overflow-hidden rounded-[2rem] 
-                bg-white/5 backdrop-blur-2xl 
+                group relative overflow-hidden rounded-3xl 
+                bg-white/5 backdrop-blur-xl 
                 border border-white/10 hover:border-white/20
-                transition-all duration-500 ease-out
-                hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.1)]
-                hover:-translate-y-1 cursor-pointer
+                transition-all duration-300 cursor-pointer 
+                hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] hover:-translate-y-1
                 ${category.className}
               `}
             >
-              {/* Internal Ambient Orb (Fills the "Empty" space) */}
-              <div className={`absolute -top-24 -right-24 w-64 h-64 ${category.orbColor} opacity-20 blur-[80px] group-hover:opacity-30 transition-opacity duration-700`} />
-              
-              {/* Content Container */}
-              <div className="relative p-8 h-full flex flex-col justify-between z-10">
-                
-                {/* Header: Icon & Arrow */}
-                <div className="flex justify-between items-start mb-8">
-                  <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-inner group-hover:scale-110 transition-transform duration-500">
-                    {category.icon}
-                  </div>
-                  <div className="p-2 rounded-full bg-white/5 text-white/50 group-hover:text-white group-hover:bg-white/20 transition-all">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </div>
-                </div>
+              {/* Visual Header */}
+              <div className="h-36 w-full relative overflow-hidden border-b border-white/5">
+                 {category.visual}
+                 
+                 {/* Icon Badge */}
+                 <div className="absolute bottom-3 left-6">
+                    <div className="w-10 h-10 rounded-xl bg-black/40 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/10 text-white">
+                        {category.icon}
+                    </div>
+                 </div>
+              </div>
 
-                {/* Body Text */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-2xl font-bold text-white tracking-tight">
+              {/* Card Content */}
+              <div className="p-6 pt-4">
+                <div className="mb-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
                       {category.title}
                     </h3>
+                    <ArrowUpRight className="w-5 h-5 text-white/30 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </div>
-                  <p className="text-sm font-medium text-white/60 uppercase tracking-widest">
-                    {category.role}
-                  </p>
-                  <p className="text-base text-white/80 leading-relaxed line-clamp-2">
-                    {category.description}
+                  <p className="text-sm font-medium text-white/60 leading-relaxed">
+                     {category.description}
                   </p>
                 </div>
-
-                {/* Footer: Glass Pills */}
-                <div className="flex flex-wrap gap-2 mt-8">
+                
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {category.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium text-white/90 bg-white/5 border border-white/10 rounded-full backdrop-blur-md"
+                      className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 rounded-lg text-white/50 group-hover:text-white/80 transition-colors"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-
-              {/* Hover sheen effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* 3. The "Glass Sheet" Modal */}
+      {/* The "Deep Dive" Modal */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
         <DialogContent className="max-w-xl p-0 border-white/10 bg-black/80 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-[2rem] text-white">
           
-          {/* Modal Header Area */}
-          <div className={`relative h-40 w-full bg-gradient-to-br ${selectedSkill?.gradient}`}>
-            <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg">
-                   {selectedSkill?.icon}
-                </div>
-                <div>
-                  <DialogTitle className="text-2xl font-bold text-white tracking-tight">
-                    {selectedSkill?.title}
-                  </DialogTitle>
-                  <p className="text-white/60 font-medium">{selectedSkill?.role}</p>
-                </div>
+          {/* Modal Header Visual */}
+          <div className="relative h-32 w-full shrink-0 bg-gradient-to-b from-white/5 to-transparent">
+            {selectedSkill?.visual}
+            
+            <div className="absolute bottom-4 left-6 flex items-center gap-3">
+              <div className="p-2 bg-black/50 rounded-lg backdrop-blur-sm shadow-sm border border-white/10 text-white">
+                 {selectedSkill?.icon}
+              </div>
+              <div>
+                <DialogTitle className="text-xl font-bold text-white tracking-tight">{selectedSkill?.title}</DialogTitle>
+                <DialogDescription className="text-xs font-medium text-white/50">
+                  {selectedSkill?.role}
+                </DialogDescription>
               </div>
             </div>
-            <DialogClose className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white/70 hover:text-white">
-              <X className="w-5 h-5" />
+            <DialogClose className="absolute top-4 right-4 rounded-full bg-white/10 p-2 hover:bg-white/20 text-white transition-colors">
+              <X className="w-4 h-4" />
             </DialogClose>
           </div>
 
+          {/* Scrollable Content Area */}
           <div className="p-8 space-y-8 overflow-y-auto max-h-[60vh]">
-            
-            {/* Philosophy */}
+            {/* Philosophy Block */}
             <div className="relative pl-6 border-l-2 border-white/20">
-              <p className="text-lg text-white/90 italic font-light leading-relaxed">
-                "{selectedSkill?.details.philosophy}"
-              </p>
+                <p className="text-lg text-white/90 italic font-light leading-relaxed">
+                  "{selectedSkill?.details.philosophy}"
+                </p>
             </div>
 
-            {/* Frameworks Grid */}
+            {/* Frameworks List */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 flex items-center gap-2">
-                <Layers className="w-4 h-4" /> Core Frameworks
+                <Layers className="w-3 h-3" /> Core Frameworks
               </h4>
-              <div className="space-y-3">
+              <div className="grid gap-3">
                 {selectedSkill?.details.frameworks.map((fw, i) => (
-                  <div key={i} className="group flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
-                    <div className="mt-1 p-1.5 rounded-lg bg-white/5 text-white/80 group-hover:text-yellow-400 group-hover:bg-yellow-400/10 transition-colors">
-                      <Zap className="w-4 h-4" />
+                  <div key={i} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5 group">
+                    <div className="mt-0.5 p-1 rounded bg-white/5 text-purple-400">
+                      <Zap className="w-3 h-3" />
                     </div>
                     <div>
                       <p className="font-semibold text-white text-sm">{fw.name}</p>
-                      <p className="text-xs text-white/50 mt-0.5">{fw.desc}</p>
+                      <p className="text-xs text-white/50 leading-relaxed mt-0.5">{fw.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Mastery & Tools Split */}
+            {/* Proficiency & Tools */}
             <div className="grid grid-cols-2 gap-8 pt-6 border-t border-white/10">
-               {/* Mastery Bar */}
                <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3 flex items-center gap-2">
-                    <Users className="w-4 h-4" /> Mastery
+                    <Users className="w-3 h-3" /> Mastery
                   </h4>
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full ${selectedSkill?.orbColor} opacity-80`} 
-                        style={{ width: `${selectedSkill?.details.masteryLevel}%` }}
-                      />
-                    </div>
-                    <span className="text-sm font-bold text-white/80">{selectedSkill?.details.masteryLevel}%</span>
-                  </div>
-               </div>
-
-               {/* Tools Badges */}
-               <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">
-                    Tools
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedSkill?.details.tools.map(tool => (
-                      <Badge key={tool} variant="secondary" className="bg-white/10 hover:bg-white/20 text-white border-transparent text-[10px] px-3">
-                        {tool}
-                      </Badge>
-                    ))}
-                  </div>
-               </div>
-            </div>
-
-          </div>
-        </DialogContent>
-      </Dialog>
-    </section>
-  );
-};
-
-export default Skills;
+                    <Progress value={selectedSkill?.details.masteryLevel} className="h-1.5 flex-1 bg-white/10" />
+                    <span className="text-xs font-bold text-
