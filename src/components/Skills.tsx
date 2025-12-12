@@ -2,7 +2,7 @@ import { useState } from "react";
 import { 
   Brain, Code2, Settings, Database, LayoutTemplate, 
   ChevronRight, Layers, Zap, Users, X, 
-  ArrowUpRight
+  ArrowUpRight, Target
 } from "lucide-react";
 import {
   Dialog,
@@ -15,8 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
-// --- Visuals ---
-
+// --- Visuals (Unchanged) ---
 const StrategyVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-purple-500/5 to-transparent">
     <div className="p-3 rounded-full bg-purple-500/10 shadow-[0_0_30px_rgba(168,85,247,0.2)] border border-purple-500/20">
@@ -24,7 +23,6 @@ const StrategyVisual = () => (
     </div>
   </div>
 );
-
 const TechVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-blue-500/5 to-transparent">
     <div className="p-3 rounded-full bg-blue-500/10 shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-500/20">
@@ -32,7 +30,6 @@ const TechVisual = () => (
     </div>
   </div>
 );
-
 const OpsVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-orange-500/5 to-transparent">
     <div className="p-3 rounded-full bg-orange-500/10 shadow-[0_0_30px_rgba(249,115,22,0.2)] border border-orange-500/20">
@@ -40,7 +37,6 @@ const OpsVisual = () => (
     </div>
   </div>
 );
-
 const DataVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-green-500/5 to-transparent">
     <div className="p-3 rounded-full bg-green-500/10 shadow-[0_0_30px_rgba(34,197,94,0.2)] border border-green-500/20">
@@ -48,7 +44,6 @@ const DataVisual = () => (
     </div>
   </div>
 );
-
 const DesignVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-pink-500/5 to-transparent">
     <div className="p-3 rounded-full bg-pink-500/10 shadow-[0_0_30px_rgba(236,72,153,0.2)] border border-pink-500/20">
@@ -57,7 +52,7 @@ const DesignVisual = () => (
   </div>
 );
 
-// --- Data ---
+// --- Data with Enhanced Insights ---
 
 const skillCategories = [
   {
@@ -69,11 +64,12 @@ const skillCategories = [
     visual: <StrategyVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Strategy without execution is hallucination.",
+      philosophy: "Strategy without execution is hallucination. I focus on 'Viable' over 'Visionary'.",
       frameworks: [
-        { name: "Opportunity Tree", desc: "Mapping outcomes." },
-        { name: "RICE Scoring", desc: "Quantifying priority." }
+        { name: "Opportunity Tree", desc: "Mapping outcomes to opportunities (Teresa Torres method)." },
+        { name: "RICE Scoring", desc: "Quantifying prioritization to remove HIPPO bias." }
       ],
+      insight: "I use these frameworks to defend 'No' as much as to justify 'Yes'.",
       masteryLevel: 95,
       tools: ["Productboard", "Miro"]
     }
@@ -87,11 +83,12 @@ const skillCategories = [
     visual: <TechVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Know enough to challenge estimates.",
+      philosophy: "Know enough to challenge estimates, but respect the engineers' craft.",
       frameworks: [
-        { name: "Rapid Prototyping", desc: "Throwaway MVPs." },
-        { name: "Prompt Eng.", desc: "LLM Context." }
+        { name: "Rapid Prototyping", desc: "Building 'throwaway' MVPs to test logic." },
+        { name: "Prompt Eng.", desc: "Structuring LLM context for consistent outputs." }
       ],
+      insight: "My ability to read code means I don't need a translator to talk to dev teams.",
       masteryLevel: 75,
       tools: ["VS Code", "Lovable"]
     }
@@ -105,11 +102,12 @@ const skillCategories = [
     visual: <OpsVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Good ops makes the right thing easy.",
+      philosophy: "Good ops makes the right thing the easy thing to do.",
       frameworks: [
-        { name: "Six Sigma", desc: "Removing waste." },
-        { name: "SLA Definition", desc: "Clear expectations." }
+        { name: "Six Sigma", desc: "Systematically removing waste (Muda) from the cycle." },
+        { name: "SLA Definition", desc: "Setting clear delivery expectations upfront." }
       ],
+      insight: "Process should be a guardrail, not a gate. I build flows that speed teams up.",
       masteryLevel: 90,
       tools: ["Linear", "Excel"]
     }
@@ -125,9 +123,10 @@ const skillCategories = [
     details: {
       philosophy: "Data aims the gun; intuition pulls the trigger.",
       frameworks: [
-        { name: "North Star", desc: "Key Value Indicator." },
-        { name: "Funnel Ops", desc: "Fixing drop-offs." }
+        { name: "North Star", desc: "Aligning all teams to a single value indicator." },
+        { name: "Funnel Ops", desc: "Identifying and fixing drop-offs in the user journey." }
       ],
+      insight: "I focus on leading indicators (usage) rather than lagging ones (revenue) for product health.",
       masteryLevel: 80,
       tools: ["Mixpanel", "Tableau"]
     }
@@ -141,11 +140,12 @@ const skillCategories = [
     role: "The Empathy",
     className: "md:col-span-2",
     details: {
-      philosophy: "I fight for the user's perspective.",
+      philosophy: "I fight for the user's perspective in every technical discussion.",
       frameworks: [
-        { name: "Jobs to be Done", desc: "Focusing on intent." },
-        { name: "Heuristic Eval", desc: "Auditing usability." }
+        { name: "Jobs to be Done", desc: "Focusing on the user's intent, not just demographics." },
+        { name: "Heuristic Eval", desc: "Auditing usability against standard principles." }
       ],
+      insight: "A pretty UI that solves the wrong problem is still a failure.",
       masteryLevel: 85,
       tools: ["Figma", "Maze"]
     }
@@ -200,6 +200,7 @@ const Skills = () => {
                 <p className="text-xs font-medium text-white/60 leading-relaxed mb-4 line-clamp-2">
                    {category.description}
                 </p>
+                
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {category.tags.map((tag) => (
                     <span
@@ -216,16 +217,21 @@ const Skills = () => {
         </div>
       </div>
 
+      {/* FIXED MODAL: [&>button]:hidden removes the double X */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
-        <DialogContent className="max-w-lg p-0 border-white/10 bg-black/90 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-2xl text-white">
+        <DialogContent className="max-w-lg p-0 border-white/10 bg-black/90 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-2xl text-white [&>button]:hidden">
           <div className="relative h-28 w-full shrink-0 bg-gradient-to-b from-white/5 to-transparent">
             {selectedSkill?.visual}
             <DialogClose className="absolute top-4 right-4 rounded-full bg-white/10 p-1.5 hover:bg-white/20 text-white transition-colors">
               <X className="w-4 h-4" />
             </DialogClose>
           </div>
-          <div className="p-6 space-y-6">
-            <DialogTitle className="text-xl font-bold">{selectedSkill?.title}</DialogTitle>
+          <div className="p-6 space-y-6 overflow-y-auto max-h-[60vh]">
+            <div className="flex justify-between items-start">
+               <DialogTitle className="text-xl font-bold">{selectedSkill?.title}</DialogTitle>
+               <Badge variant="outline" className="border-white/10 text-white/50">{selectedSkill?.role}</Badge>
+            </div>
+            
             <div className="p-4 rounded-xl bg-white/5 border border-white/5 italic text-white/70 text-sm">
                 "{selectedSkill?.details.philosophy}"
             </div>
@@ -242,6 +248,13 @@ const Skills = () => {
                     </div>
                   </div>
                 ))}
+            </div>
+
+            <div className="flex items-start gap-3 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                <Target className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <p className="text-xs text-white/80">
+                   <span className="font-bold text-blue-400">Why it matters:</span> {selectedSkill?.details.insight}
+                </p>
             </div>
 
             <div className="flex items-center gap-3 pt-4 border-t border-white/10">
