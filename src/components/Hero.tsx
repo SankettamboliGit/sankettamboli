@@ -1,4 +1,4 @@
-import { FileText, ChevronDown, Zap, Award, Brain, CheckCircle2 } from "lucide-react";
+import { FileText, ChevronDown, Zap, Brain } from "lucide-react";
 import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
@@ -29,8 +29,8 @@ const Hero = () => {
           {/* Glowing Halo */}
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-full blur-2xl transform group-hover:scale-110 transition-transform duration-700" />
           
-          {/* Glass Container */}
-          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-2 bg-white/5 border border-white/10 backdrop-blur-sm shadow-2xl">
+          {/* Glass Container for Image */}
+          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-2 bg-white/5 border border-white/10 backdrop-blur-sm shadow-2xl z-10">
             <div className="w-full h-full rounded-full overflow-hidden bg-black/20 relative">
                <img 
                  src={profileImage} 
@@ -40,8 +40,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Badge: Experience */}
-          <div className="absolute -right-6 md:-right-12 top-8 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
+          {/* Right Badge: Experience (Pushed OUT further to -right-32) */}
+          <div className="absolute -right-32 top-8 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
             <div className="p-1.5 rounded-full bg-yellow-500/20 text-yellow-400">
                <Zap className="w-3.5 h-3.5 fill-yellow-400" />
             </div>
@@ -51,8 +51,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Left Badge: Certifications (NEW) */}
-          <div className="absolute -left-6 md:-left-16 bottom-4 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
+          {/* Left Badge: Certifications (Pushed OUT further to -left-32) */}
+          <div className="absolute -left-32 bottom-8 hidden md:flex items-center gap-3 px-4 py-2 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl animate-fade-in hover:scale-105 transition-transform cursor-default z-20">
             <div className="p-1.5 rounded-full bg-blue-500/20 text-blue-400">
                <Brain className="w-3.5 h-3.5" />
             </div>
@@ -63,7 +63,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Headline - Updated to be Quirky & Modern */}
+        {/* Headline */}
         <div className="space-y-6 max-w-4xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
             Translating <span className="text-white/40 italic font-serif">"Vague Ideas"</span> <br />
