@@ -15,7 +15,8 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 
-// --- Visual Components (Unchanged) ---
+// --- Visual Components ---
+
 const DiscoveryVisual = () => (
   <div className="w-full h-full bg-gradient-to-br from-yellow-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-yellow-500/20 transition-colors duration-500">
     <div className="grid grid-cols-2 gap-2 transform rotate-3 opacity-80">
@@ -82,7 +83,7 @@ const AIVisual = () => (
   </div>
 );
 
-// --- Expanded Data with Real Insights ---
+// --- Data ---
 
 const services = [
   {
@@ -274,7 +275,7 @@ const Services = () => {
                 </ul>
             </div>
 
-            {/* Artifacts & Metrics (New Insightful Data) */}
+            {/* Artifacts & Metrics */}
             <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
                <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3 flex items-center gap-2">
