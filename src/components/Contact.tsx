@@ -15,7 +15,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden">
+    <section id="contact" className="py-24 px-6 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-900/20 blur-[120px] pointer-events-none rounded-full opacity-40" />
 
@@ -27,7 +27,7 @@ const Contact = () => {
           Open to Product Operations and Product Management roles.
         </p>
 
-        {/* Rectangular Glass Cards */}
+        {/* Compact Glass Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 animate-fade-up stagger-2 max-w-5xl mx-auto">
           
           {/* 1. Email Card */}
@@ -41,8 +41,8 @@ const Contact = () => {
               {copied ? <Check className="w-6 h-6 text-green-400" /> : <Mail className="w-6 h-6 text-white" />}
             </div>
             
-            <p className="text-white font-semibold text-lg mb-1 truncate w-full px-4">{email}</p>
-            <p className="text-white/40 text-xs uppercase tracking-wider font-bold">Copy Email</p>
+            <p className="text-white font-semibold text-sm mb-1 truncate w-full px-4">{email}</p>
+            <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Copy Email</p>
           </button>
 
           {/* 2. LinkedIn Card */}
@@ -57,13 +57,13 @@ const Contact = () => {
             </div>
             
             <div className="flex items-center gap-2 mb-1">
-              <p className="text-white font-semibold text-lg">LinkedIn</p>
-              <ArrowUpRight className="w-4 h-4 text-blue-400 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <p className="text-white font-semibold text-sm">LinkedIn</p>
+              <ArrowUpRight className="w-3 h-3 text-blue-400 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </div>
-            <p className="text-white/40 text-xs uppercase tracking-wider font-bold">Connect</p>
+            <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Connect</p>
           </a>
 
-          {/* 3. Phone Card */}
+          {/* 3. Phone Card - EXPLICITLY VISIBLE */}
           <a 
             href="tel:+919998271731"
             className="group relative flex flex-col items-center justify-center py-8 px-6 bg-green-500/5 border border-green-500/10 rounded-3xl hover:bg-green-500/10 hover:border-green-500/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
@@ -72,8 +72,8 @@ const Contact = () => {
               <Phone className="w-6 h-6 text-green-400" />
             </div>
             
-            <p className="text-white font-semibold text-lg mb-1">{phone}</p>
-            <p className="text-white/40 text-xs uppercase tracking-wider font-bold">Call Me</p>
+            <p className="text-white font-semibold text-sm mb-1">{phone}</p>
+            <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Call Me</p>
           </a>
 
         </div>
