@@ -2,7 +2,8 @@ import { useState } from "react";
 import {
   Compass, Map, Users, BarChart3, Layers, Lightbulb, 
   ArrowRight, CheckCircle2, Cpu, X,
-  StickyNote, Calendar, MessageSquare, FileText, Network
+  StickyNote, Calendar, MessageSquare, FileText, Network,
+  FileCheck, TrendingUp
 } from "lucide-react";
 import {
   Dialog,
@@ -14,8 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 
-// --- Visual Components ---
-
+// --- Visual Components (Unchanged) ---
 const DiscoveryVisual = () => (
   <div className="w-full h-full bg-gradient-to-br from-yellow-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-yellow-500/20 transition-colors duration-500">
     <div className="grid grid-cols-2 gap-2 transform rotate-3 opacity-80">
@@ -82,7 +82,7 @@ const AIVisual = () => (
   </div>
 );
 
-// --- Data ---
+// --- Expanded Data with Real Insights ---
 
 const services = [
   {
@@ -91,9 +91,11 @@ const services = [
     description: "Facilitated sessions to uncover user pain points and align stakeholders.",
     visual: <DiscoveryVisual />,
     details: {
-      philosophy: "I believe the best products start with a shared understanding of the problem.",
-      process: ["Stakeholder Alignment", "Problem Definition", "Solution Sketching"],
-      tools: ["Miro", "FigJam", "Zoom"]
+      philosophy: "I believe the best products start with a shared understanding of the problem, not a list of features.",
+      process: ["Stakeholder Alignment", "Problem Definition (HMW)", "Solution Sketching (Crazy 8s)"],
+      tools: ["Miro", "FigJam", "Zoom"],
+      artifacts: ["User Journey Map", "Problem Statement Canvas", "Low-Fi Concepts"],
+      metric: "Reduction in rework due to misaligned requirements."
     }
   },
   {
@@ -102,9 +104,11 @@ const services = [
     description: "Strategic roadmaps balancing business goals, user needs, and feasibility.",
     visual: <RoadmapVisual />,
     details: {
-      philosophy: "A roadmap is not a release plan; it's a strategic communication tool.",
-      process: ["Prioritization (RICE)", "Theme Definition", "Dependency Mapping"],
-      tools: ["Jira", "Linear", "Productboard"]
+      philosophy: "A roadmap is not a release plan; it's a strategic communication tool focused on outcomes.",
+      process: ["Prioritization (RICE/MoSCoW)", "Theme Definition", "Dependency Mapping"],
+      tools: ["Jira", "Linear", "Productboard"],
+      artifacts: ["Now-Next-Later Roadmap", "Release Plan", "Risk Register"],
+      metric: "% of roadmap items linked to strategic OKRs."
     }
   },
   {
@@ -113,9 +117,11 @@ const services = [
     description: "Qualitative and quantitative research to validate assumptions.",
     visual: <ResearchVisual />,
     details: {
-      philosophy: "Data tells you what is happening; users tell you why.",
+      philosophy: "Data tells you 'what' is happening; users tell you 'why'. I use both to build conviction.",
       process: ["Persona Recruitment", "JTBD Interviews", "Affinity Mapping"],
-      tools: ["Dovetail", "Google Forms"]
+      tools: ["Dovetail", "Google Forms", "Hotjar"],
+      artifacts: ["User Personas", "Research Insights Report", "Usability Test Recordings"],
+      metric: "Increase in user confidence score pre-build."
     }
   },
   {
@@ -124,9 +130,11 @@ const services = [
     description: "Feature prioritization using metrics and business impact analysis.",
     visual: <DataVisual />,
     details: {
-      philosophy: "If you can't measure it, you can't improve it.",
-      process: ["North Star Metric", "Funnel Analysis", "A/B Testing"],
-      tools: ["Mixpanel", "Amplitude", "SQL"]
+      philosophy: "If you can't measure it, you can't improve it. Every feature needs a success metric before code is written.",
+      process: ["North Star Metric Def.", "Funnel Analysis", "A/B Testing"],
+      tools: ["Mixpanel", "Amplitude", "SQL"],
+      artifacts: ["Measurement Plan", "Dashboard Setup", "Experiment Results"],
+      metric: "Improvement in feature adoption rates."
     }
   },
   {
@@ -135,9 +143,11 @@ const services = [
     description: "Clear user stories that bridge business needs and engineering execution.",
     visual: <SpecVisual />,
     details: {
-      philosophy: "Great specs reduce engineering churn and ambiguity.",
-      process: ["User Stories", "Gherkin Acceptance Criteria", "Edge Case Definitions"],
-      tools: ["Notion", "Confluence", "Jira"]
+      philosophy: "Great specs reduce engineering churn. I write for clarity, covering edge cases and error states upfront.",
+      process: ["User Stories (As a...)", "Gherkin Acceptance Criteria", "Edge Case Definitions"],
+      tools: ["Notion", "Confluence", "Jira"],
+      artifacts: ["Product Requirements Doc", "Functional Spec", "QA Checklist"],
+      metric: "Decrease in clarification questions during sprint."
     }
   },
   {
@@ -146,9 +156,11 @@ const services = [
     description: "Identifying AI/ML opportunities to enhance product value.",
     visual: <AIVisual />,
     details: {
-      philosophy: "AI should reduce friction, not just add novelty.",
+      philosophy: "AI should reduce friction, not just add novelty. I look for tasks where AI provides 'magic' leverage.",
       process: ["Opportunity Mapping", "Feasibility Check", "Rapid Prototyping"],
-      tools: ["OpenAI API", "V0", "Lovable"]
+      tools: ["OpenAI API", "V0", "Lovable"],
+      artifacts: ["AI Use Case Canvas", "Prompt Library", "Feasibility Report"],
+      metric: "Time saved per user task via AI automation."
     }
   },
 ];
@@ -217,9 +229,9 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Methodology Modal */}
+      {/* Methodology Modal - FIXED: [&>button]:hidden removes the double X */}
       <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
-        <DialogContent className="max-w-xl p-0 border-white/10 bg-black/80 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-[2rem] text-white">
+        <DialogContent className="max-w-xl p-0 border-white/10 bg-black/80 backdrop-blur-3xl shadow-2xl overflow-hidden rounded-[2rem] text-white [&>button]:hidden">
           <div className="relative h-40 w-full shrink-0 bg-gradient-to-b from-white/5 to-transparent">
             {selectedService?.visual}
             <div className="absolute bottom-6 left-8 flex items-center gap-4">
@@ -237,12 +249,15 @@ const Services = () => {
               <X className="w-5 h-5" />
             </DialogClose>
           </div>
+          
           <div className="p-8 space-y-8 overflow-y-auto max-h-[60vh]">
             <div className="relative pl-6 border-l-2 border-white/20">
                 <p className="text-lg text-white/90 italic font-light leading-relaxed">
                   "{selectedService?.details.philosophy}"
                 </p>
             </div>
+            
+            {/* Process List */}
             <div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 flex items-center gap-2">
                     <Cpu className="w-4 h-4" /> The Process
@@ -258,6 +273,30 @@ const Services = () => {
                     ))}
                 </ul>
             </div>
+
+            {/* Artifacts & Metrics (New Insightful Data) */}
+            <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
+               <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3 flex items-center gap-2">
+                    <FileCheck className="w-4 h-4" /> Key Artifacts
+                  </h4>
+                  <ul className="space-y-2">
+                    {selectedService?.details.artifacts.map((art, i) => (
+                      <li key={i} className="text-xs text-white/70">• {art}</li>
+                    ))}
+                  </ul>
+               </div>
+               <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4" /> Success Indicator
+                  </h4>
+                  <p className="text-xs text-white/80 italic leading-relaxed">
+                    "{selectedService?.details.metric}"
+                  </p>
+               </div>
+            </div>
+
+            {/* Tools */}
             <div className="pt-6 border-t border-white/10">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Tools Stack</h4>
                 <div className="flex flex-wrap gap-2">
