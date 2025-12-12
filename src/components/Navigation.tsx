@@ -23,14 +23,14 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
-          isScrolled ? "w-[90%] md:w-auto" : "w-[95%] md:w-auto"
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ease-out ${
+          isScrolled ? "w-[90%] md:w-auto scale-100" : "w-[95%] md:w-auto scale-105"
         }`}
       >
         <div className={`
           flex items-center justify-between md:justify-center px-6 py-3 rounded-full 
-          backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-500
-          ${isScrolled ? "bg-black/50 supports-[backdrop-filter]:bg-black/20" : "bg-black/30"}
+          backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] transition-all duration-500
+          ${isScrolled ? "bg-black/60 supports-[backdrop-filter]:bg-black/40" : "bg-black/20 supports-[backdrop-filter]:bg-white/5"}
         `}>
           
           {/* Desktop Nav */}
@@ -39,7 +39,7 @@ const Navigation = () => {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300"
+                  className="px-5 py-2 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300"
                 >
                   {item.label}
                 </a>
@@ -49,8 +49,8 @@ const Navigation = () => {
 
           {/* Mobile Hamburger */}
           <div className="md:hidden flex items-center justify-between w-full">
-            <span className="text-white font-bold tracking-tight">ST.</span>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white">
+            <span className="text-white font-bold tracking-tight text-lg">ST.</span>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
               {mobileMenuOpen ? <X /> : <Menu />}
             </button>
           </div>
@@ -59,14 +59,14 @@ const Navigation = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex items-center justify-center md:hidden animate-fade-in">
+        <div className="fixed inset-0 z-40 bg-[#030303]/95 backdrop-blur-3xl flex items-center justify-center md:hidden animate-fade-up">
           <ul className="flex flex-col gap-8 text-center">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-2xl font-light text-white/90 hover:text-white tracking-tight"
+                  className="text-3xl font-light text-white/90 hover:text-white tracking-tight hover:scale-110 transition-transform"
                 >
                   {item.label}
                 </a>
