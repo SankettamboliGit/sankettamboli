@@ -6,87 +6,40 @@
 
 @layer base {
   :root {
-    /* Apple-style Dark Mode Palette */
-    --background: 0 0% 1%; /* #030303 - Deepest Black */
-    --foreground: 0 0% 98%; /* White */
-
-    --card: 0 0% 4%; /* Slightly lighter black for cards */
+    --background: 0 0% 1%; /* #030303 */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 4%;
     --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%; /* White primary */
+    --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 12%; /* Dark Grey for subtle elements */
+    --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%; /* Muted text is grey */
-
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 12%; /* Very subtle borders */
-    --input: 0 0% 12%;
-    --ring: 0 0% 83%;
-
-    --radius: 1.5rem; /* Larger, friendlier roundness */
+    --border: 0 0% 12%;
+    --radius: 1.5rem;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-purple-500/30 selection:text-white;
-    /* Global Ambient Light - The "Aurora" */
+    @apply bg-[#030303] text-foreground font-sans antialiased selection:bg-purple-500/30 selection:text-white;
+    /* Fixed Ambient Background - No more shifting gradients */
     background-image: 
-      radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.08), transparent 25%), 
-      radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.08), transparent 25%);
+      radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.05), transparent 25%), 
+      radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.05), transparent 25%);
     background-attachment: fixed;
   }
 }
 
 @layer utilities {
-  .animate-fade-up {
-    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  }
-  
+  .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
   .stagger-1 { animation-delay: 0.1s; }
   .stagger-2 { animation-delay: 0.2s; }
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Premium Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #030303;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
