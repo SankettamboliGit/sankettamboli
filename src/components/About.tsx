@@ -1,4 +1,4 @@
-import { MapPin, GraduationCap, Award, Globe } from "lucide-react";
+import { MapPin, GraduationCap, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const About = () => {
