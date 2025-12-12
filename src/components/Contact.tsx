@@ -15,73 +15,73 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative overflow-hidden">
-      {/* Ambient Footer Glow - Reduced size for cleaner look */}
-      <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-900/20 blur-[100px] pointer-events-none rounded-full opacity-40" />
+    <section id="contact" className="py-32 px-6 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-900/20 blur-[120px] pointer-events-none rounded-full opacity-40" />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight animate-fade-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight animate-fade-up">
           Ready to optimize?
         </h2>
-        <p className="text-white/50 text-base mb-12 max-w-lg mx-auto font-light animate-fade-up stagger-1">
+        <p className="text-white/50 text-lg mb-16 max-w-lg mx-auto font-light animate-fade-up stagger-1">
           Open to Product Operations and Product Management roles.
         </p>
 
-        {/* COMPACT GRID: Smaller cards, smaller text */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16 animate-fade-up stagger-2 max-w-4xl mx-auto">
+        {/* Rectangular Glass Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 animate-fade-up stagger-2 max-w-5xl mx-auto">
           
-          {/* 1. Email Copy Button */}
+          {/* 1. Email Card */}
           <button 
             onClick={handleCopy}
-            className="group flex flex-col items-center justify-center gap-3 bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-md hover:shadow-lg hover:-translate-y-1"
+            className="group relative flex flex-col items-center justify-center py-8 px-6 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
           >
-            <div className="p-3 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors relative">
-              {copied ? <Check className="w-5 h-5 text-green-400" /> : <Mail className="w-5 h-5 text-white/80" />}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            
+            <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-white/5">
+              {copied ? <Check className="w-6 h-6 text-green-400" /> : <Mail className="w-6 h-6 text-white" />}
             </div>
-            <div className="text-center">
-              <p className="text-[10px] text-white/40 uppercase tracking-wider font-bold mb-1">Email</p>
-              <p className="text-white font-medium text-sm break-all">{email}</p>
-            </div>
-            <div className="text-[10px] text-white/30 flex items-center gap-1 group-hover:text-white/60 transition-colors mt-1">
-               <Copy className="w-3 h-3" /> Copy
-            </div>
+            
+            <p className="text-white font-semibold text-lg mb-1 truncate w-full px-4">{email}</p>
+            <p className="text-white/40 text-xs uppercase tracking-wider font-bold">Copy Email</p>
           </button>
 
-          {/* 2. LinkedIn Button */}
+          {/* 2. LinkedIn Card */}
           <a 
             href="https://linkedin.com/in/sanket-tamboli"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center justify-center gap-3 bg-blue-600/5 border border-blue-500/20 p-5 rounded-2xl hover:bg-blue-600/10 hover:border-blue-500/30 transition-all backdrop-blur-md hover:shadow-lg hover:-translate-y-1"
+            className="group relative flex flex-col items-center justify-center py-8 px-6 bg-blue-500/5 border border-blue-500/10 rounded-3xl hover:bg-blue-500/10 hover:border-blue-500/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
           >
-            <div className="p-3 bg-blue-500/10 rounded-full text-blue-400 relative">
-              <Linkedin className="w-5 h-5" />
+            <div className="p-3 bg-blue-500/10 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-blue-500/10">
+              <Linkedin className="w-6 h-6 text-blue-400" />
             </div>
-            <div className="text-center">
-              <p className="text-[10px] text-blue-400/60 uppercase tracking-wider font-bold mb-1">Social</p>
-              <p className="text-blue-100 font-medium text-sm">LinkedIn Profile</p>
+            
+            <div className="flex items-center gap-2 mb-1">
+              <p className="text-white font-semibold text-lg">LinkedIn</p>
+              <ArrowUpRight className="w-4 h-4 text-blue-400 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </div>
-            <ArrowUpRight className="w-3 h-3 text-blue-400/50 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-1" />
+            <p className="text-white/40 text-xs uppercase tracking-wider font-bold">Connect</p>
           </a>
 
-          {/* 3. Phone Number Button */}
+          {/* 3. Phone Card */}
           <a 
             href="tel:+919998271731"
-            className="group flex flex-col items-center justify-center gap-3 bg-green-600/5 border border-green-500/20 p-5 rounded-2xl hover:bg-green-600/10 hover:border-green-500/30 transition-all backdrop-blur-md hover:shadow-lg hover:-translate-y-1"
+            className="group relative flex flex-col items-center justify-center py-8 px-6 bg-green-500/5 border border-green-500/10 rounded-3xl hover:bg-green-500/10 hover:border-green-500/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
           >
-            <div className="p-3 bg-green-500/10 rounded-full text-green-400 relative">
-              <Phone className="w-5 h-5" />
+            <div className="p-3 bg-green-500/10 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-green-500/10">
+              <Phone className="w-6 h-6 text-green-400" />
             </div>
-            <div className="text-center">
-              <p className="text-[10px] text-green-400/60 uppercase tracking-wider font-bold mb-1">Phone</p>
-              <p className="text-green-100 font-medium text-sm">{phone}</p>
-            </div>
-            <ArrowUpRight className="w-3 h-3 text-green-400/50 group-hover:text-green-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-1" />
+            
+            <p className="text-white font-semibold text-lg mb-1">{phone}</p>
+            <p className="text-white/40 text-xs uppercase tracking-wider font-bold">Call Me</p>
           </a>
 
         </div>
 
-        <p className="text-white/20 text-xs animate-fade-up stagger-3">Based in Vadodara, Gujarat • Open to Remote</p>
+        <div className="flex items-center justify-center gap-2 text-white/30 text-sm animate-fade-up stagger-3">
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          Based in Vadodara, Gujarat • Open to Remote
+        </div>
       </div>
     </section>
   );
