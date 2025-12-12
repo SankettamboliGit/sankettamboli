@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, Copy, Check, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Copy, Check, Linkedin, ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
