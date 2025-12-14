@@ -19,7 +19,7 @@ const Index = () => {
         <Skills />    {/* Competency Matrix */}
         <Services />  {/* Product Strategy */}
         <Projects />  {/* Projects */}
-        <Contact />   {/* Contact */}
+        <Contact />
       </main>
       <Footer />
     </div>
