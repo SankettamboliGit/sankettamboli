@@ -14,13 +14,12 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        {/* Order matches Navigation: Home -> About -> Experience -> Competency Matrix -> Product Strategy -> Projects -> Contact */}
         <About />
         <Experience />
-        <Skills />    {/* Title: Competency Matrix */}
-        <Services />  {/* Title: Product Strategy */}
-        <Projects />  {/* Title: Projects */}
-        <Contact />   {/* Title: Contact */}
+        <Skills />    {/* Competency Matrix */}
+        <Services />  {/* Product Strategy */}
+        <Projects />  {/* Projects */}
+        <Contact />   {/* Contact */}
       </main>
       <Footer />
     </div>
