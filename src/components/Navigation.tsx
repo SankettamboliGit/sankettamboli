@@ -16,7 +16,7 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Scroll Spy: Detect active section
+  // Scroll Spy Logic
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     
@@ -54,7 +54,7 @@ const Navigation = () => {
           ${isScrolled || isMobileMenuOpen ? "bg-black/90" : "bg-black/60 md:bg-black/30"}
         `}
       >
-        {/* MOBILE: Active Section Pill (Tap to Expand) */}
+        {/* MOBILE: Active Section Pill */}
         <div 
           className="md:hidden w-full flex items-center justify-between gap-3 cursor-pointer min-w-[140px]" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
