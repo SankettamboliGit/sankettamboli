@@ -91,10 +91,10 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-up">
           <Badge variant="outline" className="mb-4 border-white/20 text-white/70 backdrop-blur-md px-4 py-1">
-            Selected Work
+            Projects
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
-            Case Studies
+            Projects
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-lg">
             Real-world examples of how I translate user needs into scalable solutions.
