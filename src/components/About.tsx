@@ -9,10 +9,15 @@ const About = () => {
           
           {/* Text Content */}
           <div className="space-y-6 md:space-y-8 animate-fade-up">
-            <span className="text-purple-400 font-medium tracking-widest text-xs uppercase">The Philosophy</span>
+            <Badge variant="outline" className="mb-2 border-white/20 text-white/70 backdrop-blur-md px-3 py-0.5 text-[10px] uppercase tracking-widest">
+              Philosophy
+            </Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              Building systems that work <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">for people</span>.
+              About
             </h2>
+            <h3 className="text-xl md:text-2xl text-white/80 font-medium">
+              Building systems that work <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">for people</span>.
+            </h3>
             <div className="space-y-4 md:space-y-6 text-base md:text-lg text-white/50 font-light leading-relaxed">
               <p>
                 I am an <strong className="text-white">Operations & Product Professional</strong> with 9 years of experience. My career has been defined by one core obsession: <em>Efficiency without losing Empathy.</em>
@@ -23,7 +28,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Glass Card - Optimized for Mobile */}
+          {/* Glass Card */}
           <div className="relative group animate-fade-up stagger-2">
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-700 opacity-50" />
             
