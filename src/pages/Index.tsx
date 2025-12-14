@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
 import Services from "@/components/Services";
+import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -14,12 +14,13 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
+        {/* Order matches Navigation: Home -> About -> Experience -> Competency Matrix -> Product Strategy -> Projects -> Contact */}
         <About />
         <Experience />
-        <Skills />
-        <Services />
-        <Projects />
-        <Contact />
+        <Skills />    {/* Title: Competency Matrix */}
+        <Services />  {/* Title: Product Strategy */}
+        <Projects />  {/* Title: Projects */}
+        <Contact />   {/* Title: Contact */}
       </main>
       <Footer />
     </div>
