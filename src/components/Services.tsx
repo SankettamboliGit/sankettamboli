@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 
-// ... (Visual Components: DiscoveryVisual, etc. - Use full set from previous) ...
+// --- Visual Components ---
 const DiscoveryVisual = () => (
   <div className="w-full h-full bg-gradient-to-br from-yellow-500/10 to-transparent flex items-center justify-center relative overflow-hidden group-hover:from-yellow-500/20 transition-colors duration-500">
     <div className="grid grid-cols-2 gap-2 transform rotate-3 opacity-80">
@@ -89,7 +89,7 @@ const services = [
     description: "Facilitated sessions to uncover user pain points and align stakeholders.",
     visual: <DiscoveryVisual />,
     details: {
-      philosophy: "I believe the best products start with a shared understanding of the problem.",
+      philosophy: "I believe the best products start with a shared understanding of the problem, not a list of features.",
       process: ["Stakeholder Alignment", "Problem Definition (HMW)", "Solution Sketching"],
       tools: ["Miro", "FigJam", "Zoom"],
       artifacts: ["User Journey Map", "Problem Statement Canvas", "Low-Fi Concepts"],
@@ -102,7 +102,7 @@ const services = [
     description: "Strategic roadmaps balancing business goals, user needs, and feasibility.",
     visual: <RoadmapVisual />,
     details: {
-      philosophy: "A roadmap is not a release plan; it's a strategic communication tool.",
+      philosophy: "A roadmap is not a release plan; it's a strategic communication tool focused on outcomes.",
       process: ["Prioritization (RICE/MoSCoW)", "Theme Definition", "Dependency Mapping"],
       tools: ["Jira", "Linear", "Productboard"],
       artifacts: ["Now-Next-Later Roadmap", "Release Plan", "Risk Register"],
@@ -141,8 +141,8 @@ const services = [
     description: "Clear user stories that bridge business needs and engineering execution.",
     visual: <SpecVisual />,
     details: {
-      philosophy: "Great specs reduce engineering churn. I write for clarity.",
-      process: ["User Stories", "Gherkin Acceptance Criteria", "Edge Case Definitions"],
+      philosophy: "Great specs reduce engineering churn. I write for clarity, covering edge cases and error states upfront.",
+      process: ["User Stories (As a...)", "Gherkin Acceptance Criteria", "Edge Case Definitions"],
       tools: ["Notion", "Confluence", "Jira"],
       artifacts: ["Product Requirements Doc", "Functional Spec", "QA Checklist"],
       metric: "Decrease in clarification questions during sprint."
@@ -154,7 +154,7 @@ const services = [
     description: "Identifying AI/ML opportunities to enhance product value.",
     visual: <AIVisual />,
     details: {
-      philosophy: "AI should reduce friction, not just add novelty.",
+      philosophy: "AI should reduce friction, not just add novelty. I look for tasks where AI provides 'magic' leverage.",
       process: ["Opportunity Mapping", "Feasibility Check", "Rapid Prototyping"],
       tools: ["OpenAI API", "V0", "Lovable"],
       artifacts: ["AI Use Case Canvas", "Prompt Library", "Feasibility Report"],
@@ -167,29 +167,29 @@ const Services = () => {
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
 
   return (
-    <section id="services" className="py-24 px-6 bg-[#030303] relative overflow-hidden">
+    <section id="services" className="py-24 md:py-32 px-4 md:px-6 bg-[#030303] relative overflow-hidden">
       
       {/* Background Ambience */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[100px] pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-up">
-          {/* REMOVED BADGE HERE */}
+          {/* TITLE CHANGED HERE */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Product Strategy
+            Strategies
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-base md:text-lg px-2">
             How I turn ambiguous problems into shipped solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => (
             <div
               key={service.title}
               onClick={() => setSelectedService(service)}
               className={`
-                group relative overflow-hidden rounded-3xl 
+                group relative overflow-hidden rounded-2xl md:rounded-3xl 
                 bg-white/5 backdrop-blur-xl 
                 border border-white/10 hover:border-white/20
                 transition-all duration-300 cursor-pointer 
