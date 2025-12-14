@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -17,7 +17,6 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
-  // Scroll Spy Logic
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     
@@ -46,18 +45,16 @@ const Navigation = () => {
     };
   }, []);
 
-  // Click Outside to Close Logic
+  // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
       }
     };
-
     if (isMobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -72,28 +69,28 @@ const Navigation = () => {
         className={`
           relative flex flex-col items-center px-6 py-3 
           backdrop-blur-xl border border-white/10 shadow-2xl 
-          transition-all duration-300 ease-out origin-top
-          ${isMobileMenuOpen ? "rounded-3xl bg-[#0a0a0a]" : "rounded-full"}
-          ${isScrolled && !isMobileMenuOpen ? "bg-[#0a0a0a]/90" : "bg-[#0a0a0a]/80 lg:bg-black/40"}
+          transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+          bg-[#0a0a0a]/90
+          rounded-[2rem] /* Fixed radius: Looks like a pill when closed, card when open */
         `}
       >
-        {/* MOBILE/TABLET VIEW: Active Section Pill */}
+        {/* MOBILE/TABLET VIEW: Active Section Pill (Centered) */}
         <div 
-          className="lg:hidden w-full flex items-center justify-between gap-4 cursor-pointer min-w-[160px]" 
+          className="lg:hidden w-full flex items-center justify-center gap-3 cursor-pointer min-w-[160px]" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <span className="text-sm font-bold text-white tracking-wide mx-auto pl-6">
+          <span className="text-sm font-bold text-white tracking-wide">
             {activeSection}
           </span>
-          <div className="p-1 rounded-full hover:bg-white/10 transition-colors">
-             {isMobileMenuOpen ? <ChevronUp className="w-4 h-4 text-white/70" /> : <ChevronDown className="w-4 h-4 text-white/70" />}
-          </div>
+          <ChevronDown 
+            className={`w-4 h-4 text-white/70 transition-transform duration-300 ${isMobileMenuOpen ? "rotate-180" : ""}`} 
+          />
         </div>
 
-        {/* MOBILE/TABLET MENU: Expanded List */}
+        {/* MOBILE/TABLET MENU: Expanded List (Smooth Slide) */}
         <div className={`
-            lg:hidden flex-col gap-1 w-full text-center overflow-hidden transition-all duration-300 ease-in-out
-            ${isMobileMenuOpen ? "max-h-[500px] opacity-100 flex mt-4 pb-2 scale-100" : "max-h-0 opacity-0 hidden mt-0 scale-95"}
+            lg:hidden flex flex-col gap-1 w-full text-center overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+            ${isMobileMenuOpen ? "max-h-[500px] opacity-100 mt-4 pb-2" : "max-h-0 opacity-0 mt-0 pb-0 pointer-events-none"}
         `}>
           <div className="w-full h-px bg-white/10 mb-2" />
           {navItems.map((item) => (
@@ -113,8 +110,8 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* DESKTOP VIEW: Full Horizontal List */}
-        <ul className="hidden lg:flex items-center gap-1">
+        {/* DESKTOP VIEW: Full Horizontal List (Centered) */}
+        <ul className="hidden lg:flex items-center justify-center gap-1">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
