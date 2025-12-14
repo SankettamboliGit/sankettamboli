@@ -16,7 +16,6 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Scroll Spy Logic
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     
@@ -46,17 +45,17 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw]">
+    <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw]">
       <div
         className={`
-          relative flex flex-col items-center px-6 py-3 rounded-full 
+          relative flex flex-col items-center px-5 py-2.5 md:px-6 md:py-3 rounded-full 
           backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-500
           ${isScrolled || isMobileMenuOpen ? "bg-black/90" : "bg-black/60 md:bg-black/30"}
         `}
       >
         {/* MOBILE: Active Section Pill */}
         <div 
-          className="md:hidden w-full flex items-center justify-between gap-3 cursor-pointer min-w-[140px]" 
+          className="md:hidden w-full flex items-center justify-between gap-3 cursor-pointer min-w-[120px]" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span className="text-sm font-bold text-white tracking-wide mx-auto">
@@ -65,7 +64,7 @@ const Navigation = () => {
           {isMobileMenuOpen ? <ChevronUp className="w-4 h-4 text-white/70" /> : <ChevronDown className="w-4 h-4 text-white/70" />}
         </div>
 
-        {/* MOBILE: Dropdown Menu */}
+        {/* MOBILE: Expanded Menu */}
         <div className={`
             md:hidden flex-col gap-1 mt-3 w-full text-center overflow-hidden transition-all duration-300 ease-in-out
             ${isMobileMenuOpen ? "max-h-[400px] opacity-100 flex pb-2" : "max-h-0 opacity-0 hidden"}
@@ -86,7 +85,7 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* DESKTOP: Full Horizontal List */}
+        {/* DESKTOP: Full Menu */}
         <ul className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <li key={item.label}>
