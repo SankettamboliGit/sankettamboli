@@ -45,9 +45,8 @@ const Navigation = () => {
             ))}
           </ul>
 
-          {/* Mobile Hamburger */}
-          <div className="md:hidden flex items-center justify-between w-full">
-            <span className="text-white font-bold tracking-tight text-lg">ST.</span>
+          {/* Mobile Hamburger - REMOVED "ST." & Aligned Right */}
+          <div className="md:hidden flex items-center justify-end w-full">
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
               {mobileMenuOpen ? <X /> : <Menu />}
             </button>
