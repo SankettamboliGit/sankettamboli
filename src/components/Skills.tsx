@@ -11,8 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 
-// ... (Visual Components: StrategyVisual, TechVisual etc. - Keep them exactly as before) ...
-// Included one for context, use full set from previous turns
+// --- Visuals ---
 const StrategyVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-purple-500/5 to-transparent">
     <div className="p-3 rounded-full bg-purple-500/10 shadow-[0_0_30px_rgba(168,85,247,0.2)] border border-purple-500/20">
@@ -137,13 +136,14 @@ const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState<typeof skillCategories[0] | null>(null);
 
   return (
-    <section id="skills" className="py-24 px-6 bg-[#030303] relative overflow-hidden">
+    <section id="skills" className="py-24 md:py-32 px-6 bg-[#030303] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-up">
+          {/* TITLE CHANGED HERE */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Competency Matrix
+            Matrix
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base md:text-lg">
             Deep operational expertise combined with broad technical strategy.
@@ -194,7 +194,6 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Modal - Same mobile optimization as Services */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
         <DialogContent className="max-w-lg w-[95vw] rounded-3xl p-0 border-white/10 bg-black/90 backdrop-blur-3xl text-white [&>button]:hidden">
           <div className="relative h-32 w-full shrink-0 bg-gradient-to-b from-white/5 to-transparent">
