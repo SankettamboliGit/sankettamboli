@@ -16,6 +16,7 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Scroll Spy Logic
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     
@@ -45,17 +46,20 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw]">
+    // Increased z-index to 50 to sit above everything. Max width constraints ensure it doesn't touch edges.
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[90vw]">
       <div
         className={`
-          relative flex flex-col items-center px-5 py-2.5 md:px-6 md:py-3 rounded-full 
-          backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-500
-          ${isScrolled || isMobileMenuOpen ? "bg-black/90" : "bg-black/60 md:bg-black/30"}
+          relative flex flex-col items-center px-6 py-3 
+          backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-500 ease-out
+          ${isMobileMenuOpen ? "rounded-3xl bg-[#0a0a0a] border-white/20" : "rounded-full"}
+          ${isScrolled && !isMobileMenuOpen ? "bg-[#0a0a0a]/90" : "bg-[#0a0a0a]/80 lg:bg-black/40"}
         `}
       >
-        {/* MOBILE: Active Section Pill */}
+        {/* === MOBILE/TABLET VIEW: Active Section Pill (Tap to Expand) === */}
+        {/* Changed from md:hidden to lg:hidden so Tablets also get this clean view instead of a squashed list */}
         <div 
-          className="md:hidden w-full flex items-center justify-between gap-3 cursor-pointer min-w-[120px]" 
+          className="lg:hidden w-full flex items-center justify-between gap-4 cursor-pointer min-w-[160px]" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span className="text-sm font-bold text-white tracking-wide mx-auto">
@@ -64,10 +68,10 @@ const Navigation = () => {
           {isMobileMenuOpen ? <ChevronUp className="w-4 h-4 text-white/70" /> : <ChevronDown className="w-4 h-4 text-white/70" />}
         </div>
 
-        {/* MOBILE: Expanded Menu */}
+        {/* === MOBILE/TABLET MENU: Expanded List === */}
         <div className={`
-            md:hidden flex-col gap-1 mt-3 w-full text-center overflow-hidden transition-all duration-300 ease-in-out
-            ${isMobileMenuOpen ? "max-h-[400px] opacity-100 flex pb-2" : "max-h-0 opacity-0 hidden"}
+            lg:hidden flex-col gap-1 w-full text-center overflow-hidden transition-all duration-300 ease-in-out
+            ${isMobileMenuOpen ? "max-h-[500px] opacity-100 flex mt-4 pb-2" : "max-h-0 opacity-0 hidden mt-0"}
         `}>
           <div className="w-full h-px bg-white/10 mb-2" />
           {navItems.map((item) => (
@@ -76,8 +80,10 @@ const Navigation = () => {
               href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className={`
-                text-xs py-2 px-4 rounded-lg transition-colors block
-                ${activeSection === item.label ? "text-white bg-white/10 font-bold" : "text-white/60 hover:text-white"}
+                text-sm py-2.5 px-6 rounded-xl transition-all duration-200 block
+                ${activeSection === item.label 
+                  ? "text-white bg-white/10 font-bold border border-white/5" 
+                  : "text-white/60 hover:text-white hover:bg-white/5"}
               `}
             >
               {item.label}
@@ -85,17 +91,18 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* DESKTOP: Full Menu */}
-        <ul className="hidden md:flex items-center gap-1">
+        {/* === DESKTOP VIEW: Full Horizontal List (Only on Large Screens) === */}
+        {/* Hidden on lg and below to prevent overlapping/squashing */}
+        <ul className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
                 className={`
-                  px-4 py-2 text-xs font-medium rounded-full transition-all duration-300
+                  px-5 py-2 text-xs font-medium rounded-full transition-all duration-300
                   ${activeSection === item.label 
-                    ? "text-white bg-white/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]" 
-                    : "text-white/70 hover:text-white hover:bg-white/5"}
+                    ? "text-white bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10" 
+                    : "text-white/70 hover:text-white hover:bg-white/5 border border-transparent"}
                 `}
               >
                 {item.label}
