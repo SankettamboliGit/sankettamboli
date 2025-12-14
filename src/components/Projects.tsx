@@ -87,9 +87,9 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="projects" className="py-20 md:py-32 px-4 md:px-6 bg-[#030303] relative overflow-hidden">
+    <section id="projects" className="py-24 px-6 bg-[#030303] relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12 animate-fade-up">
+        <div className="text-center mb-16 animate-fade-up">
           {/* REMOVED BADGE HERE */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
             Projects
@@ -131,13 +131,13 @@ const Projects = () => {
 
               {/* Card Content */}
               <div className="p-6 md:p-8 relative -mt-12">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors leading-tight">
                     {project.title}
                   </h3>
                   <ArrowUpRight className="w-5 h-5 text-white/30 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </div>
-                <p className="text-white/60 text-xs md:text-sm line-clamp-2 mb-4 leading-relaxed">
+                <p className="text-white/60 text-sm line-clamp-2 mb-6 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -186,7 +186,7 @@ const Projects = () => {
                       <Target className="w-4 h-4" />
                       <h5 className="font-bold text-xs uppercase tracking-wide">The Challenge</h5>
                     </div>
-                    <p className="text-white/70 leading-relaxed text-xs md:text-sm">
+                    <p className="text-white/70 leading-relaxed text-sm">
                       {selectedProject.caseStudy.problem}
                     </p>
                   </div>
@@ -195,7 +195,7 @@ const Projects = () => {
                       <Lightbulb className="w-4 h-4" />
                       <h5 className="font-bold text-xs uppercase tracking-wide">The Solution</h5>
                     </div>
-                    <p className="text-white/70 leading-relaxed text-xs md:text-sm">
+                    <p className="text-white/70 leading-relaxed text-sm">
                       {selectedProject.caseStudy.solution}
                     </p>
                   </div>
@@ -211,7 +211,7 @@ const Projects = () => {
                         <div className="mt-1 p-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500/20 transition-colors">
                            <CheckCircle2 className="w-3 h-3" />
                         </div>
-                        <span className="text-white/80 leading-relaxed text-xs md:text-sm">{step}</span>
+                        <span className="text-white/80 leading-relaxed text-sm">{step}</span>
                       </li>
                     ))}
                   </ul>
@@ -222,7 +222,7 @@ const Projects = () => {
                     <Trophy className="w-4 h-4" />
                     <h5 className="font-bold uppercase tracking-wider text-xs">The Outcome</h5>
                   </div>
-                  <p className="text-white text-sm md:text-base font-medium leading-relaxed">
+                  <p className="text-white text-base font-medium leading-relaxed">
                     {selectedProject.caseStudy.outcome}
                   </p>
                 </div>
