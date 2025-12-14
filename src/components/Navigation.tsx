@@ -1,41 +1,103 @@
 import { useState, useEffect } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },      // Moved up to match page order
-  { label: "Competency Matrix", href: "#skills" },   // Renamed from "Skills"
-  { label: "Product Strategy", href: "#services" },  // Renamed from "Methodology"
-  { label: "Projects", href: "#projects" },          // Renamed from "Work"
+  { label: "Experience", href: "#experience" },
+  { label: "Competency Matrix", href: "#skills" },
+  { label: "Product Strategy", href: "#services" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("Home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Scroll Spy: Detect active section
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const navItem = navItems.find(item => item.href === `#${id}`);
+            if (navItem) setActiveSection(navItem.label);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+
+    navItems.forEach((item) => {
+      const element = document.querySelector(item.href);
+      if (element) observer.observe(element);
+    });
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
-    <nav
-      className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] md:w-auto max-w-5xl`}
-    >
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw]">
       <div
         className={`
-          flex items-center justify-center px-3 py-2 md:px-6 md:py-3 rounded-[1.5rem] md:rounded-full 
+          relative flex flex-col items-center px-6 py-3 rounded-full 
           backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-500
-          ${isScrolled ? "bg-black/90" : "bg-black/60 md:bg-black/30"}
+          ${isScrolled || isMobileMenuOpen ? "bg-black/90" : "bg-black/60 md:bg-black/30"}
         `}
       >
-        <ul className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-1 gap-y-1 md:gap-1">
+        {/* MOBILE: Active Section Pill (Tap to Expand) */}
+        <div 
+          className="md:hidden w-full flex items-center justify-between gap-3 cursor-pointer min-w-[140px]" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span className="text-sm font-bold text-white tracking-wide mx-auto">
+            {activeSection}
+          </span>
+          {isMobileMenuOpen ? <ChevronUp className="w-4 h-4 text-white/70" /> : <ChevronDown className="w-4 h-4 text-white/70" />}
+        </div>
+
+        {/* MOBILE: Dropdown Menu */}
+        <div className={`
+            md:hidden flex-col gap-1 mt-3 w-full text-center overflow-hidden transition-all duration-300 ease-in-out
+            ${isMobileMenuOpen ? "max-h-[400px] opacity-100 flex pb-2" : "max-h-0 opacity-0 hidden"}
+        `}>
+          <div className="w-full h-px bg-white/10 mb-2" />
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`
+                text-xs py-2 px-4 rounded-lg transition-colors block
+                ${activeSection === item.label ? "text-white bg-white/10 font-bold" : "text-white/60 hover:text-white"}
+              `}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+
+        {/* DESKTOP: Full Horizontal List */}
+        <ul className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className="px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 block whitespace-nowrap"
+                className={`
+                  px-4 py-2 text-xs font-medium rounded-full transition-all duration-300
+                  ${activeSection === item.label 
+                    ? "text-white bg-white/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]" 
+                    : "text-white/70 hover:text-white hover:bg-white/5"}
+                `}
               >
                 {item.label}
               </a>
