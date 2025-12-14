@@ -36,21 +36,23 @@ const Experience = () => {
     <section id="experience" className="py-20 md:py-32 px-4 md:px-6 bg-[#030303] relative">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Journey</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            Experience
+          </h2>
           <p className="text-white/50 text-base md:text-lg">9+ years of operational leadership.</p>
         </div>
 
         <div className="relative space-y-8 md:space-y-12">
-          {/* Vertical Line - Left on mobile, Center on desktop */}
+          {/* Vertical Line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2" />
 
           {experiences.map((exp, index) => (
             <div key={index} className={`relative flex flex-col md:flex-row gap-6 md:gap-10 ${index % 2 === 0 ? "md:flex-row-reverse" : ""} animate-fade-up stagger-${index + 1}`}>
               
-              {/* Dot - Aligned to line */}
+              {/* Dot */}
               <div className={`absolute left-[13px] md:left-1/2 w-3 h-3 rounded-full bg-[#030303] border-[2px] ${exp.color} md:-translate-x-1/2 mt-6 z-10`} />
 
-              {/* Content Card - Less padding left on mobile */}
+              {/* Content Card */}
               <div className="w-full md:w-[calc(50%-2.5rem)] pl-10 md:pl-0">
                 <div className="group relative bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-md active:scale-95 transition-all">
                   <div className="flex justify-between items-start mb-3">
