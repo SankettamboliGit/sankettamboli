@@ -15,63 +15,61 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight animate-fade-up">
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight animate-fade-up">
           Ready to optimize?
         </h2>
-        <p className="text-white/50 text-base mb-16 max-w-2xl mx-auto font-light animate-fade-up stagger-1">
+        <p className="text-white/50 text-base md:text-lg mb-12 max-w-xl mx-auto font-light">
           Open to Product Operations and Product Management roles.
         </p>
 
-        {/* WIDE GRID: Forces landscape rectangles */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16 animate-fade-up stagger-2">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-16 animate-fade-up stagger-2 max-w-6xl mx-auto">
           
-          {/* 1. Email Card - Wide & No Wrap */}
+          {/* Email Card */}
           <button 
             onClick={handleCopy}
-            className="group flex flex-col items-center justify-center py-10 px-4 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 w-full"
+            className="group flex flex-col items-center justify-center py-8 px-4 bg-white/5 border border-white/10 rounded-3xl active:scale-95 transition-all w-full"
           >
-            <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-white/5 shadow-inner">
+            <div className="p-3 bg-white/5 rounded-2xl mb-4 border border-white/5">
               {copied ? <Check className="w-6 h-6 text-green-400" /> : <Mail className="w-6 h-6 text-purple-300" />}
             </div>
             
-            {/* whitespace-nowrap ensures it NEVER wraps */}
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 font-medium text-lg mb-2 whitespace-nowrap overflow-visible">
+            {/* Mobile: text-xs to fit email, Desktop: text-lg */}
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 font-medium text-xs md:text-lg mb-1 break-all md:whitespace-nowrap px-2">
               {email}
             </p>
-            <p className="text-purple-400/60 text-[10px] uppercase tracking-widest font-bold group-hover:text-purple-300 transition-colors">Click to Copy</p>
+            <p className="text-purple-400/60 text-[10px] uppercase tracking-widest font-bold">Copy Email</p>
           </button>
 
-          {/* 2. LinkedIn Card */}
+          {/* LinkedIn Card */}
           <a 
             href="https://linkedin.com/in/sanket-tamboli"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center justify-center py-10 px-4 bg-blue-600/5 border border-blue-500/10 rounded-3xl hover:bg-blue-500/10 hover:border-blue-500/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 w-full"
+            className="group flex flex-col items-center justify-center py-8 px-4 bg-blue-600/5 border border-blue-500/10 rounded-3xl active:scale-95 transition-all w-full"
           >
-            <div className="p-3 bg-blue-500/10 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-blue-500/10 shadow-inner">
+            <div className="p-3 bg-blue-500/10 rounded-2xl mb-4 border border-blue-500/10">
               <Linkedin className="w-6 h-6 text-blue-400" />
             </div>
-            
-            <div className="flex items-center gap-2 mb-2">
-              <p className="text-blue-100 font-medium text-lg whitespace-nowrap">LinkedIn Profile</p>
-              <ArrowUpRight className="w-4 h-4 text-blue-400 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <div className="flex items-center gap-2 mb-1">
+              <p className="text-blue-100 font-medium text-base md:text-lg">LinkedIn Profile</p>
+              <ArrowUpRight className="w-4 h-4 text-blue-400 opacity-50" />
             </div>
-            <p className="text-blue-400/60 text-[10px] uppercase tracking-widest font-bold group-hover:text-blue-300 transition-colors">Connect</p>
+            <p className="text-blue-400/60 text-[10px] uppercase tracking-widest font-bold">Connect</p>
           </a>
 
-          {/* 3. Phone Card */}
+          {/* Phone Card */}
           <a 
             href="tel:+919998271731"
-            className="group flex flex-col items-center justify-center py-10 px-4 bg-green-500/5 border border-green-500/10 rounded-3xl hover:bg-green-500/10 hover:border-green-500/20 transition-all backdrop-blur-xl hover:shadow-2xl hover:-translate-y-1 w-full"
+            className="group flex flex-col items-center justify-center py-8 px-4 bg-green-500/5 border border-green-500/10 rounded-3xl active:scale-95 transition-all w-full"
           >
-            <div className="p-3 bg-green-500/10 rounded-2xl group-hover:scale-110 transition-transform mb-4 border border-green-500/10 shadow-inner">
+            <div className="p-3 bg-green-500/10 rounded-2xl mb-4 border border-green-500/10">
               <Phone className="w-6 h-6 text-green-400" />
             </div>
-            
-            <p className="text-green-50 font-medium text-lg mb-2 tracking-wide whitespace-nowrap">{phone}</p>
-            <p className="text-green-400/60 text-[10px] uppercase tracking-widest font-bold group-hover:text-green-300 transition-colors">Call Me</p>
+            <p className="text-green-50 font-medium text-base md:text-lg mb-1 tracking-wide">{phone}</p>
+            <p className="text-green-400/60 text-[10px] uppercase tracking-widest font-bold">Call Me</p>
           </a>
 
         </div>
