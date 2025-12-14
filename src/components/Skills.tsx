@@ -15,7 +15,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
-// --- Visuals ---
+// ... (Visual Components remain the same: StrategyVisual, TechVisual, etc. - keeping code concise) ...
+// Assuming Visuals are defined here or imported.
+
+// --- Visual Components (Included for completeness) ---
 const StrategyVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-purple-500/5 to-transparent">
     <div className="p-3 rounded-full bg-purple-500/10 shadow-[0_0_30px_rgba(168,85,247,0.2)] border border-purple-500/20">
@@ -64,10 +67,10 @@ const skillCategories = [
     visual: <StrategyVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Strategy without execution is hallucination. I focus on 'Viable' over 'Visionary'.",
+      philosophy: "Strategy without execution is hallucination.",
       frameworks: [
-        { name: "Opportunity Tree", desc: "Mapping outcomes to opportunities (Teresa Torres method)." },
-        { name: "RICE Scoring", desc: "Quantifying prioritization to remove HIPPO bias." }
+        { name: "Opportunity Tree", desc: "Mapping outcomes." },
+        { name: "RICE Scoring", desc: "Quantifying priority." }
       ],
       insight: "I use these frameworks to defend 'No' as much as to justify 'Yes'.",
       masteryLevel: 95,
@@ -83,12 +86,12 @@ const skillCategories = [
     visual: <TechVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Know enough to challenge estimates, but respect the engineers' craft.",
+      philosophy: "Know enough to challenge estimates.",
       frameworks: [
-        { name: "Rapid Prototyping", desc: "Building 'throwaway' MVPs to test logic." },
-        { name: "Prompt Eng.", desc: "Structuring LLM context for consistent outputs." }
+        { name: "Rapid Prototyping", desc: "Throwaway MVPs." },
+        { name: "Prompt Eng.", desc: "LLM Context." }
       ],
-      insight: "My ability to read code means I don't need a translator to talk to dev teams.",
+      insight: "My ability to read code means I don't need a translator.",
       masteryLevel: 75,
       tools: ["VS Code", "Lovable"]
     }
@@ -102,12 +105,12 @@ const skillCategories = [
     visual: <OpsVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Good ops makes the right thing the easy thing to do.",
+      philosophy: "Good ops makes the right thing easy.",
       frameworks: [
-        { name: "Six Sigma", desc: "Systematically removing waste (Muda) from the cycle." },
-        { name: "SLA Definition", desc: "Setting clear delivery expectations upfront." }
+        { name: "Six Sigma", desc: "Removing waste." },
+        { name: "SLA Definition", desc: "Clear expectations." }
       ],
-      insight: "Process should be a guardrail, not a gate. I build flows that speed teams up.",
+      insight: "Process should be a guardrail, not a gate.",
       masteryLevel: 90,
       tools: ["Linear", "Excel"]
     }
@@ -123,10 +126,10 @@ const skillCategories = [
     details: {
       philosophy: "Data aims the gun; intuition pulls the trigger.",
       frameworks: [
-        { name: "North Star", desc: "Aligning all teams to a single value indicator." },
-        { name: "Funnel Ops", desc: "Identifying and fixing drop-offs in the user journey." }
+        { name: "North Star", desc: "Key Value Indicator." },
+        { name: "Funnel Ops", desc: "Fixing drop-offs." }
       ],
-      insight: "I focus on leading indicators (usage) rather than lagging ones (revenue).",
+      insight: "Focus on leading indicators over lagging ones.",
       masteryLevel: 80,
       tools: ["Mixpanel", "Tableau"]
     }
@@ -140,12 +143,12 @@ const skillCategories = [
     role: "The Empathy",
     className: "md:col-span-2",
     details: {
-      philosophy: "I fight for the user's perspective in every technical discussion.",
+      philosophy: "I fight for the user's perspective.",
       frameworks: [
-        { name: "Jobs to be Done", desc: "Focusing on the user's intent, not just demographics." },
-        { name: "Heuristic Eval", desc: "Auditing usability against standard principles." }
+        { name: "Jobs to be Done", desc: "Focusing on intent." },
+        { name: "Heuristic Eval", desc: "Auditing usability." }
       ],
-      insight: "A pretty UI that solves the wrong problem is still a failure.",
+      insight: "A pretty UI that solves the wrong problem is a failure.",
       masteryLevel: 85,
       tools: ["Figma", "Maze"]
     }
@@ -162,10 +165,10 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-up">
           <Badge variant="outline" className="mb-3 border-white/20 text-white/70 backdrop-blur-md px-3 py-0.5 text-[10px] uppercase tracking-widest">
-            Competency Matrix
+            Skills
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            The T-Shaped Skillset
+            Competency Matrix
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
             Deep operational expertise combined with broad technical strategy.
