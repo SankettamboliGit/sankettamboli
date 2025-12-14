@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, Copy, Check, Linkedin, ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
-import { Badge } from "@/components/ui/badge";
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
@@ -19,9 +18,7 @@ const Contact = () => {
     <section id="contact" className="py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="mb-8 animate-fade-up">
-          <Badge variant="outline" className="mb-3 border-white/20 text-white/70 backdrop-blur-md px-3 py-0.5 text-[10px] uppercase tracking-widest">
-            Get in touch
-          </Badge>
+          {/* BADGE REMOVED */}
           <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
             Contact
           </h2>
