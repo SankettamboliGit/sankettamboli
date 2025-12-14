@@ -9,9 +9,7 @@ const About = () => {
           
           {/* Text Content */}
           <div className="space-y-6 md:space-y-8 animate-fade-up">
-            <Badge variant="outline" className="mb-2 border-white/20 text-white/70 backdrop-blur-md px-3 py-0.5 text-[10px] uppercase tracking-widest">
-              Philosophy
-            </Badge>
+            {/* BADGE REMOVED */}
             <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
               About
             </h2>
