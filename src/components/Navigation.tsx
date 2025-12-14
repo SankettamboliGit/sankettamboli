@@ -5,7 +5,7 @@ const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Methodologies", href: "#skills" }, // Renamed from Matrix
+  { label: "Methodologies", href: "#skills" },
   { label: "Strategies", href: "#services" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
@@ -16,7 +16,6 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Scroll Spy Logic
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     
@@ -55,12 +54,12 @@ const Navigation = () => {
           ${isScrolled && !isMobileMenuOpen ? "bg-[#0a0a0a]/90" : "bg-[#0a0a0a]/80 lg:bg-black/40"}
         `}
       >
-        {/* MOBILE/TABLET VIEW: Active Section Pill */}
+        {/* MOBILE/TABLET VIEW: Active Section Pill (Centered) */}
         <div 
-          className="lg:hidden w-full flex items-center justify-between gap-4 cursor-pointer min-w-[160px]" 
+          className="lg:hidden w-full flex items-center justify-center gap-2 cursor-pointer min-w-[140px]" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <span className="text-sm font-bold text-white tracking-wide mx-auto">
+          <span className="text-sm font-bold text-white tracking-wide">
             {activeSection}
           </span>
           {isMobileMenuOpen ? <ChevronUp className="w-4 h-4 text-white/70" /> : <ChevronDown className="w-4 h-4 text-white/70" />}
@@ -89,8 +88,8 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* DESKTOP VIEW: Full Horizontal List */}
-        <ul className="hidden lg:flex items-center gap-1">
+        {/* DESKTOP VIEW: Full Horizontal List (Centered) */}
+        <ul className="hidden lg:flex items-center justify-center gap-1">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
