@@ -141,7 +141,7 @@ const Skills = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-up">
-          {/* TITLE CHANGED HERE */}
+          {/* BADGE REMOVED */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
             Methodologies
           </h2>
