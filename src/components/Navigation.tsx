@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Product Strategy", href: "#services" },
-  { label: "Projects", href: "#projects" }, // Renamed from Work
-  { label: "Experience", href: "#experience" },
+  { label: "Experience", href: "#experience" },      // Moved up to match page order
+  { label: "Competency Matrix", href: "#skills" },   // Renamed from "Skills"
+  { label: "Product Strategy", href: "#services" },  // Renamed from "Methodology"
+  { label: "Projects", href: "#projects" },          // Renamed from "Work"
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,7 +35,7 @@ const Navigation = () => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 block"
+                className="px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 block whitespace-nowrap"
               >
                 {item.label}
               </a>
