@@ -90,6 +90,7 @@ const Projects = () => {
     <section id="projects" className="py-20 md:py-32 px-4 md:px-6 bg-[#030303] relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-up">
+          {/* REMOVED BADGE HERE */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
             Projects
           </h2>
