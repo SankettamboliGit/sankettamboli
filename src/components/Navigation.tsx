@@ -17,6 +17,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
+  // Scroll Spy Logic
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     
@@ -52,9 +53,11 @@ const Navigation = () => {
         setIsMobileMenuOpen(false);
       }
     };
+
     if (isMobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -71,7 +74,7 @@ const Navigation = () => {
           backdrop-blur-xl border border-white/10 shadow-2xl 
           transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
           bg-[#0a0a0a]/90
-          rounded-[2rem] /* Fixed radius: Looks like a pill when closed, card when open */
+          rounded-[2rem] /* FIXED: Constant shape prevents jitter */
         `}
       >
         {/* MOBILE/TABLET VIEW: Active Section Pill (Centered) */}
@@ -83,7 +86,7 @@ const Navigation = () => {
             {activeSection}
           </span>
           <ChevronDown 
-            className={`w-4 h-4 text-white/70 transition-transform duration-300 ${isMobileMenuOpen ? "rotate-180" : ""}`} 
+            className={`w-4 h-4 text-white/70 transition-transform duration-500 ${isMobileMenuOpen ? "rotate-180" : ""}`} 
           />
         </div>
 
