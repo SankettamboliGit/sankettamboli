@@ -143,7 +143,7 @@ const Skills = () => {
         <div className="text-center mb-16 animate-fade-up">
           {/* TITLE CHANGED HERE */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Matrix
+            Methodologies
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base md:text-lg">
             Deep operational expertise combined with broad technical strategy.
