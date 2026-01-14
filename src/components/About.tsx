@@ -12,15 +12,18 @@ const About = () => {
               About
             </h2>
             <h3 className="text-xl md:text-3xl text-white/80 font-medium leading-tight">
-              Building systems that work <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">for people</span>.
+              From Operations to <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Product Ownership</span>.
             </h3>
             <div className="space-y-4 text-base md:text-lg text-white/50 font-light leading-relaxed max-w-xl">
               <p>
-                I am an <strong className="text-white">Operations & Product Professional</strong> with 9 years of experience. My career has been defined by one core obsession: <em>Efficiency without losing Empathy.</em>
+                I spent 9 years in <strong className="text-white">US and India staffing operations</strong>, leading teams, managing multi-stakeholder delivery, and owning internal SaaS platforms. Along the way, I realized I was already doing the work of a Product Manager—gathering requirements, designing processes, measuring outcomes, and continuously improving systems.
               </p>
               <p>
-                Whether optimizing high-volume recruitment pipelines or configuring complex SaaS workflows, I bridge the gap between human needs and technical execution.
+                Now, I'm formally transitioning into <strong className="text-white">Product Manager and Product Owner</strong> roles, bringing a unique blend of operational rigor, user-first thinking, and data-backed decision-making. I'm particularly interested in <em>Product Operations, Internal Tools, and B2B/SaaS platforms</em>.
+              </p>
+              <p>
+                My certifications in <strong className="text-white">AI Product Management, Lean Six Sigma, and Scrum</strong> complement my hands-on experience. I don't just understand frameworks—I've applied them under real constraints with real teams.
               </p>
             </div>
           </div>
@@ -32,7 +35,7 @@ const About = () => {
               <div className="flex justify-between items-start mb-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white">Sanket Tamboli</h3>
-                  <p className="text-white/60">Product Operations Manager</p>
+                  <p className="text-white/60">Aspiring Product Manager / Owner</p>
                 </div>
                 <Globe className="w-6 h-6 text-white/40" />
               </div>

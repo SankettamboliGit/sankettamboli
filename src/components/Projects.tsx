@@ -13,72 +13,72 @@ import { Badge } from "@/components/ui/badge";
 const projects = [
   {
     title: "AI-First Web Portfolio",
-    category: "Product Engineering",
+    category: "Rapid Prototyping",
     period: "2025",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop", 
-    description: "Designed and deployed a fully responsive web application in under 48 hours using Generative AI.",
-    tags: ["React", "Generative AI", "Rapid Prototyping"],
+    description: "Designed and deployed this fully responsive portfolio in under 48 hours using AI-assisted development tools, demonstrating my ability to move from idea to working product without traditional development cycles.",
+    tags: ["Lovable", "AI Tools", "Rapid Execution"],
     caseStudy: {
-      problem: "Traditional development cycles create a lag between 'Product Vision' and 'Technical Execution'.",
-      solution: "Leveraged Lovable.dev and natural language prompting to bypass manual coding.",
-      process: ["Rapid Prototyping", "Iterative Design", "Tech Stack: React/Vite"],
-      outcome: "Bridge the gap between user needs and technical execution without writing manual syntax."
+      problem: "Traditional development creates a lag between product vision and technical execution. As a PM candidate, I needed to demonstrate both product thinking and the ability to ship.",
+      solution: "Used Lovable.dev and natural language prompting to build a production-ready portfolio. Owned the entire process: information architecture, content strategy, and iterative refinement.",
+      process: ["Problem Definition: What should my portfolio communicate?", "Information Architecture: Sections, flow, and hierarchy", "Iterative Development: Prompt, review, refine across 50+ iterations"],
+      outcome: "A working product that showcases PM skills (systems thinking, prioritization, user focus) while demonstrating technical fluency and execution speed."
     }
   },
   {
-    title: "SaaS Platform Optimization",
+    title: "Internal ATS Platform Ownership",
     category: "Product Operations",
     period: "2021 – Present",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop",
-    description: "Owned the maintenance and configuration of internal ATS, optimizing it through user feedback loops.",
-    tags: ["SaaS Operations", "User Feedback", "Data Integrity"],
+    description: "Owned end-to-end maintenance and configuration of internal SaaS platform (ATS). Ran user feedback loops, defined custom metrics, and shipped workflow improvements that directly impacted team output.",
+    tags: ["Platform Ownership", "User Feedback", "Configuration"],
     caseStudy: {
-      problem: "Operational bottlenecks and data inconsistencies were hindering strategic decisions.",
-      solution: "Owned the end-to-end maintenance and configuration of the internal SaaS platform (ATS).",
-      process: ["User Feedback Loops", "Custom Metrics", "Data Audit"],
-      outcome: "Delivered actionable insights to leadership and ensured a reliable data environment."
+      problem: "Operational bottlenecks and data inconsistencies were hindering strategic decisions. Users (recruiters) had workarounds that bypassed the system.",
+      solution: "Took ownership of platform configuration, established feedback mechanisms, and defined metrics that aligned user behavior with business goals.",
+      process: ["User Feedback Collection: Regular check-ins with recruiters", "Data Audit: Identified and fixed inconsistencies", "Configuration Changes: Shipped workflow improvements"],
+      outcome: "Delivered reliable data environment and actionable insights to leadership. Reduced workarounds by making the system work for users, not against them."
     }
   },
   {
-    title: "Revenue Intelligence Dashboard",
-    category: "Data Product",
+    title: "Revenue Intelligence Dashboards",
+    category: "Data & Analytics",
     period: "2022 – Present",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-    description: "Built dynamic revenue reports and growth projections to visualize financial trends.",
-    tags: ["Business Intelligence", "Revenue Ops", "Data Visualization"],
+    description: "Built revenue reports and growth projection dashboards that identified leakages and informed strategic corrections at leadership level.",
+    tags: ["Dashboards", "Revenue Ops", "Business Intelligence"],
     caseStudy: {
-      problem: "Stakeholders lacked visibility into real-time financial trends, leading to undetected revenue leakages.",
-      solution: "Designed and deployed a suite of dynamic revenue reports and growth projection matrices.",
-      process: ["Leakage Identification", "Visualization Dashboards", "Strategic Growth Roadmap"],
-      outcome: "Enabled stakeholders to clearly identify revenue leakages and take corrective actions."
+      problem: "Stakeholders lacked visibility into real-time financial trends. Revenue leakages went undetected until end-of-quarter reviews.",
+      solution: "Designed and deployed dynamic revenue reports with clear visualizations. Created growth projection matrices that enabled proactive decision-making.",
+      process: ["Leakage Identification: Where is money falling through?", "Dashboard Design: What do stakeholders need to see?", "Strategic Alignment: How do metrics tie to business goals?"],
+      outcome: "Enabled leadership to identify revenue leakages in real-time and take corrective actions before they compounded."
     }
   },
   {
-    title: "Gamification Strategy",
+    title: "Team Gamification & Retention",
     category: "Product Strategy",
     period: "2021 – Present",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-    description: "Developed incentive plans and retention roadmaps to gamify performance and reduce attrition.",
+    description: "Designed and implemented gamification strategies including incentive plans and retention roadmaps to reduce attrition and drive performance.",
     tags: ["Gamification", "Behavioral Design", "Retention"],
     caseStudy: {
-      problem: "High attrition rates were affecting the team's ability to meet monthly output targets.",
-      solution: "Designed and implemented a comprehensive 'Gamification' strategy involving incentive plans.",
-      process: ["Retention Roadmaps", "Performance Improvement Plans", "Capacity Planning"],
-      outcome: "Significantly reduced attrition and drove higher monthly outputs."
+      problem: "High attrition rates were affecting team stability and monthly output targets. Traditional incentives weren't moving the needle.",
+      solution: "Designed a comprehensive gamification strategy with clear reward structures, performance improvement plans, and capacity planning to match workload to team size.",
+      process: ["Behavioral Analysis: Why are people leaving?", "Incentive Design: What motivates this team?", "Implementation: Roll out and measure"],
+      outcome: "Reduced attrition significantly and drove higher monthly outputs. Created a playbook that could be replicated across teams."
     }
   },
   {
     title: "Talent Pipeline Architecture",
     category: "Supply Chain Ops",
-    period: "2021 – Present",
+    period: "2017 – 2021",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop",
-    description: "Orchestrated the creation of scalable candidate pipelines for niche industry domains.",
-    tags: ["Pipeline Strategy", "Supply Chain", "Market Analysis"],
+    description: "Shifted from reactive sourcing to proactive pipeline building, creating scalable candidate inventories for niche enterprise roles including ServiceNow ecosystem positions.",
+    tags: ["Pipeline Strategy", "Enterprise Ops", "ServiceNow"],
     caseStudy: {
-      problem: "Reactive sourcing methods were leading to long lead times.",
-      solution: "Shifted from 'Just-in-Time' sourcing to a 'Inventory-Based' pipeline strategy.",
-      process: ["Market Analysis", "Pipeline Design", "Cross-Functional Comms"],
-      outcome: "Ensured continuous availability of talent and reduced time-to-fill."
+      problem: "Reactive 'Just-in-Time' sourcing led to long lead times and missed opportunities with Fortune 500 clients.",
+      solution: "Designed an 'Inventory-Based' pipeline strategy—building talent pools before demand rather than scrambling after. Included ServiceNow Developer and QA roles.",
+      process: ["Market Analysis: What roles will be needed?", "Pipeline Design: How do we maintain warm relationships?", "Cross-Functional Comms: Aligning sales, delivery, and sourcing"],
+      outcome: "Reduced time-to-fill and ensured continuous availability of qualified candidates. Gained working familiarity with ITSM and enterprise platform concepts."
     }
   }
 ];

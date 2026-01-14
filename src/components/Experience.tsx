@@ -3,30 +3,30 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    role: "Senior Manager - Ops",
+    role: "Senior Manager - Operations",
     company: "Akshar Staffing",
     period: "2021 – Present",
-    impact: "Reduced Attrition",
-    description: "Owned internal SaaS configuration and gamified team strategies.",
-    tags: ["SaaS Ops", "Gamification"],
+    impact: "Platform Owner",
+    description: "Owned end-to-end configuration of internal ATS platform. Defined KPIs, ran user feedback loops, and shipped workflow improvements that reduced attrition and improved team output. Built revenue dashboards and gamification systems to drive performance.",
+    tags: ["Product Ops", "SaaS Config", "Data-Driven"],
     color: "border-purple-500"
   },
   {
-    role: "Lead Recruitment Exec",
+    role: "Lead Recruitment Executive",
     company: "Diverse Lynx",
     period: "2021",
-    impact: "Optimized Time-to-Fill",
-    description: "Executed multi-channel sourcing strategies to optimize quality.",
-    tags: ["Sourcing", "Stakeholder Mgmt"],
+    impact: "Process Optimization",
+    description: "Managed complex operational pipelines across multiple stakeholders. Executed multi-channel sourcing strategies, reduced time-to-fill, and ensured delivery under tight constraints—functioning as a connector between clients, vendors, and internal teams.",
+    tags: ["Stakeholder Mgmt", "Delivery Ops"],
     color: "border-blue-500"
   },
   {
     role: "Talent Acquisition Lead",
     company: "Rang Technologies",
     period: "2017 – 2021",
-    impact: "Fortune 500 Clients",
-    description: "Built robust talent pipelines to efficiently match candidates.",
-    tags: ["Pipeline", "Negotiation"],
+    impact: "Fortune 500 Delivery",
+    description: "Built scalable talent pipelines for enterprise clients including ServiceNow ecosystem roles. This gave me working familiarity with ITSM concepts, enterprise workflows, and platform-driven product thinking. Negotiated offers and managed candidate lifecycle end-to-end.",
+    tags: ["Enterprise Ops", "ServiceNow Exposure", "Negotiation"],
     color: "border-green-500"
   },
 ];
@@ -39,7 +39,7 @@ const Experience = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Experience
           </h2>
-          <p className="text-white/50 text-base md:text-lg">9+ years of operational leadership.</p>
+          <p className="text-white/50 text-base md:text-lg">9+ years owning systems, managing stakeholders, and delivering outcomes under constraints.</p>
         </div>
 
         <div className="relative space-y-10 md:space-y-16">

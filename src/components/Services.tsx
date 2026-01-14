@@ -85,80 +85,80 @@ const AIVisual = () => (
 const services = [
   {
     icon: Compass,
-    title: "Discovery Workshops",
-    description: "Facilitated sessions to uncover user pain points and align stakeholders.",
+    title: "Discovery & Requirements",
+    description: "Facilitating sessions to uncover user pain points, align stakeholders, and define clear problem statements before jumping to solutions.",
     visual: <DiscoveryVisual />,
     details: {
-      philosophy: "I believe the best products start with a shared understanding of the problem, not a list of features.",
-      process: ["Stakeholder Alignment", "Problem Definition (HMW)", "Solution Sketching"],
-      tools: ["Miro", "FigJam", "Zoom"],
-      artifacts: ["User Journey Map", "Problem Statement Canvas", "Low-Fi Concepts"],
+      philosophy: "The best products start with a shared understanding of the problem, not a list of features. I've spent years gathering requirements across complex multi-stakeholder environments.",
+      process: ["Stakeholder Interviews", "Problem Definition (HMW)", "Requirement Documentation"],
+      tools: ["Miro", "FigJam", "Notion"],
+      artifacts: ["User Journey Map", "Problem Statement Canvas", "Requirements Doc"],
       metric: "Reduction in rework due to misaligned requirements."
     }
   },
   {
     icon: Map,
-    title: "Roadmap Planning",
-    description: "Strategic roadmaps balancing business goals, user needs, and feasibility.",
+    title: "Roadmap & Prioritization",
+    description: "Creating outcome-focused roadmaps that balance business goals, user needs, and technical constraints.",
     visual: <RoadmapVisual />,
     details: {
-      philosophy: "A roadmap is not a release plan; it's a strategic communication tool focused on outcomes.",
+      philosophy: "A roadmap is a strategic communication tool, not a release plan. I've built and maintained roadmaps that aligned leadership, teams, and vendors.",
       process: ["Prioritization (RICE/MoSCoW)", "Theme Definition", "Dependency Mapping"],
-      tools: ["Jira", "Linear", "Productboard"],
+      tools: ["Jira", "Linear", "Excel"],
       artifacts: ["Now-Next-Later Roadmap", "Release Plan", "Risk Register"],
-      metric: "% of roadmap items linked to strategic OKRs."
+      metric: "% of roadmap items linked to measurable outcomes."
     }
   },
   {
     icon: Users,
-    title: "User Research",
-    description: "Qualitative and quantitative research to validate assumptions.",
+    title: "User Feedback Loops",
+    description: "Setting up continuous discovery systems to validate assumptions and incorporate user insights into product decisions.",
     visual: <ResearchVisual />,
     details: {
-      philosophy: "Data tells you what is happening; users tell you why. I use both to build conviction.",
-      process: ["Persona Recruitment", "JTBD Interviews", "Affinity Mapping"],
-      tools: ["Dovetail", "Google Forms", "Hotjar"],
-      artifacts: ["User Personas", "Research Insights Report", "Usability Test Recordings"],
-      metric: "Increase in user confidence score pre-build."
+      philosophy: "Data tells you what is happening; users tell you why. I've run feedback loops across recruiters, candidates, and leadership to drive platform improvements.",
+      process: ["User Interviews", "Feedback Collection", "Insight Synthesis"],
+      tools: ["Google Forms", "Hotjar", "Direct Interviews"],
+      artifacts: ["User Insights Report", "Feature Requests Backlog", "Usability Findings"],
+      metric: "Increase in user satisfaction scores post-implementation."
     }
   },
   {
     icon: BarChart3,
-    title: "Data-Driven Strategy",
-    description: "Feature prioritization using metrics and business impact analysis.",
+    title: "Metrics & Reporting",
+    description: "Defining success metrics, building dashboards, and delivering actionable insights to stakeholders.",
     visual: <DataVisual />,
     details: {
-      philosophy: "If you can't measure it, you can't improve it. Every feature needs a success metric before code is written.",
-      process: ["North Star Metric Def.", "Funnel Analysis", "A/B Testing"],
-      tools: ["Mixpanel", "Amplitude", "SQL"],
-      artifacts: ["Measurement Plan", "Dashboard Setup", "Experiment Results"],
-      metric: "Improvement in feature adoption rates."
+      philosophy: "If you can't measure it, you can't improve it. I've built revenue dashboards that identified leakages and informed strategic corrections.",
+      process: ["North Star Metric Definition", "Dashboard Design", "Leakage Identification"],
+      tools: ["Excel", "Tableau", "Google Sheets"],
+      artifacts: ["KPI Dashboard", "Revenue Reports", "Growth Projections"],
+      metric: "Revenue leakages identified and corrected."
     }
   },
   {
     icon: Layers,
-    title: "PRDs & Specs",
-    description: "Clear user stories that bridge business needs and engineering execution.",
+    title: "Process Design & Ops",
+    description: "Designing workflows, defining SLAs, and optimizing operations to reduce friction and improve efficiency.",
     visual: <SpecVisual />,
     details: {
-      philosophy: "Great specs reduce engineering churn. I write for clarity, covering edge cases and error states upfront.",
-      process: ["User Stories (As a...)", "Gherkin Acceptance Criteria", "Edge Case Definitions"],
-      tools: ["Notion", "Confluence", "Jira"],
-      artifacts: ["Product Requirements Doc", "Functional Spec", "QA Checklist"],
-      metric: "Decrease in clarification questions during sprint."
+      philosophy: "Good ops makes the right thing easy. I've designed and implemented processes for teams of 20+ across multiple functions.",
+      process: ["Workflow Mapping", "SLA Definition", "Gamification Design"],
+      tools: ["ATS Platforms", "Excel", "Notion"],
+      artifacts: ["Process Documentation", "SLA Framework", "Incentive Plans"],
+      metric: "Reduction in process cycle time and attrition."
     }
   },
   {
     icon: Lightbulb,
-    title: "AI Product Strategy",
-    description: "Identifying AI/ML opportunities to enhance product value.",
+    title: "ServiceNow Domain Exposure",
+    description: "Working familiarity with ITSM, enterprise workflows, and platform-driven product thinking through recruiting for ServiceNow ecosystem roles.",
     visual: <AIVisual />,
     details: {
-      philosophy: "AI should reduce friction, not just add novelty. I look for tasks where AI provides 'magic' leverage.",
-      process: ["Opportunity Mapping", "Feasibility Check", "Rapid Prototyping"],
-      tools: ["OpenAI API", "V0", "Lovable"],
-      artifacts: ["AI Use Case Canvas", "Prompt Library", "Feasibility Report"],
-      metric: "Time saved per user task via AI automation."
+      philosophy: "Recruiting for ServiceNow Developers and QA professionals gave me hands-on understanding of enterprise workflows, incident/change/service processes, and platform-based products.",
+      process: ["ITSM Concepts", "Enterprise Workflows", "User Roles Understanding"],
+      tools: ["ServiceNow (Domain Knowledge)", "ITSM Frameworks", "Enterprise Platforms"],
+      artifacts: ["Technical Requirements Understanding", "Platform Thinking", "Process-Driven Systems"],
+      metric: "This is domain familiarity, not developer experience—but it informs my product thinking for enterprise tools."
     }
   },
 ];
@@ -176,10 +176,10 @@ const Services = () => {
         <div className="text-center mb-16 animate-fade-up">
           {/* TITLE CHANGED HERE */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Strategies
+            How I Add Value
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-base md:text-lg px-2">
-            How I turn ambiguous problems into shipped solutions.
+            Practical capabilities built through years of owning systems and delivering outcomes.
           </p>
         </div>
 

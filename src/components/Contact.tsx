@@ -18,10 +18,10 @@ const Contact = () => {
     <section id="contact" className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight animate-fade-up">
-          Ready to optimize?
+          Let's Connect
         </h2>
         <p className="text-white/50 text-base mb-12 max-w-xl mx-auto font-light animate-fade-up stagger-1">
-          Open to Product Operations and Product Management roles.
+          Open to Product Manager, Product Owner, and Product Operations roles. Particularly interested in internal tools, B2B platforms, and workflow-heavy enterprise products.
         </p>
 
         {/* VERTICAL STACK: Ensures maximum width for long text */}

@@ -19,7 +19,7 @@ const Hero = () => {
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
             </span>
             <span className="text-[10px] font-medium text-white/90 uppercase tracking-widest">
-              Available for Product Roles
+              Open to PM / PO Roles
             </span>
           </div>
         </div>
@@ -86,14 +86,13 @@ const Hero = () => {
         {/* text-3xl (mobile) / text-5xl (desktop) - Much cleaner */}
         <div className="space-y-5 max-w-3xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-            Transforming Ambiguity into <br />
+            Operations Leader <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-blue-200">
-              Scalable Product Strategy.
+              Transitioning to Product.
             </span>
           </h1>
           <p className="text-base md:text-lg text-white/60 font-light leading-relaxed max-w-xl mx-auto">
-            I bridge the gap between <strong>User Needs</strong> and <strong>Technical Execution</strong>. 
-            A Product Operations Manager specializing in SaaS optimization.
+            9 years building scalable workflows, optimizing internal platforms, and translating business needs into executable systems. Now bringing that execution mindset to <strong>Product Manager</strong> and <strong>Product Owner</strong> roles.
           </p>
         </div>
 
