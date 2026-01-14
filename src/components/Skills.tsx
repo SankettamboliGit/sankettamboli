@@ -52,82 +52,82 @@ const DesignVisual = () => (
 const skillCategories = [
   {
     id: "strategy",
-    title: "Product Strategy",
+    title: "Product & Agile",
     role: "The Brain",
-    description: "Turning ambiguity into clear roadmaps.",
-    tags: ["Discovery", "Roadmapping"],
+    description: "Roadmapping, prioritization, and outcome-focused planning. I translate business goals into actionable backlogs.",
+    tags: ["Roadmapping", "Scrum", "RICE"],
     visual: <StrategyVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Strategy without execution is hallucination.",
-      frameworks: [{ name: "Opportunity Tree", desc: "Outcomes > Features" }, { name: "RICE Scoring", desc: "Prioritization" }],
-      insight: "I use these frameworks to defend 'No' as much as to justify 'Yes'.",
-      masteryLevel: 95,
-      tools: ["Productboard", "Miro"]
-    }
-  },
-  {
-    id: "tech",
-    title: "Tech Literacy",
-    role: "The Hands",
-    description: "Prototyping to validate feasibility.",
-    tags: ["React", "AI Engineering"],
-    visual: <TechVisual />,
-    className: "md:col-span-1",
-    details: {
-      philosophy: "Know enough to challenge estimates.",
-      frameworks: [{ name: "Rapid Prototyping", desc: "Throwaway MVPs" }, { name: "Prompt Eng.", desc: "LLM Context" }],
-      insight: "My ability to read code means I don't need a translator for dev teams.",
-      masteryLevel: 75,
-      tools: ["VS Code", "Lovable"]
+      philosophy: "A roadmap is a hypothesis, not a promise. I prioritize ruthlessly and defend 'No' as much as 'Yes'.",
+      frameworks: [{ name: "Opportunity Solution Tree", desc: "Connecting outcomes to experiments" }, { name: "RICE / MoSCoW", desc: "Data-informed prioritization" }],
+      insight: "My Scrum Master and AI Product Management certifications give me structured frameworks, but 9 years of ops taught me when to adapt them.",
+      masteryLevel: 90,
+      tools: ["Jira", "Linear", "Productboard"]
     }
   },
   {
     id: "ops",
-    title: "Ops Excellence",
+    title: "Operations & Systems",
     role: "The Backbone",
-    description: "Optimizing the build machine.",
-    tags: ["Process Design", "Agile"],
+    description: "Process design, SLA definition, and workflow optimization. I make the right thing easy to do.",
+    tags: ["Six Sigma", "Process Design", "SLAs"],
     visual: <OpsVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Good ops makes the right thing easy.",
-      frameworks: [{ name: "Six Sigma", desc: "Removing waste" }, { name: "SLA Definition", desc: "Clear expectations" }],
-      insight: "Process should be a guardrail, not a gate.",
-      masteryLevel: 90,
-      tools: ["Linear", "Excel"]
+      philosophy: "Good operations are invisible. If people notice the process, it's broken.",
+      frameworks: [{ name: "Lean Six Sigma", desc: "Eliminating waste systematically" }, { name: "Capacity Planning", desc: "Matching resources to demand" }],
+      insight: "My Lean Six Sigma certification complements hands-on experience optimizing recruitment pipelines and internal SaaS platforms.",
+      masteryLevel: 95,
+      tools: ["Excel", "ATS Platforms", "ServiceNow (exposure)"]
     }
   },
   {
     id: "data",
     title: "Data & Analytics",
-    description: "Measuring Impact.",
-    tags: ["SQL Basics", "KPIs"],
+    description: "Defining metrics, building dashboards, and making data-backed decisions. I measure what matters.",
+    tags: ["KPIs", "Dashboards", "SQL Basics"],
     visual: <DataVisual />,
     className: "md:col-span-1",
     role: "The Compass",
     details: {
-      philosophy: "Data aims the gun; intuition pulls the trigger.",
-      frameworks: [{ name: "North Star", desc: "Single value metric" }, { name: "Funnel Ops", desc: "Fixing drop-offs" }],
-      insight: "Focus on leading indicators (usage) over lagging ones (revenue).",
+      philosophy: "If you can't measure it, you can't improve it. Every decision should tie back to a metric.",
+      frameworks: [{ name: "North Star Metric", desc: "Single focus for the team" }, { name: "Funnel Analysis", desc: "Finding and fixing drop-offs" }],
+      insight: "I've built revenue dashboards that identified leakages and informed strategic corrections at leadership level.",
       masteryLevel: 80,
-      tools: ["Mixpanel", "Tableau"]
+      tools: ["Excel", "Tableau", "Google Sheets"]
+    }
+  },
+  {
+    id: "tech",
+    title: "Tools & Platforms",
+    role: "The Hands",
+    description: "Configuring SaaS platforms, rapid prototyping, and understanding technical constraints without being a developer.",
+    tags: ["SaaS Config", "ATS", "AI Tools"],
+    visual: <TechVisual />,
+    className: "md:col-span-1",
+    details: {
+      philosophy: "Know enough to challenge estimates and prototype ideas. I don't need a translator for dev teams.",
+      frameworks: [{ name: "Rapid Prototyping", desc: "Validate before you build" }, { name: "Platform Thinking", desc: "Configuration over custom code" }],
+      insight: "I built this portfolio using AI-assisted tools (Lovable) in under 48 hours—demonstrating my ability to move from idea to working product.",
+      masteryLevel: 75,
+      tools: ["Lovable", "V0", "Figma", "Notion"]
     }
   },
   {
     id: "design",
-    title: "Design & UX",
-    description: "User Centricity.",
-    tags: ["Figma", "User Journey"],
+    title: "Collaboration & Leadership",
+    description: "Aligning stakeholders, running feedback loops, and communicating across functions.",
+    tags: ["Stakeholder Mgmt", "Cross-Functional"],
     visual: <DesignVisual />,
-    role: "The Empathy",
+    role: "The Connector",
     className: "md:col-span-2",
     details: {
-      philosophy: "I fight for the user's perspective.",
-      frameworks: [{ name: "Jobs to be Done", desc: "Intent focus" }, { name: "Heuristic Eval", desc: "Usability audit" }],
-      insight: "A pretty UI that solves the wrong problem is still a failure.",
-      masteryLevel: 85,
-      tools: ["Figma", "Maze"]
+      philosophy: "The best product work happens at the intersection of business, users, and technology. I've spent 9 years navigating that intersection.",
+      frameworks: [{ name: "User Feedback Loops", desc: "Continuous discovery" }, { name: "Stakeholder Mapping", desc: "Knowing who to align and when" }],
+      insight: "From vendors to C-suite, I've managed relationships across the entire value chain—and I bring that connector mindset to product work.",
+      masteryLevel: 90,
+      tools: ["Slack", "Zoom", "Miro"]
     }
   }
 ];
@@ -143,10 +143,10 @@ const Skills = () => {
         <div className="text-center mb-16 animate-fade-up">
           {/* BADGE REMOVED */}
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Methodologies
+            Expertise
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base md:text-lg">
-            Deep operational expertise combined with broad technical strategy.
+            Product-relevant skills built through 9 years of operational leadership.
           </p>
         </div>
 
