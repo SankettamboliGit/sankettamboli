@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { 
-  Brain, Code2, Settings, Database, LayoutTemplate, 
-  Layers, Zap, Users, X, ArrowUpRight, Target
+  Brain, Settings, Database, Users, X, ArrowUpRight, Target, Wrench
 } from "lucide-react";
 import {
   Dialog,
@@ -12,17 +11,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 // --- Visuals ---
-const StrategyVisual = () => (
+const ProductVisual = () => (
   <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-purple-500/5 to-transparent">
     <div className="p-3 rounded-full bg-purple-500/10 shadow-[0_0_30px_rgba(168,85,247,0.2)] border border-purple-500/20">
       <Brain className="w-8 h-8 text-purple-200" />
-    </div>
-  </div>
-);
-const TechVisual = () => (
-  <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-blue-500/5 to-transparent">
-    <div className="p-3 rounded-full bg-blue-500/10 shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-500/20">
-      <Code2 className="w-8 h-8 text-blue-200" />
     </div>
   </div>
 );
@@ -40,10 +32,10 @@ const DataVisual = () => (
     </div>
   </div>
 );
-const DesignVisual = () => (
-  <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-pink-500/5 to-transparent">
-    <div className="p-3 rounded-full bg-pink-500/10 shadow-[0_0_30px_rgba(236,72,153,0.2)] border border-pink-500/20">
-      <LayoutTemplate className="w-8 h-8 text-pink-200" />
+const ToolsVisual = () => (
+  <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-blue-500/5 to-transparent">
+    <div className="p-3 rounded-full bg-blue-500/10 shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-500/20">
+      <Wrench className="w-8 h-8 text-blue-200" />
     </div>
   </div>
 );
@@ -51,33 +43,37 @@ const DesignVisual = () => (
 // --- Data ---
 const skillCategories = [
   {
-    id: "strategy",
-    title: "Product & Agile",
-    role: "The Brain",
-    description: "Roadmapping, prioritization, and outcome-focused planning. I translate business goals into actionable backlogs.",
-    tags: ["Roadmapping", "Scrum", "RICE"],
-    visual: <StrategyVisual />,
+    id: "product",
+    title: "Product & Delivery",
+    description: "Product lifecycle, backlog management, requirement definition, Agile execution, stakeholder alignment.",
+    tags: ["Roadmapping", "Scrum", "RICE", "Backlog"],
+    visual: <ProductVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "A roadmap is a hypothesis, not a promise. I prioritize ruthlessly and defend 'No' as much as 'Yes'.",
-      frameworks: [{ name: "Opportunity Solution Tree", desc: "Connecting outcomes to experiments" }, { name: "RICE / MoSCoW", desc: "Data-informed prioritization" }],
-      insight: "My Scrum Master and AI Product Management certifications give me structured frameworks, but 9 years of ops taught me when to adapt them.",
+      philosophy: "Roadmaps are hypotheses. Prioritize ruthlessly. Defend 'No' as much as 'Yes'.",
+      frameworks: [
+        { name: "RICE / MoSCoW", desc: "Data-informed prioritization" },
+        { name: "Opportunity Solution Tree", desc: "Connecting outcomes to experiments" }
+      ],
+      insight: "Scrum Master and AI Product Management certified. 9 years of ops taught me when to adapt frameworks.",
       masteryLevel: 90,
-      tools: ["Jira", "Linear", "Productboard"]
+      tools: ["Jira", "Linear", "Notion"]
     }
   },
   {
     id: "ops",
     title: "Operations & Systems",
-    role: "The Backbone",
-    description: "Process design, SLA definition, and workflow optimization. I make the right thing easy to do.",
-    tags: ["Six Sigma", "Process Design", "SLAs"],
+    description: "Workflow design, process optimization, platform ownership, KPI tracking, data quality.",
+    tags: ["Six Sigma", "Process Design", "SLAs", "Capacity"],
     visual: <OpsVisual />,
     className: "md:col-span-1",
     details: {
       philosophy: "Good operations are invisible. If people notice the process, it's broken.",
-      frameworks: [{ name: "Lean Six Sigma", desc: "Eliminating waste systematically" }, { name: "Capacity Planning", desc: "Matching resources to demand" }],
-      insight: "My Lean Six Sigma certification complements hands-on experience optimizing recruitment pipelines and internal SaaS platforms.",
+      frameworks: [
+        { name: "Lean Six Sigma", desc: "Eliminating waste systematically" },
+        { name: "Capacity Planning", desc: "Matching resources to demand" }
+      ],
+      insight: "Lean Six Sigma certified. Optimized recruitment pipelines and internal SaaS platforms.",
       masteryLevel: 95,
       tools: ["Excel", "ATS Platforms", "ServiceNow (exposure)"]
     }
@@ -85,105 +81,71 @@ const skillCategories = [
   {
     id: "data",
     title: "Data & Analytics",
-    description: "Defining metrics, building dashboards, and making data-backed decisions. I measure what matters.",
-    tags: ["KPIs", "Dashboards", "SQL Basics"],
+    description: "Defining metrics, building dashboards, funnel analysis, data-informed decisions.",
+    tags: ["KPIs", "Dashboards", "Revenue Ops"],
     visual: <DataVisual />,
     className: "md:col-span-1",
-    role: "The Compass",
     details: {
-      philosophy: "If you can't measure it, you can't improve it. Every decision should tie back to a metric.",
-      frameworks: [{ name: "North Star Metric", desc: "Single focus for the team" }, { name: "Funnel Analysis", desc: "Finding and fixing drop-offs" }],
-      insight: "I've built revenue dashboards that identified leakages and informed strategic corrections at leadership level.",
+      philosophy: "If you can't measure it, you can't improve it. Every decision ties back to a metric.",
+      frameworks: [
+        { name: "North Star Metric", desc: "Single focus for the team" },
+        { name: "Funnel Analysis", desc: "Finding and fixing drop-offs" }
+      ],
+      insight: "Built revenue dashboards that identified leakages and informed strategic corrections.",
       masteryLevel: 80,
-      tools: ["Excel", "Tableau", "Google Sheets"]
+      tools: ["Excel", "Google Sheets", "Tableau"]
     }
   },
   {
-    id: "tech",
+    id: "tools",
     title: "Tools & Platforms",
-    role: "The Hands",
-    description: "Configuring SaaS platforms, rapid prototyping, and understanding technical constraints without being a developer.",
-    tags: ["SaaS Config", "ATS", "AI Tools"],
-    visual: <TechVisual />,
+    description: "ServiceNow (platform exposure), Lovable, Figma, Notion, data and reporting tools.",
+    tags: ["ServiceNow", "Lovable", "Figma", "Notion"],
+    visual: <ToolsVisual />,
     className: "md:col-span-1",
     details: {
-      philosophy: "Know enough to challenge estimates and prototype ideas. I don't need a translator for dev teams.",
-      frameworks: [{ name: "Rapid Prototyping", desc: "Validate before you build" }, { name: "Platform Thinking", desc: "Configuration over custom code" }],
-      insight: "I built this portfolio using AI-assisted tools (Lovable) in under 48 hours—demonstrating my ability to move from idea to working product.",
+      philosophy: "Tools should amplify execution, not create overhead. Choose based on team context.",
+      frameworks: [
+        { name: "No-Code/Low-Code", desc: "Rapid prototyping and deployment" },
+        { name: "ITSM Familiarity", desc: "ServiceNow ecosystem exposure" }
+      ],
+      insight: "Platform familiarity through recruiting for ServiceNow ecosystem—ITSM concepts, enterprise workflows, user roles.",
       masteryLevel: 75,
-      tools: ["Lovable", "V0", "Figma", "Notion"]
+      tools: ["ServiceNow (domain)", "Lovable", "Figma", "Notion"]
     }
   },
-  {
-    id: "design",
-    title: "Collaboration & Leadership",
-    description: "Aligning stakeholders, running feedback loops, and communicating across functions.",
-    tags: ["Stakeholder Mgmt", "Cross-Functional"],
-    visual: <DesignVisual />,
-    role: "The Connector",
-    className: "md:col-span-2",
-    details: {
-      philosophy: "The best product work happens at the intersection of business, users, and technology. I've spent 9 years navigating that intersection.",
-      frameworks: [{ name: "User Feedback Loops", desc: "Continuous discovery" }, { name: "Stakeholder Mapping", desc: "Knowing who to align and when" }],
-      insight: "From vendors to C-suite, I've managed relationships across the entire value chain—and I bring that connector mindset to product work.",
-      masteryLevel: 90,
-      tools: ["Slack", "Zoom", "Miro"]
-    }
-  }
 ];
 
+type SkillCategory = typeof skillCategories[number];
+
 const Skills = () => {
-  const [selectedSkill, setSelectedSkill] = useState<typeof skillCategories[0] | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<SkillCategory | null>(null);
 
   return (
-    <section id="skills" className="py-24 md:py-32 px-6 bg-[#030303] relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="skills" className="py-24 px-6 relative">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
-          {/* BADGE REMOVED */}
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Expertise
-          </h2>
-          <p className="text-white/50 max-w-xl mx-auto text-base md:text-lg">
-            Product-relevant skills built through 9 years of operational leadership.
-          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Expertise</h2>
+          <p className="text-white/50 text-base md:text-lg">Competencies clustered for PM / PO roles.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {skillCategories.map((category) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillCategories.map((skill) => (
             <div
-              key={category.id}
-              onClick={() => setSelectedSkill(category)}
-              className={`
-                group relative overflow-hidden rounded-3xl 
-                bg-white/5 backdrop-blur-xl 
-                border border-white/10 hover:border-white/20
-                transition-all duration-300 cursor-pointer 
-                active:scale-95
-                ${category.className}
-              `}
+              key={skill.id}
+              onClick={() => setSelectedSkill(skill)}
+              className={`group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:border-white/20 transition-all ${skill.className}`}
             >
-              <div className="h-32 w-full relative overflow-hidden border-b border-white/5">
-                 {category.visual}
-              </div>
-
-              <div className="p-6 md:p-8">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
-                    {category.title}
-                  </h3>
-                  <ArrowUpRight className="w-5 h-5 text-white/30" />
+              <div className="h-28 relative">{skill.visual}</div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold text-white">{skill.title}</h3>
+                  <ArrowUpRight className="w-4 h-4 text-white/30 group-hover:text-white/70 transition-colors" />
                 </div>
-                <p className="text-sm text-white/60 leading-relaxed mb-6 line-clamp-2">
-                   {category.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {category.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 rounded-lg text-white/50"
-                    >
+                <p className="text-white/50 text-sm mb-4 leading-relaxed">{skill.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {skill.tags.map((tag) => (
+                    <span key={tag} className="text-[10px] px-3 py-1 rounded-full bg-white/5 text-white/60 border border-white/5">
                       {tag}
                     </span>
                   ))}
@@ -194,52 +156,72 @@ const Skills = () => {
         </div>
       </div>
 
+      {/* Detail Dialog */}
       <Dialog open={!!selectedSkill} onOpenChange={() => setSelectedSkill(null)}>
-        <DialogContent className="max-w-lg w-[95vw] rounded-3xl p-0 border-white/10 bg-black/90 backdrop-blur-3xl text-white [&>button]:hidden">
-          <div className="relative h-32 w-full shrink-0 bg-gradient-to-b from-white/5 to-transparent">
-            {selectedSkill?.visual}
-            <DialogClose className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white">
-              <X className="w-4 h-4" />
-            </DialogClose>
-          </div>
-          <div className="p-6 md:p-8 space-y-6 overflow-y-auto max-h-[60vh]">
-            <div className="flex justify-between items-start">
-               <DialogTitle className="text-xl md:text-2xl font-bold">{selectedSkill?.title}</DialogTitle>
-               <Badge variant="outline" className="border-white/10 text-white/50">{selectedSkill?.role}</Badge>
-            </div>
-            
-            <div className="p-4 rounded-xl bg-white/5 border border-white/5 italic text-white/70 text-sm">
-                "{selectedSkill?.details.philosophy}"
-            </div>
-            
-            <div className="grid gap-3">
-                {selectedSkill?.details.frameworks.map((fw, i) => (
-                  <div key={i} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/5">
-                    <div className="mt-0.5">
-                      <Zap className="w-4 h-4 text-yellow-500" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-white text-sm">{fw.name}</p>
-                      <p className="text-xs text-white/50">{fw.desc}</p>
+        <DialogContent className="bg-[#0a0a0a]/95 backdrop-blur-xl border-white/10 max-w-lg p-0 overflow-hidden">
+          {selectedSkill && (
+            <>
+              <div className="h-32 relative">{selectedSkill.visual}</div>
+              <div className="p-6 space-y-5">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <DialogTitle className="text-xl font-bold text-white">{selectedSkill.title}</DialogTitle>
+                  </div>
+                  <DialogClose className="p-1 rounded-full hover:bg-white/10 transition-colors">
+                    <X className="w-4 h-4 text-white/50" />
+                  </DialogClose>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-xs text-white/40 uppercase tracking-wider font-bold mb-2">Approach</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">{selectedSkill.details.philosophy}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs text-white/40 uppercase tracking-wider font-bold mb-2">Frameworks</h4>
+                    <div className="space-y-2">
+                      {selectedSkill.details.frameworks.map((f) => (
+                        <div key={f.name} className="flex items-start gap-2">
+                          <Target className="w-3 h-3 text-purple-400 mt-1 shrink-0" />
+                          <div>
+                            <span className="text-white/90 text-sm font-medium">{f.name}</span>
+                            <span className="text-white/50 text-sm"> — {f.desc}</span>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                ))}
-            </div>
 
-            <div className="flex items-start gap-3 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl">
-                <Target className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
-                <p className="text-sm text-white/80">
-                   <span className="font-bold text-blue-400">Why it matters:</span> {selectedSkill?.details.insight}
-                </p>
-            </div>
+                  <div>
+                    <h4 className="text-xs text-white/40 uppercase tracking-wider font-bold mb-2">Insight</h4>
+                    <p className="text-white/60 text-sm italic leading-relaxed">{selectedSkill.details.insight}</p>
+                  </div>
 
-            <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-white/80" style={{ width: `${selectedSkill?.details.masteryLevel}%` }} />
+                  <div>
+                    <h4 className="text-xs text-white/40 uppercase tracking-wider font-bold mb-2">Mastery</h4>
+                    <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"
+                        style={{ width: `${selectedSkill.details.masteryLevel}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs text-white/40 uppercase tracking-wider font-bold mb-2">Tools</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedSkill.details.tools.map((tool) => (
+                        <Badge key={tool} variant="secondary" className="bg-white/5 text-white/70 border-white/10 text-xs">
+                          {tool}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <span className="text-sm font-bold text-white">{selectedSkill?.details.masteryLevel}% Mastery</span>
-            </div>
-          </div>
+              </div>
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </section>

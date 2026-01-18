@@ -12,18 +12,20 @@ const About = () => {
               About
             </h2>
             <h3 className="text-xl md:text-3xl text-white/80 font-medium leading-tight">
-              From Operations to <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Product Ownership</span>.
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Operations to Product</span>
             </h3>
-            <div className="space-y-4 text-base md:text-lg text-white/50 font-light leading-relaxed max-w-xl">
+            <div className="space-y-4 text-base md:text-lg text-white/60 font-light leading-relaxed max-w-xl">
               <p>
-                I spent 9 years in <strong className="text-white">US and India staffing operations</strong>, leading teams, managing multi-stakeholder delivery, and owning internal SaaS platforms. Along the way, I realized I was already doing the work of a Product Manager—gathering requirements, designing processes, measuring outcomes, and continuously improving systems.
+                Owned internal SaaS platforms and workflow systems across US and India staffing operations.
               </p>
               <p>
-                Now, I'm formally transitioning into <strong className="text-white">Product Manager and Product Owner</strong> roles, bringing a unique blend of operational rigor, user-first thinking, and data-backed decision-making. I'm particularly interested in <em>Product Operations, Internal Tools, and B2B/SaaS platforms</em>.
+                Translated business problems into executable workflows. Defined requirements, managed backlogs, and shipped process improvements.
               </p>
               <p>
-                My certifications in <strong className="text-white">AI Product Management, Lean Six Sigma, and Scrum</strong> complement my hands-on experience. I don't just understand frameworks—I've applied them under real constraints with real teams.
+                Worked cross-functionally with leadership, delivery teams, and vendors. Applied Scrum and Lean to drive execution under constraints.
+              </p>
+              <p>
+                Used data and user feedback to identify bottlenecks and measure outcomes. Built dashboards for stakeholder visibility.
               </p>
             </div>
           </div>
@@ -35,7 +37,7 @@ const About = () => {
               <div className="flex justify-between items-start mb-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white">Sanket Tamboli</h3>
-                  <p className="text-white/60">Aspiring Product Manager / Owner</p>
+                  <p className="text-white/60">Product Manager / Owner</p>
                 </div>
                 <Globe className="w-6 h-6 text-white/40" />
               </div>

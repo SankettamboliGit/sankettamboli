@@ -3,30 +3,30 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    role: "Senior Manager - Operations",
+    role: "Senior Manager – Operations",
     company: "Akshar Staffing",
     period: "2021 – Present",
     impact: "Platform Owner",
-    description: "Owned end-to-end configuration of internal ATS platform. Defined KPIs, ran user feedback loops, and shipped workflow improvements that reduced attrition and improved team output. Built revenue dashboards and gamification systems to drive performance.",
-    tags: ["Product Ops", "SaaS Config", "Data-Driven"],
+    description: "Owned configuration and optimization of internal ATS. Defined KPIs, ran user feedback loops, and shipped workflow improvements. Built dashboards for revenue tracking and gamification systems to drive team performance.",
+    tags: ["Backlog Ownership", "KPI Definition", "Process Design"],
     color: "border-purple-500"
   },
   {
-    role: "Lead Recruitment Executive",
+    role: "Lead – Delivery Operations",
     company: "Diverse Lynx",
     period: "2021",
-    impact: "Process Optimization",
-    description: "Managed complex operational pipelines across multiple stakeholders. Executed multi-channel sourcing strategies, reduced time-to-fill, and ensured delivery under tight constraints—functioning as a connector between clients, vendors, and internal teams.",
-    tags: ["Stakeholder Mgmt", "Delivery Ops"],
+    impact: "Cross-Functional Execution",
+    description: "Managed multi-stakeholder delivery pipelines. Defined requirements, reduced cycle time, and ensured SLA compliance across clients, vendors, and internal teams.",
+    tags: ["Stakeholder Alignment", "SLA Management", "Delivery Ops"],
     color: "border-blue-500"
   },
   {
-    role: "Talent Acquisition Lead",
+    role: "Lead – Talent Operations",
     company: "Rang Technologies",
     period: "2017 – 2021",
-    impact: "Fortune 500 Delivery",
-    description: "Built scalable talent pipelines for enterprise clients including ServiceNow ecosystem roles. This gave me working familiarity with ITSM concepts, enterprise workflows, and platform-driven product thinking. Negotiated offers and managed candidate lifecycle end-to-end.",
-    tags: ["Enterprise Ops", "ServiceNow Exposure", "Negotiation"],
+    impact: "Enterprise Delivery",
+    description: "Built scalable pipelines for Fortune 500 clients. Gained platform familiarity through ServiceNow ecosystem recruiting—understanding ITSM concepts, enterprise workflows, and user roles.",
+    tags: ["Pipeline Architecture", "ServiceNow Exposure", "Enterprise Ops"],
     color: "border-green-500"
   },
 ];
@@ -39,7 +39,7 @@ const Experience = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Experience
           </h2>
-          <p className="text-white/50 text-base md:text-lg">9+ years owning systems, managing stakeholders, and delivering outcomes under constraints.</p>
+          <p className="text-white/50 text-base md:text-lg">9 years owning systems, aligning stakeholders, and delivering under constraints.</p>
         </div>
 
         <div className="relative space-y-10 md:space-y-16">
