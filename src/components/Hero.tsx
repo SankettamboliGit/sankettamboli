@@ -84,7 +84,7 @@ const Hero = () => {
         {/* Headline */}
         <div className="space-y-5 max-w-2xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-            Product-Focused Operator
+            Product-Focused Ops Professional
           </h1>
           <p className="text-base md:text-lg text-white/50 font-light max-w-lg mx-auto leading-relaxed">
             9 years owning workflows, internal tools, and cross-functional execution across US and India markets. Transitioning to PM / PO roles.
