@@ -109,10 +109,11 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Scroll Cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-          <ChevronDown className="w-5 h-5 text-white/40" />
-        </div>
+      </div>
+
+      {/* Scroll Cue */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50 z-10">
+        <ChevronDown className="w-5 h-5 text-white/40" />
       </div>
     </section>
   );
