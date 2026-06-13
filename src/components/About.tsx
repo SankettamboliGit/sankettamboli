@@ -16,16 +16,16 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-base md:text-lg text-white/60 font-light leading-relaxed max-w-xl">
               <p>
-                Owned internal SaaS platforms and workflow systems across US and India staffing operations.
+                Director of Delivery at Technocore360. Own end-to-end execution for the client-services portfolio across US, Europe, Canada, and India, leading an 11-person team to SLA and fulfillment targets.
               </p>
               <p>
-                Translated business problems into executable workflows. Defined requirements, managed backlogs, and shipped process improvements.
+                Act as internal product owner for the team's SaaS/ATS workflows — gather feedback, prioritize enhancements with vendors, validate releases, and enforce clean-data standards that improved forecasting accuracy.
               </p>
               <p>
-                Worked cross-functionally with leadership, delivery teams, and vendors. Applied Scrum and Lean to drive execution under constraints.
+                Delivered ServiceNow SOW engagements (ITSM/ITOM/HRSD/CSM), deploying 20+ consultants against fixed acceptance criteria and reducing time-to-fill on niche roles from 90 to 15 days.
               </p>
               <p>
-                Used data and user feedback to identify bottlenecks and measure outcomes. Built dashboards for stakeholder visibility.
+                Define delivery KPIs and dashboards (fill rate, ramp time, SLA adherence) that surface revenue leakage and inform leadership decisions.
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const About = () => {
               <div className="flex justify-between items-start mb-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white">Sanket Tamboli</h3>
-                  <p className="text-white/60">Product Manager / Owner</p>
+                  <p className="text-white/60">Director of Delivery — Client Services</p>
                 </div>
                 <Globe className="w-6 h-6 text-white/40" />
               </div>
