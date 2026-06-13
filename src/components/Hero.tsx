@@ -100,7 +100,7 @@ const Hero = () => {
             View Work
           </a>
           <a 
-            href="https://drive.google.com/file/d/1CozgNLDwsi8hUY0Ead2Efa9Ibf5BNKqk/view?usp=sharing"
+            href="https://drive.google.com/file/d/1zNr2cCp_NRRDGWJJ9yV-KMPQmqVUvrAV/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 border border-white/20 text-white/90 font-semibold rounded-full hover:bg-white/5 hover:border-white/30 transition-all"
