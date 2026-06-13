@@ -3,29 +3,47 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    role: "Senior Manager – Operations",
-    company: "Akshar Staffing",
-    period: "2021 – Present",
-    impact: "Platform Owner",
-    description: "Owned configuration and optimization of internal ATS. Defined KPIs, ran user feedback loops, and shipped workflow improvements. Built dashboards for revenue tracking and gamification systems to drive team performance.",
-    tags: ["Backlog Ownership", "KPI Definition", "Process Design"],
+    role: "Director of Delivery — Client Services",
+    company: "Technocore360",
+    period: "Apr 2026 – Present",
+    impact: "Portfolio Owner",
+    description: "Own end-to-end delivery across IT, healthcare, pharma, and technical-functional domains for local to Fortune 200 clients. Lead an 11-person team across India and US to SLA and fulfillment targets. Delivered ServiceNow SOW engagements (ITSM/ITOM/HRSD/CSM), cutting time-to-fill on niche roles from 90 to 15 days. Act as internal product owner for the team's SaaS/ATS workflows.",
+    tags: ["Portfolio Ownership", "ServiceNow SOW", "KPI & Dashboards"],
     color: "border-purple-500"
   },
   {
-    role: "Lead – Delivery Operations",
-    company: "Diverse Lynx",
-    period: "2021",
-    impact: "Cross-Functional Execution",
-    description: "Managed multi-stakeholder delivery pipelines. Defined requirements, reduced cycle time, and ensured SLA compliance across clients, vendors, and internal teams.",
-    tags: ["Stakeholder Alignment", "SLA Management", "Delivery Ops"],
+    role: "Senior Manager — Operations & Delivery",
+    company: "Technocore360",
+    period: "Apr 2025 – Jun 2026",
+    impact: "Platform Owner",
+    description: "Ran daily operations and capacity planning for a 5–7 person team across India and US. Built revenue matrices and growth dashboards that surfaced leakages for leadership. Audited ATS process adherence, enforced clean-data standards, and led requirement gathering with hiring managers to reduce requirement churn.",
+    tags: ["Backlog Ownership", "Revenue Dashboards", "Process Design"],
     color: "border-blue-500"
   },
   {
-    role: "Lead – Talent Operations",
+    role: "Associate Delivery Manager",
+    company: "Technocore360",
+    period: "Apr 2022 – Mar 2025",
+    impact: "Team Lead",
+    description: "Led US IT hiring for Fortune 500 clients and start-ups, managing a 10-member team. Owned recruitment metrics, modified procedures to resolve bottlenecks, and partnered with department heads to forecast hiring needs.",
+    tags: ["Team Leadership", "Metrics Ownership", "Stakeholder Planning"],
+    color: "border-cyan-500"
+  },
+  {
+    role: "Lead Recruitment Executive",
+    company: "Diverse Lynx",
+    period: "Apr 2021 – Oct 2021",
+    impact: "Cross-Functional Execution",
+    description: "Owned the full recruitment lifecycle for the US Delivery Center. Collaborated with leadership and hiring managers on a strategic recruiting process; used JobDiva to manage workflow tracking and ensure data accuracy across the funnel.",
+    tags: ["Lifecycle Ownership", "Stakeholder Alignment", "ATS Workflows"],
+    color: "border-pink-500"
+  },
+  {
+    role: "Talent Acquisition Lead",
     company: "Rang Technologies",
-    period: "2017 – 2021",
+    period: "Mar 2017 – Apr 2021",
     impact: "Enterprise Delivery",
-    description: "Built scalable pipelines for Fortune 500 clients. Gained platform familiarity through ServiceNow ecosystem recruiting—understanding ITSM concepts, enterprise workflows, and user roles.",
+    description: "Owned end-to-end delivery on Direct, VMS, and MSP client accounts. Built proactive candidate pipelines, defined requirements with BDMs, and gained platform familiarity through ServiceNow ecosystem recruiting — ITSM concepts, enterprise workflows, and user roles.",
     tags: ["Pipeline Architecture", "ServiceNow Exposure", "Enterprise Ops"],
     color: "border-green-500"
   },

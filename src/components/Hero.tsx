@@ -19,7 +19,7 @@ const Hero = () => {
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
             </span>
             <span className="text-[10px] font-medium text-white/90 uppercase tracking-widest">
-              Open to PM / PO Roles
+              Director of Delivery · Open to PM / PO Roles
             </span>
           </div>
         </div>
@@ -62,8 +62,8 @@ const Hero = () => {
                  <Zap className="w-5 h-5 fill-yellow-400" />
                </div>
                <div>
-                 <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider">Experience</span>
-                 <span className="block text-sm font-bold text-white">9+ Years Ops</span>
+                 <span className="block text-[10px] text-white/50 uppercase font-bold tracking-wider">Currently</span>
+                 <span className="block text-sm font-bold text-white">Director of Delivery</span>
                </div>
             </div>
           </div>
@@ -84,10 +84,10 @@ const Hero = () => {
         {/* Headline */}
         <div className="space-y-5 max-w-2xl animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-            Product-Focused Ops Professional
+            Delivery Director with a Product Mindset
           </h1>
           <p className="text-base md:text-lg text-white/50 font-light max-w-lg mx-auto leading-relaxed">
-            9 years owning workflows, internal tools, and cross-functional execution across US and India markets. Transitioning to PM / PO roles.
+            Director of Delivery at Technocore360. 9 years owning workflows, internal SaaS platforms, and cross-functional execution across US and India. Targeting PM / PO roles.
           </p>
         </div>
 

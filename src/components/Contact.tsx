@@ -21,7 +21,7 @@ const Contact = () => {
           Let's Connect
         </h2>
         <p className="text-white/50 text-base mb-12 max-w-xl mx-auto font-light animate-fade-up stagger-1">
-          Open to Product Manager, Product Owner, and Product Operations roles. Internal tools, B2B platforms, enterprise products.
+          Currently Director of Delivery at Technocore360. Open to Product Manager, Product Owner, and Product Operations roles — internal tools, B2B platforms, ServiceNow and workflow-heavy enterprise products.
         </p>
 
         <div className="flex flex-col gap-4 mb-16 animate-fade-up stagger-2 w-full max-w-2xl mx-auto">

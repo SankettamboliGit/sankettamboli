@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <p className="text-white/90 font-bold text-lg">Sanket Tamboli</p>
-          <p className="text-white/40 text-sm">Product Operations & Strategy</p>
+          <p className="text-white/40 text-sm">Director of Delivery — Client Services</p>
         </div>
 
         <div className="flex gap-6">
