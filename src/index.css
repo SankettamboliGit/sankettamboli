@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,18 +16,39 @@
     --secondary-foreground: 0 0% 98%;
     --border: 0 0% 12%;
     --radius: 1.5rem;
+
+    /* Single accent — refined violet-indigo. Used sparingly. */
+    --accent: 248 100% 74%;        /* ≈ #8B7CFF */
+    --accent-foreground: 0 0% 100%;
+    --accent-deep: 248 60% 62%;    /* hover */
   }
 }
 
 @layer base {
   * { @apply border-border; }
+  html { -webkit-font-smoothing: antialiased; }
   body {
-    @apply bg-[#030303] text-foreground font-sans antialiased selection:bg-purple-500/30 selection:text-white;
-    /* Fixed Ambient Background - No more shifting gradients */
-    background-image: 
-      radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.05), transparent 25%), 
-      radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.05), transparent 25%);
-    background-attachment: fixed;
+    @apply bg-[#030303] text-foreground font-sans antialiased;
+    selection-color: hsl(var(--accent));
+  }
+  ::selection { background: hsl(var(--accent) / 0.3); color: #fff; }
+
+  /* Display type — used on h1/h2/section titles via .font-display */
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+
+  /* Fluid display sizes */
+  .text-display-xl { font-size: clamp(2.5rem, 6.5vw + 0.5rem, 4.5rem); }
+  .text-display-lg { font-size: clamp(2rem, 4.5vw + 0.5rem, 3.25rem); }
+
+  /* Keyboard focus — never remove without replacement */
+  :focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -37,9 +58,76 @@
   .stagger-2 { animation-delay: 0.2s; }
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
+
+  /* Scroll-reveal — opacity/transform only */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* Refined glass surface — subtle top highlight */
+  .surface {
+    background: hsl(0 0% 100% / 0.04);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.06),
+      0 1px 0 hsl(0 0% 0% / 0.4);
+  }
+  .surface-hover {
+    transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 400ms ease,
+                background 400ms ease;
+  }
+  .surface-hover:hover {
+    transform: translateY(-2px);
+    border-color: hsl(0 0% 100% / 0.16);
+    background: hsl(0 0% 100% / 0.06);
+  }
+
+  /* Fixed film-grain overlay */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 240px 240px;
+  }
+
+  /* Single calm ambient glow — uses the one accent */
+  .ambient-accent {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 9999px;
+    filter: blur(120px);
+    background: hsl(var(--accent) / 0.08);
+  }
 }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduced motion: kill all entrance animation, leave everything visible */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-fade-up,
+  [class*="animate-fade-up"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
 }
