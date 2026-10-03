@@ -34,7 +34,7 @@ const Hero = () => {
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[hsl(var(--accent))]"></span>
             </span>
             <span className="text-[10px] font-medium text-white/90 uppercase tracking-widest">
-              Director of Delivery · Open to PM / PO Roles
+              Delivery Director · Product Operations Leader
             </span>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Hero = () => {
                   Certified
                 </span>
                 <span className="block text-sm font-bold text-white">
-                  AI PM • Agile • Scrum
+                   18 ServiceNow Credentials
                 </span>
               </div>
               <div className="p-2 rounded-xl bg-white/5 text-white/70 border border-white/10">
@@ -101,7 +101,7 @@ const Hero = () => {
         >
           <div className="px-4 py-2 surface rounded-xl flex items-center gap-2 backdrop-blur-md">
             <Award className="w-4 h-4 text-white/70" />
-            <span className="text-xs font-bold text-white">AI PM • Agile</span>
+            <span className="text-xs font-bold text-white">18 ServiceNow Credentials</span>
           </div>
           <div className="px-4 py-2 surface rounded-xl flex items-center gap-2 backdrop-blur-md">
             <Briefcase className="w-4 h-4 text-white/70" />
@@ -115,7 +115,7 @@ const Hero = () => {
           style={{ animationDelay: `${t.headline}ms` }}
         >
           <h1 className="font-display font-semibold text-display-xl text-white">
-            Delivery Director with a Product Mindset
+            Technology Delivery &amp; Product Operations Leader
           </h1>
         </div>
 
@@ -124,9 +124,9 @@ const Hero = () => {
           style={{ animationDelay: `${t.subhead}ms` }}
         >
           <p className="text-base md:text-lg text-white/70 font-light mx-auto leading-relaxed">
-            Director of Delivery at Technocore360. 9 years owning workflows,
-            internal SaaS platforms, and cross-functional execution across US
-            and India. Targeting PM / PO roles.
+            Delivery Director leading an 11-person India/U.S. team across
+            ServiceNow SOW delivery, enterprise workflows, internal SaaS/ATS
+            ownership, and data-led operations.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ const Hero = () => {
             View Work
           </a>
           <a
-            href="https://drive.google.com/file/d/1zNr2cCp_NRRDGWJJ9yV-KMPQmqVUvrAV/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Ms4HBfit_oIq0Qh32IkQ-p-vMc21ly18/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 border border-white/20 text-white/90 font-semibold rounded-full hover:bg-white/5 hover:border-white/30 transition-all"

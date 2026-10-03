@@ -21,81 +21,81 @@ const IconWell = ({ children }: { children: React.ReactNode }) => (
 const skillCategories = [
   {
     id: "product",
-    title: "Product & Delivery",
+    title: "Product Operations & Agile",
     description:
-      "Product lifecycle, backlog management, requirement definition, Agile execution, stakeholder alignment.",
-    tags: ["Roadmapping", "Scrum", "RICE", "Backlog"],
+      "Internal product ownership, requirement prioritization, feedback loops, release validation, Agile execution.",
+    tags: ["Product Ownership", "Scrum", "Kanban", "Release Validation"],
     visual: <IconWell><Brain className="w-8 h-8" /></IconWell>,
     details: {
       philosophy:
-        "Roadmaps are hypotheses. Prioritize ruthlessly. Defend 'No' as much as 'Yes'.",
+        "Turn operational needs into prioritized requirements, validated releases, and workflows people trust.",
       frameworks: [
-        { name: "RICE / MoSCoW", desc: "Data-informed prioritization" },
-        { name: "Opportunity Solution Tree", desc: "Connecting outcomes to experiments" },
+        { name: "Scrum / Kanban", desc: "Structured, adaptable execution" },
+        { name: "Feedback Loops", desc: "Connecting user needs to enhancements" },
       ],
       insight:
-        "Scrum Master and AI Product Management certified. 9 years of ops taught me when to adapt frameworks.",
+        "Owned SaaS/ATS feedback, enhancement prioritization, vendor coordination, release validation, and data governance.",
       masteryLevel: 90,
-      tools: ["Jira", "Linear", "Notion"],
+      tools: ["ATS Platforms", "Figma", "Notion", "Lovable"],
     },
   },
   {
     id: "ops",
-    title: "Operations & Systems",
+    title: "Delivery & Program Leadership",
     description:
-      "Workflow design, process optimization, platform ownership, KPI tracking, data quality.",
-    tags: ["Six Sigma", "Process Design", "SLAs", "Capacity"],
+      "Program delivery, SLA management, capacity planning, change management, and cross-functional leadership.",
+    tags: ["Program Delivery", "SLAs", "Capacity", "Change Management"],
     visual: <IconWell><Settings className="w-8 h-8" /></IconWell>,
     details: {
-      philosophy: "Good operations are invisible. If people notice the process, it's broken.",
+        "Reliable delivery starts with clear scope, measurable commitments, and accountable ownership.",
       frameworks: [
-        { name: "Lean Six Sigma", desc: "Eliminating waste systematically" },
-        { name: "Capacity Planning", desc: "Matching resources to demand" },
+        { name: "SLA Management", desc: "Connecting commitments to delivery controls" },
+        { name: "Capacity Planning", desc: "Matching global coverage to demand" },
       ],
       insight:
-        "Lean Six Sigma certified. Optimized recruitment pipelines and internal SaaS platforms.",
+        "Leads an 11-person India/U.S. team and mentors team leads while managing stakeholders and vendor partners.",
       masteryLevel: 95,
-      tools: ["Excel", "ATS Platforms", "ServiceNow (exposure)"],
+      tools: ["Excel", "JobDiva", "Ceipal", "ServiceNow"],
     },
   },
   {
     id: "data",
-    title: "Data & Analytics",
+    title: "Governance & Analytics",
     description:
-      "Defining metrics, building dashboards, funnel analysis, data-informed decisions.",
-    tags: ["KPIs", "Dashboards", "Revenue Ops"],
+      "Delivery KPIs, dashboards, data governance, forecasting, and data-informed decisions.",
+    tags: ["KPIs", "Dashboards", "Data Governance", "Forecasting"],
     visual: <IconWell><Database className="w-8 h-8" /></IconWell>,
     details: {
       philosophy:
         "If you can't measure it, you can't improve it. Every decision ties back to a metric.",
       frameworks: [
-        { name: "North Star Metric", desc: "Single focus for the team" },
-        { name: "Funnel Analysis", desc: "Finding and fixing drop-offs" },
+        { name: "Delivery KPIs", desc: "Fill rate, ramp time, and SLA adherence" },
+        { name: "Revenue Analysis", desc: "Finding leakages and bottlenecks" },
       ],
       insight:
         "Built revenue dashboards that identified leakages and informed strategic corrections.",
       masteryLevel: 80,
-      tools: ["Excel", "Google Sheets", "Tableau"],
+      tools: ["Microsoft Excel", "ATS Reporting", "Data Analysis"],
     },
   },
   {
     id: "tools",
-    title: "Tools & Platforms",
+    title: "ServiceNow & AI Platforms",
     description:
-      "ServiceNow (platform exposure), Lovable, Figma, Notion, data and reporting tools.",
-    tags: ["ServiceNow", "Lovable", "Figma", "Notion"],
+      "ServiceNow enterprise workflows, Salesforce Agentforce, ATS ecosystems, and generative AI tools.",
+    tags: ["ServiceNow", "Agentforce", "ATS", "Generative AI"],
     visual: <IconWell><Wrench className="w-8 h-8" /></IconWell>,
     details: {
       philosophy:
-        "Tools should amplify execution, not create overhead. Choose based on team context.",
+        "Platform knowledge matters when it improves requirements, delivery decisions, and user workflows.",
       frameworks: [
-        { name: "No-Code/Low-Code", desc: "Rapid prototyping and deployment" },
-        { name: "ITSM Familiarity", desc: "ServiceNow ecosystem exposure" },
+        { name: "Enterprise Workflow", desc: "ITSM, ITOM, GRC, HRSD, CSM, and CMDB" },
+        { name: "Agentic AI", desc: "Agentforce Builder and Prompt Builder learning" },
       ],
       insight:
-        "Platform familiarity through recruiting for ServiceNow ecosystem—ITSM concepts, enterprise workflows, user roles.",
+        "Holds 18 ServiceNow micro/suite certifications and 36 Salesforce Trailhead badges as Agentblazer Champion 2026.",
       masteryLevel: 75,
-      tools: ["ServiceNow (domain)", "Lovable", "Figma", "Notion"],
+      tools: ["ServiceNow", "Salesforce Agentforce", "JobDiva", "Ceipal", "Lovable"],
     },
   },
 ];
@@ -113,7 +113,7 @@ const Skills = () => {
             Expertise
           </h2>
           <p className="text-white/60 text-base md:text-lg">
-            Competencies clustered for PM / PO roles.
+             Delivery, product operations, governance, and enterprise platform expertise.
           </p>
         </Reveal>
 

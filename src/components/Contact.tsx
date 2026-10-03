@@ -28,10 +28,9 @@ const Contact = () => {
         </Reveal>
         <Reveal delay={100}>
           <p className="text-white/70 text-base mb-12 max-w-xl mx-auto font-light">
-            Currently Director of Delivery at Technocore360. Open to Product
-            Manager, Product Owner, and Product Operations roles — internal
-            tools, B2B platforms, ServiceNow and workflow-heavy enterprise
-            products.
+            Delivery Director at Technocore360, focused on technology delivery,
+            product operations, ServiceNow SOW programs, enterprise workflows,
+            and internal SaaS/ATS ownership.
           </p>
         </Reveal>
 

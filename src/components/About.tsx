@@ -12,13 +12,13 @@ const About = () => {
               About
             </h2>
             <h3 className="text-xl md:text-2xl text-white/80 font-medium leading-tight">
-              <span className="text-[hsl(var(--accent))]">Operations to Product</span>
+              <span className="text-[hsl(var(--accent))]">Delivery Leadership, Product Operations</span>
             </h3>
             <div className="space-y-4 text-base md:text-lg text-white/70 font-light leading-relaxed max-w-xl">
               <p>
-                Director of Delivery at Technocore360. Own end-to-end execution
-                for the client-services portfolio across US, Europe, Canada, and
-                India, leading an 11-person team to SLA and fulfillment targets.
+                 Delivery Director at Technocore360, leading an 11-person
+                 India/U.S. team and owning end-to-end delivery for clients up
+                 to Fortune 200 enterprises across four global markets.
               </p>
               <p>
                 Act as internal product owner for the team's SaaS/ATS workflows
@@ -27,14 +27,16 @@ const About = () => {
                 improved forecasting accuracy.
               </p>
               <p>
-                Delivered ServiceNow SOW engagements (ITSM/ITOM/HRSD/CSM),
+                 Deliver ServiceNow SOW engagements across ITSM, ITOM, GRC,
+                 HRSD, and CSM,
                 deploying 20+ consultants against fixed acceptance criteria and
                 reducing time-to-fill on niche roles from 90 to 15 days.
               </p>
               <p>
-                Define delivery KPIs and dashboards (fill rate, ramp time, SLA
-                adherence) that surface revenue leakage and inform leadership
-                decisions.
+                 Define delivery KPIs and dashboards that surface revenue
+                 leakage and inform leadership decisions. Hold 18 ServiceNow
+                 certifications and 36 Salesforce Trailhead badges, including
+                 Agentblazer Champion 2026.
               </p>
             </div>
           </Reveal>
@@ -48,7 +50,7 @@ const About = () => {
                   <h3 className="font-display text-2xl font-semibold text-white">
                     Sanket Tamboli
                   </h3>
-                  <p className="text-white/70">Director of Delivery — Client Services</p>
+                    <p className="text-white/70">Technology Delivery &amp; Product Operations Leader</p>
                 </div>
                 <Globe className="w-6 h-6 text-white/40" />
               </div>
@@ -83,7 +85,7 @@ const About = () => {
                     Certifications
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["AI Product Mgmt", "Lean Six Sigma", "Scrum Master"].map((c) => (
+                    {["18× ServiceNow", "Agentblazer Champion", "AI Product Mgmt", "Scrum Master"].map((c) => (
                       <Badge
                         key={c}
                         variant="secondary"
