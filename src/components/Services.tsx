@@ -29,42 +29,42 @@ const IconWell = ({ children }: { children: React.ReactNode }) => (
 
 const services = [
   {
-    title: "Product Discovery",
+    title: "Requirements & Scope",
     description:
-      "Uncovering user pain points, aligning stakeholders, defining problem statements before solutions.",
+      "Translating client goals and SOW deliverables into clear, feasible, prioritized requirements.",
     visual: <IconWell><Compass className="w-8 h-8" /></IconWell>,
     details: {
       approach:
-        "Best products start with shared problem understanding. Requirement definition across multi-stakeholder environments.",
-      process: ["Stakeholder Interviews", "Problem Definition (HMW)", "Requirement Documentation"],
-      tools: ["Miro", "FigJam", "Notion"],
-      artifacts: ["User Journey Map", "Problem Statement", "Requirements Doc"],
+        "Shared understanding of scope, acceptance criteria, milestones, and market feasibility reduces churn before delivery begins.",
+      process: ["Stakeholder Alignment", "SOW Translation", "Phased Planning"],
+      tools: ["ServiceNow Domain", "Excel", "Notion"],
+      artifacts: ["Role Requirements", "Hiring Plan", "Acceptance Criteria"],
     },
   },
   {
-    title: "Roadmap & Prioritization",
+    title: "Program Delivery",
     description:
-      "Outcome-focused roadmaps balancing business goals, user needs, and technical constraints.",
+      "Cross-functional delivery across teams, clients, and vendors against milestones, SLAs, and outcomes.",
     visual: <IconWell><Map className="w-8 h-8" /></IconWell>,
     details: {
       approach:
-        "A roadmap is a strategic communication tool. Aligning leadership, teams, and vendors.",
-      process: ["RICE/MoSCoW Prioritization", "Theme Definition", "Dependency Mapping"],
-      tools: ["Jira", "Linear", "Excel"],
-      artifacts: ["Now-Next-Later Roadmap", "Release Plan", "Risk Register"],
+        "Delivery becomes predictable when commitments, dependencies, ownership, and escalation paths are explicit.",
+      process: ["Capacity Planning", "SLA Management", "Risk Escalation"],
+      tools: ["Excel", "ATS Platforms", "Dashboards"],
+      artifacts: ["Delivery Plan", "SLA Dashboard", "Risk Register"],
     },
   },
   {
-    title: "User Feedback Loops",
+    title: "Internal Product Ownership",
     description:
-      "Continuous discovery systems to validate assumptions and incorporate user insights.",
+      "Converting SaaS/ATS user feedback into vendor enhancements, validated releases, and stronger adoption.",
     visual: <IconWell><Users className="w-8 h-8" /></IconWell>,
     details: {
       approach:
-        "Data shows what is happening. Users explain why. Feedback loops across users, leadership, and vendors.",
-      process: ["User Interviews", "Feedback Collection", "Insight Synthesis"],
-      tools: ["Google Forms", "Hotjar", "Direct Interviews"],
-      artifacts: ["User Insights Report", "Feature Requests", "Usability Findings"],
+        "Internal platforms improve when users, operational data, and vendor delivery stay in one feedback loop.",
+      process: ["Feedback Gathering", "Enhancement Prioritization", "Release Validation"],
+      tools: ["JobDiva", "Ceipal", "Direct Interviews"],
+      artifacts: ["Feature Requests", "Validation Notes", "Data Standards"],
     },
   },
   {
@@ -76,7 +76,7 @@ const services = [
       approach:
         "If you can't measure it, you can't improve it. Revenue dashboards that identified leakages.",
       process: ["North Star Definition", "Dashboard Design", "Leakage Identification"],
-      tools: ["Excel", "Tableau", "Google Sheets"],
+      tools: ["Microsoft Excel", "ATS Reporting", "Data Analysis"],
       artifacts: ["KPI Dashboard", "Revenue Reports", "Growth Projections"],
     },
   },
@@ -87,23 +87,23 @@ const services = [
     visual: <IconWell><Layers className="w-8 h-8" /></IconWell>,
     details: {
       approach:
-        "Good ops makes the right thing easy. Processes for teams of 20+ across functions.",
-      process: ["Workflow Mapping", "SLA Definition", "Gamification Design"],
+        "Good operations make the right action clear, measurable, and repeatable across teams and time zones.",
+      process: ["Workflow Mapping", "Data Governance", "Change Management"],
       tools: ["ATS Platforms", "Excel", "Notion"],
-      artifacts: ["Process Documentation", "SLA Framework", "Incentive Plans"],
+      artifacts: ["Process Documentation", "Governance Standards", "Coverage Plan"],
     },
   },
   {
-    title: "Platform & Domain Exposure",
+    title: "ServiceNow SOW Delivery",
     description:
-      "ServiceNow familiarity via recruiting for ITSM roles. Enterprise workflows, user roles, platform thinking.",
+      "ServiceNow role scoping and delivery across ITSM, ITOM, GRC, HRSD, CSM, and CMDB workflows.",
     visual: <IconWell><Server className="w-8 h-8" /></IconWell>,
     details: {
       approach:
-        "Recruiting ServiceNow Developers and QA gave hands-on understanding of enterprise workflows, incident/change/service processes.",
-      process: ["ITSM Concepts", "Enterprise Workflows", "User Roles Understanding"],
-      tools: ["ServiceNow (Domain)", "ITSM Frameworks", "Enterprise Platforms"],
-      artifacts: ["Technical Requirements", "Platform Thinking", "Process-Driven Systems"],
+        "ServiceNow SOW delivery requires translating fixed outcomes into precise role requirements and phased deployment plans.",
+      process: ["SOW Scoping", "Role Mapping", "Acceptance Alignment"],
+      tools: ["ServiceNow", "ITSM/ITOM/GRC", "Enterprise Workflows"],
+      artifacts: ["Technical Requirements", "Deployment Plan", "Acceptance Criteria"],
     },
   },
 ];
@@ -121,7 +121,7 @@ const Services = () => {
             How I Add Value
           </h2>
           <p className="text-white/60 text-base md:text-lg">
-            PM / PO competencies applied across operations and product.
+             Practical leadership across delivery, product operations, and enterprise workflows.
           </p>
         </Reveal>
 

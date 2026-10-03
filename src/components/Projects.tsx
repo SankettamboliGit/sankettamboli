@@ -12,16 +12,16 @@ const projects = [
   {
     title: "AI-First Web Portfolio",
     category: "Rapid Prototyping",
-    period: "2025",
+    period: "2025 – Present",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
     description:
-      "MVP portfolio deployed in 48 hours using AI-assisted development. Demonstrates product thinking and execution speed.",
-    tags: ["Lovable", "AI Tools", "Rapid Execution"],
+      "Responsive React portfolio designed and deployed in under 48 hours through an AI-assisted feedback loop.",
+    tags: ["Lovable", "React", "Tailwind CSS"],
     caseStudy: {
       problem:
         "Traditional development creates lag between product vision and execution. Needed to demonstrate both PM thinking and shipping ability.",
       solution:
-        "Used Lovable.dev and natural language prompting to build production-ready portfolio. Owned information architecture, content strategy, and iterative refinement.",
+        "Used Lovable.dev, React, Tailwind CSS, and Vite to build the portfolio, iterating UI and content through a generative-AI feedback loop.",
       process: [
         "Problem Definition: Portfolio positioning",
         "Information Architecture: Sections and flow",
@@ -32,77 +32,60 @@ const projects = [
     },
   },
   {
-    title: "Internal ATS Platform Ownership",
+    title: "SaaS/ATS Product Ownership",
     category: "Product Operations",
     period: "2021 – Present",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop",
     description:
-      "End-to-end ownership of internal SaaS platform. User feedback loops, KPI definition, workflow optimization.",
-    tags: ["Platform Ownership", "Backlog", "Configuration"],
+      "Internal product ownership spanning user feedback, vendor enhancements, release validation, and data governance.",
+    tags: ["Product Operations", "Release Validation", "Data Governance"],
     caseStudy: {
       problem:
         "Operational bottlenecks and data inconsistencies. Users had workarounds bypassing the system.",
       solution:
-        "Took platform ownership, established feedback mechanisms, defined metrics aligning user behavior with business goals.",
+        "Gathered user feedback, prioritized enhancements with vendors, validated releases, and set data-governance standards.",
       process: [
         "User Feedback: Regular check-ins with recruiters",
         "Data Audit: Fixed inconsistencies",
         "Configuration: Shipped workflow improvements",
       ],
       outcome:
-        "Reliable data environment. Reduced workarounds by making the system work for users.",
+        "Improved forecasting accuracy and created more reliable operational reporting through cleaner workflows and data.",
     },
   },
   {
-    title: "Revenue Intelligence Dashboards",
+    title: "Delivery KPI & Revenue Dashboards",
     category: "Data & Analytics",
     period: "2022 – Present",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
     description:
-      "Built revenue reports and growth projections identifying leakages. Enabled proactive decision-making.",
-    tags: ["Dashboards", "KPIs", "Business Intelligence"],
+      "Built delivery and revenue dashboards tracking fill rate, ramp time, SLA adherence, leakage, and growth opportunities.",
+    tags: ["Delivery KPIs", "Revenue Analysis", "Leadership Reporting"],
     caseStudy: {
       problem:
         "Stakeholders lacked visibility into real-time trends. Revenue leakages undetected until quarter-end.",
       solution:
-        "Designed dynamic revenue reports with clear visualizations. Created projection matrices for proactive decisions.",
+        "Defined delivery KPIs and built revenue matrices, growth dashboards, and projection views for leadership.",
       process: ["Leakage Identification", "Dashboard Design", "Strategic Alignment"],
       outcome:
         "Leadership identified leakages in real-time and took corrective actions.",
     },
   },
   {
-    title: "Team Gamification & Retention",
-    category: "Behavioral Design",
-    period: "2021 – Present",
+    title: "ServiceNow SOW Delivery",
+    category: "Enterprise Delivery",
+    period: "2022 – Present",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
     description:
-      "Designed incentive plans and retention roadmaps. Reduced attrition and drove performance metrics.",
-    tags: ["Gamification", "Retention", "Capacity Planning"],
+      "Translated fixed SOW outcomes into phased plans for niche ServiceNow roles across major workflow domains.",
+    tags: ["ServiceNow", "SOW", "Program Delivery"],
     caseStudy: {
       problem:
-        "High attrition affecting team stability and output targets. Traditional incentives ineffective.",
+        "Niche ServiceNow requirements were taking up to 90 days to fill, creating delivery risk against fixed milestones.",
       solution:
-        "Designed gamification strategy with reward structures, performance plans, and capacity planning.",
-      process: ["Behavioral Analysis", "Incentive Design", "Implementation and Measurement"],
-      outcome: "Reduced attrition and improved team engagement through aligned incentives.",
-    },
-  },
-  {
-    title: "Talent Pipeline Architecture",
-    category: "Supply Chain Ops",
-    period: "2017 – 2021",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
-    description:
-      "Built proactive talent pipelines for enterprise clients including ServiceNow ecosystem roles.",
-    tags: ["Pipeline Design", "ServiceNow", "Enterprise"],
-    caseStudy: {
-      problem:
-        "Reactive hiring caused delays for niche enterprise roles. Scaling delivery was unpredictable.",
-      solution:
-        "Built proactive pipelines with forecasting. Gained ServiceNow platform familiarity through ITSM recruiting.",
-      process: ["Demand Forecasting", "Pipeline Development", "Platform Exposure"],
-      outcome: "Faster time-to-fill and scalable delivery for Fortune 500 clients.",
+        "Scoped role requirements against deliverables and milestones, then converted scope into prioritized phased hiring plans.",
+      process: ["SOW Scoping", "Role Prioritization", "Phased Deployment"],
+      outcome: "Deployed 20+ consultants and reduced niche-role time-to-fill from 90 to 15 days.",
     },
   },
 ];
