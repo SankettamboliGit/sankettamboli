@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -6,12 +6,11 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <p className="text-white/90 font-bold text-lg">Sanket Tamboli</p>
-          <p className="text-white/40 text-sm">Director of Delivery — Client Services</p>
+          <p className="text-white/40 text-sm">Technology Delivery &amp; Product Operations Leader</p>
         </div>
 
         <div className="flex gap-6">
-          <a href="#" className="text-white/40 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
-          <a href="#" className="text-white/40 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
+          <a href="https://github.com/SankettamboliGit" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-white/40 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
           <a href="https://linkedin.com/in/sanket-tamboli" className="text-white/40 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
         </div>
 

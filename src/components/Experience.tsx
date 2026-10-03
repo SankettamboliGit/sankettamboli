@@ -4,23 +4,23 @@ import Reveal from "@/components/Reveal";
 
 const experiences = [
   {
-    role: "Director of Delivery — Client Services",
+    role: "Delivery Director",
     company: "Technocore360",
     period: "Apr 2026 – Present",
     impact: "Portfolio Owner",
     description:
-      "Own end-to-end delivery across IT, healthcare, pharma, and technical-functional domains for local to Fortune 200 clients. Lead an 11-person team across India and US to SLA and fulfillment targets. Delivered ServiceNow SOW engagements (ITSM/ITOM/HRSD/CSM), cutting time-to-fill on niche roles from 90 to 15 days. Act as internal product owner for the team's SaaS/ATS workflows.",
-    tags: ["Portfolio Ownership", "ServiceNow SOW", "KPI & Dashboards"],
+      "Own end-to-end client-services delivery, leading an 11-person India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Scope ServiceNow SOW roles across ITSM, ITOM, GRC, HRSD, and CSM; deployed 20+ consultants and cut niche-role time-to-fill from 90 to 15 days. Define delivery KPIs, manage executive stakeholders and vendors, and mentor team leads.",
+    tags: ["ServiceNow SOW", "Portfolio Leadership", "KPIs & Governance"],
     current: true,
   },
   {
     role: "Senior Manager — Operations & Delivery",
     company: "Technocore360",
-    period: "Apr 2025 – Jun 2026",
-    impact: "Platform Owner",
+    period: "Apr 2025 – Mar 2026",
+    impact: "Operations Leader",
     description:
-      "Ran daily operations and capacity planning for a 5–7 person team across India and US. Built revenue matrices and growth dashboards that surfaced leakages for leadership. Audited ATS process adherence, enforced clean-data standards, and led requirement gathering with hiring managers to reduce requirement churn.",
-    tags: ["Backlog Ownership", "Revenue Dashboards", "Process Design"],
+      "Managed daily operations and capacity planning for a 5–7 person India/U.S. team with 24/7 coverage. Built revenue matrices and growth dashboards, owned ATS configuration and data standards, advised hiring managers on requirement feasibility, and designed retention and mentorship frameworks.",
+    tags: ["Capacity Planning", "Revenue Dashboards", "ATS Governance"],
   },
   {
     role: "Associate Delivery Manager",
@@ -28,8 +28,17 @@ const experiences = [
     period: "Apr 2022 – Mar 2025",
     impact: "Team Lead",
     description:
-      "Led US IT hiring for Fortune 500 clients and start-ups, managing a 10-member team. Owned recruitment metrics, modified procedures to resolve bottlenecks, and partnered with department heads to forecast hiring needs.",
-    tags: ["Team Leadership", "Metrics Ownership", "Stakeholder Planning"],
+      "Led delivery for Fortune 500 clients and start-ups across ServiceNow SOW, IT, non-IT, healthcare, pharma, and life sciences roles, managing a 10-member team. Acted as internal product owner for SaaS/ATS workflows by gathering feedback, prioritizing vendor enhancements, validating releases, and setting data-governance standards.",
+    tags: ["Internal Product Owner", "Release Validation", "Team Leadership"],
+  },
+  {
+    role: "Team Lead Recruitment",
+    company: "Technocore360",
+    period: "Oct 2021 – Mar 2022",
+    impact: "Resourcing Lead",
+    description:
+      "Led business-aligned resourcing professionals across ServiceNow SOW and broader technology and life-sciences roles. Tracked time-to-hire and cost-per-hire, introduced sourcing methods, evaluated recruitment software, and forecast hiring needs with department managers.",
+    tags: ["Resource Planning", "Hiring Analytics", "Software Evaluation"],
   },
   {
     role: "Lead Recruitment Executive",
@@ -37,17 +46,26 @@ const experiences = [
     period: "Apr 2021 – Oct 2021",
     impact: "Cross-Functional Execution",
     description:
-      "Owned the full recruitment lifecycle for the US Delivery Center. Collaborated with leadership and hiring managers on a strategic recruiting process; used JobDiva to manage workflow tracking and ensure data accuracy across the funnel.",
+      "Ran full-lifecycle recruiting for the U.S. Delivery Center in a hyper-growth environment. Partnered with leadership, HR, and hiring managers; sourced IT professionals across technical and functional roles; and kept funnel data accurate in JobDiva.",
     tags: ["Lifecycle Ownership", "Stakeholder Alignment", "ATS Workflows"],
   },
   {
     role: "Talent Acquisition Lead",
     company: "Rang Technologies",
-    period: "Mar 2017 – Apr 2021",
-    impact: "Enterprise Delivery",
+    period: "Apr 2019 – Mar 2021",
+    impact: "Award-Winning Lead",
     description:
-      "Owned end-to-end delivery on Direct, VMS, and MSP client accounts. Built proactive candidate pipelines, defined requirements with BDMs, and gained platform familiarity through ServiceNow ecosystem recruiting — ITSM concepts, enterprise workflows, and user roles.",
-    tags: ["Pipeline Architecture", "ServiceNow Exposure", "Enterprise Ops"],
+      "Trained and mentored recruiters, deployed resources across client requirements, and partnered with Business Development on assigned client relationships. Earned the Striker Award 2019 for cracking the company's largest revenue-generating client and a Loyalty Award.",
+    tags: ["Mentoring", "Client Relationships", "Striker Award"],
+  },
+  {
+    role: "Talent Acquisition Specialist",
+    company: "Rang Technologies Inc",
+    period: "Mar 2017 – Apr 2019",
+    impact: "Top Performer",
+    description:
+      "Managed full-lifecycle U.S. recruiting across IT, non-IT, healthcare, Salesforce, and insurance for enterprise clients including Horizon, Deloitte, and Verizon. Earned the Flare 2018 Money Maker Award runner-up for the company's second-highest gross profit.",
+    tags: ["Enterprise Recruiting", "Offer Negotiation", "Revenue Performance"],
   },
 ];
 
@@ -60,7 +78,7 @@ const Experience = () => {
             Experience
           </h2>
           <p className="text-white/60 text-base md:text-lg">
-            9 years owning systems, aligning stakeholders, and delivering under
+            9+ years leading delivery, aligning stakeholders, and improving systems under
             constraints.
           </p>
         </Reveal>
