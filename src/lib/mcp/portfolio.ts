@@ -17,7 +17,7 @@ export const profile = {
     "Lean Six Sigma",
   ],
   summary:
-    "Delivery Director at Technocore360 with 9+ years in technology delivery and product operations. Leads an 11-person India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Delivers ServiceNow SOW engagements across ITSM, ITOM, GRC, HRSD, CSM, and CMDB workflows, deploying 20+ consultants and reducing niche-role time-to-fill from 90 to 15 days. Acts as internal product owner for SaaS/ATS workflows through user feedback, vendor enhancement prioritization, release validation, and data governance. Defines delivery KPIs and revenue dashboards that guide leadership decisions.",
+    "Delivery Director at Technocore360 with 9+ years in technology delivery and product operations. Leads a global India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Delivers ServiceNow SOW engagements across ITSM, ITOM, GRC, HRSD, CSM, and CMDB workflows, deploying 20+ consultants and reducing niche-role time-to-fill from 90 to 15 days. Acts as internal product owner for SaaS/ATS workflows through user feedback, vendor enhancement prioritization, release validation, and data governance. Defines delivery KPIs and revenue dashboards that guide leadership decisions.",
   positioning:
     "Technology delivery and product operations leader combining program execution, internal platform ownership, and enterprise workflow expertise.",
   resumeUrl:
@@ -39,7 +39,7 @@ export const experience = [
     current: true,
     focus: "Portfolio Owner",
     description:
-      "Own end-to-end client-services delivery, leading an 11-person India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Scope ServiceNow SOW roles across ITSM, ITOM, GRC, HRSD, and CSM; deployed 20+ consultants and cut niche-role time-to-fill from 90 to 15 days. Define delivery KPIs, manage executive stakeholders and vendors, and mentor team leads.",
+      "Own end-to-end client-services delivery, leading a global India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Scope ServiceNow SOW roles across ITSM, ITOM, GRC, HRSD, and CSM; deployed 20+ consultants and cut niche-role time-to-fill from 90 to 15 days. Define delivery KPIs, manage executive stakeholders and vendors, and mentor team leads.",
     tags: ["ServiceNow SOW", "Portfolio Leadership", "KPIs & Governance"],
   },
   {

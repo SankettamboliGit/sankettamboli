@@ -124,7 +124,7 @@ const Hero = () => {
           style={{ animationDelay: `${t.subhead}ms` }}
         >
           <p className="text-base md:text-lg text-white/70 font-light mx-auto leading-relaxed">
-            Delivery Director leading an 11-person India/U.S. team across
+            Delivery Director leading a global India/U.S. team across
             ServiceNow SOW delivery, enterprise workflows, internal SaaS/ATS
             ownership, and data-led operations.
           </p>
