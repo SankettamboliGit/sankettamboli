@@ -16,9 +16,9 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-base md:text-lg text-white/70 font-light leading-relaxed max-w-xl">
               <p>
-                 Delivery Director at Technocore360, leading an 11-person
-                 India/U.S. team and owning end-to-end delivery for clients up
-                 to Fortune 200 enterprises across four global markets.
+                Delivery Director at Technocore360, owning end-to-end delivery
+                for clients up to Fortune 200 enterprises across four global
+                markets.
               </p>
               <p>
                 Act as internal product owner for the team's SaaS/ATS workflows
