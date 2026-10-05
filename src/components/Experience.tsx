@@ -9,7 +9,7 @@ const experiences = [
     period: "Apr 2026 – Present",
     impact: "Portfolio Owner",
     description:
-      "Own end-to-end client-services delivery, leading an 11-person India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Scope ServiceNow SOW roles across ITSM, ITOM, GRC, HRSD, and CSM; deployed 20+ consultants and cut niche-role time-to-fill from 90 to 15 days. Define delivery KPIs, manage executive stakeholders and vendors, and mentor team leads.",
+      "Own end-to-end client-services delivery, leading a global India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Scope ServiceNow SOW roles across ITSM, ITOM, GRC, HRSD, and CSM; deployed 20+ consultants and cut niche-role time-to-fill from 90 to 15 days. Define delivery KPIs, manage executive stakeholders and vendors, and mentor team leads.",
     tags: ["ServiceNow SOW", "Portfolio Leadership", "KPIs & Governance"],
     current: true,
   },

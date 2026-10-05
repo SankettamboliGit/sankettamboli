@@ -54,7 +54,7 @@ const skillCategories = [
         { name: "Capacity Planning", desc: "Matching global coverage to demand" },
       ],
       insight:
-        "Leads an 11-person India/U.S. team and mentors team leads while managing stakeholders and vendor partners.",
+        "Leads a global India/U.S. team and mentors team leads while managing stakeholders and vendor partners.",
       masteryLevel: 95,
       tools: ["Excel", "JobDiva", "Ceipal", "ServiceNow"],
     },
