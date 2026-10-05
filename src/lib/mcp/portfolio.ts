@@ -3,18 +3,25 @@
 
 export const profile = {
   name: "Sanket Tamboli",
-  title: "Director of Delivery — Client Services",
+  title: "Technology Delivery & Product Operations Leader",
   company: "Technocore360",
   location: "Vadodara, Gujarat, India",
   education: "Postgraduate in HRM",
   yearsOfExperience: 9,
-  certifications: ["AI Product Management", "Scrum Master", "Lean Six Sigma"],
+  certifications: [
+    "18 ServiceNow micro and suite certifications",
+    "Salesforce Agentblazer Champion 2026",
+    "36 Salesforce Trailhead badges",
+    "AI Product Management",
+    "Scrum Master",
+    "Lean Six Sigma",
+  ],
   summary:
-    "Director of Delivery at Technocore360. Owns end-to-end execution for the client-services portfolio across US, Europe, Canada, and India, leading an 11-person team to SLA and fulfillment targets. Acts as internal product owner for the team's SaaS/ATS workflows — gathering feedback, prioritizing enhancements with vendors, validating releases, and enforcing clean-data standards. Delivered ServiceNow SOW engagements (ITSM/ITOM/HRSD/CSM), deploying 20+ consultants against fixed acceptance criteria and reducing time-to-fill on niche roles from 90 to 15 days. Defines delivery KPIs and dashboards (fill rate, ramp time, SLA adherence) that surface revenue leakage and inform leadership decisions.",
+    "Delivery Director at Technocore360 with 9+ years in technology delivery and product operations. Leads an 11-person India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Delivers ServiceNow SOW engagements across ITSM, ITOM, GRC, HRSD, CSM, and CMDB workflows, deploying 20+ consultants and reducing niche-role time-to-fill from 90 to 15 days. Acts as internal product owner for SaaS/ATS workflows through user feedback, vendor enhancement prioritization, release validation, and data governance. Defines delivery KPIs and revenue dashboards that guide leadership decisions.",
   positioning:
-    "Operations to Product — a delivery leader transitioning into Product Manager / Product Owner roles.",
+    "Technology delivery and product operations leader combining program execution, internal platform ownership, and enterprise workflow expertise.",
   resumeUrl:
-    "https://drive.google.com/file/d/1zNr2cCp_NRRDGWJJ9yV-KMPQmqVUvrAV/view?usp=sharing",
+    "https://drive.google.com/file/d/1Ms4HBfit_oIq0Qh32IkQ-p-vMc21ly18/view?usp=drive_link",
 };
 
 export const contact = {
@@ -26,24 +33,24 @@ export const contact = {
 
 export const experience = [
   {
-    role: "Director of Delivery — Client Services",
+    role: "Delivery Director",
     company: "Technocore360",
     period: "Apr 2026 – Present",
     current: true,
     focus: "Portfolio Owner",
     description:
-      "Own end-to-end delivery across IT, healthcare, pharma, and technical-functional domains for local to Fortune 200 clients. Lead an 11-person team across India and US to SLA and fulfillment targets. Delivered ServiceNow SOW engagements (ITSM/ITOM/HRSD/CSM), cutting time-to-fill on niche roles from 90 to 15 days. Act as internal product owner for the team's SaaS/ATS workflows.",
-    tags: ["Portfolio Ownership", "ServiceNow SOW", "KPI & Dashboards"],
+      "Own end-to-end client-services delivery, leading an 11-person India/U.S. team to SLA and fulfillment targets for clients up to Fortune 200 enterprises. Scope ServiceNow SOW roles across ITSM, ITOM, GRC, HRSD, and CSM; deployed 20+ consultants and cut niche-role time-to-fill from 90 to 15 days. Define delivery KPIs, manage executive stakeholders and vendors, and mentor team leads.",
+    tags: ["ServiceNow SOW", "Portfolio Leadership", "KPIs & Governance"],
   },
   {
     role: "Senior Manager — Operations & Delivery",
     company: "Technocore360",
-    period: "Apr 2025 – Jun 2026",
+    period: "Apr 2025 – Mar 2026",
     current: false,
-    focus: "Platform Owner",
+    focus: "Operations Leader",
     description:
-      "Ran daily operations and capacity planning for a 5–7 person team across India and US. Built revenue matrices and growth dashboards that surfaced leakages for leadership. Audited ATS process adherence, enforced clean-data standards, and led requirement gathering with hiring managers to reduce requirement churn.",
-    tags: ["Backlog Ownership", "Revenue Dashboards", "Process Design"],
+      "Managed daily operations and capacity planning for a 5–7 person India/U.S. team with 24/7 coverage. Built revenue matrices and growth dashboards, owned ATS configuration and data standards, advised hiring managers on requirement feasibility, and designed retention and mentorship frameworks.",
+    tags: ["Capacity Planning", "Revenue Dashboards", "ATS Governance"],
   },
   {
     role: "Associate Delivery Manager",
@@ -52,8 +59,18 @@ export const experience = [
     current: false,
     focus: "Team Lead",
     description:
-      "Led US IT hiring for Fortune 500 clients and start-ups, managing a 10-member team. Owned recruitment metrics, modified procedures to resolve bottlenecks, and partnered with department heads to forecast hiring needs.",
-    tags: ["Team Leadership", "Metrics Ownership", "Stakeholder Planning"],
+      "Led delivery for Fortune 500 clients and start-ups across ServiceNow SOW, IT, non-IT, healthcare, pharma, and life sciences roles, managing a 10-member team. Acted as internal product owner for SaaS/ATS workflows by gathering feedback, prioritizing vendor enhancements, validating releases, and setting data-governance standards.",
+    tags: ["Internal Product Owner", "Release Validation", "Team Leadership"],
+  },
+  {
+    role: "Team Lead Recruitment",
+    company: "Technocore360",
+    period: "Oct 2021 – Mar 2022",
+    current: false,
+    focus: "Resourcing Lead",
+    description:
+      "Led business-aligned resourcing professionals across ServiceNow SOW and broader technology and life-sciences roles. Tracked hiring metrics, introduced sourcing methods, evaluated recruitment software, and forecast hiring needs with department managers.",
+    tags: ["Resource Planning", "Hiring Analytics", "Software Evaluation"],
   },
   {
     role: "Lead Recruitment Executive",
@@ -67,52 +84,62 @@ export const experience = [
   },
   {
     role: "Talent Acquisition Lead",
-    company: "Rang Technologies",
-    period: "Mar 2017 – Apr 2021",
+    company: "Rang Technologies Inc",
+    period: "Apr 2019 – Mar 2021",
     current: false,
-    focus: "Enterprise Delivery",
+    focus: "Award-Winning Lead",
     description:
-      "Owned end-to-end delivery on Direct, VMS, and MSP client accounts. Built proactive candidate pipelines, defined requirements with BDMs, and gained platform familiarity through ServiceNow ecosystem recruiting — ITSM concepts, enterprise workflows, and user roles.",
-    tags: ["Pipeline Architecture", "ServiceNow Exposure", "Enterprise Ops"],
+      "Trained and mentored recruiters, deployed resources across client requirements, and partnered with Business Development on assigned client relationships. Earned the Striker Award 2019 and a Loyalty Award.",
+    tags: ["Mentoring", "Client Relationships", "Striker Award"],
+  },
+  {
+    role: "Talent Acquisition Specialist",
+    company: "Rang Technologies Inc",
+    period: "Mar 2017 – Apr 2019",
+    current: false,
+    focus: "Top Performer",
+    description:
+      "Managed full-lifecycle U.S. recruiting across IT, non-IT, healthcare, Salesforce, and insurance for enterprise clients. Earned the Flare 2018 Money Maker Award runner-up for the company's second-highest gross profit.",
+    tags: ["Enterprise Recruiting", "Offer Negotiation", "Revenue Performance"],
   },
 ];
 
 export const skills = [
   {
     id: "product",
-    title: "Product & Delivery",
+    title: "Product Operations & Agile",
     description:
-      "Product lifecycle, backlog management, requirement definition, Agile execution, stakeholder alignment.",
-    tags: ["Roadmapping", "Scrum", "RICE", "Backlog"],
-    frameworks: ["RICE / MoSCoW", "Opportunity Solution Tree"],
-    tools: ["Jira", "Linear", "Notion"],
+      "Internal product ownership, requirement prioritization, feedback loops, release validation, and Agile execution.",
+    tags: ["Product Ownership", "Scrum", "Kanban", "Release Validation"],
+    frameworks: ["Scrum / Kanban", "Feedback Loops"],
+    tools: ["ATS Platforms", "Figma", "Notion", "Lovable"],
   },
   {
     id: "ops",
-    title: "Operations & Systems",
+    title: "Delivery & Program Leadership",
     description:
-      "Workflow design, process optimization, platform ownership, KPI tracking, data quality.",
-    tags: ["Six Sigma", "Process Design", "SLAs", "Capacity"],
-    frameworks: ["Lean Six Sigma", "Capacity Planning"],
-    tools: ["Excel", "ATS Platforms", "ServiceNow (exposure)"],
+      "Program delivery, SLA management, capacity planning, change management, and cross-functional leadership.",
+    tags: ["Program Delivery", "SLAs", "Capacity", "Change Management"],
+    frameworks: ["SLA Management", "Capacity Planning"],
+    tools: ["Excel", "JobDiva", "Ceipal", "ServiceNow"],
   },
   {
     id: "data",
-    title: "Data & Analytics",
+    title: "Governance & Analytics",
     description:
-      "Defining metrics, building dashboards, funnel analysis, data-informed decisions.",
-    tags: ["KPIs", "Dashboards", "Revenue Ops"],
-    frameworks: ["North Star Metric", "Funnel Analysis"],
-    tools: ["Excel", "Google Sheets", "Tableau"],
+      "Delivery KPIs, dashboards, data governance, forecasting, and data-informed decisions.",
+    tags: ["KPIs", "Dashboards", "Data Governance", "Forecasting"],
+    frameworks: ["Delivery KPIs", "Revenue Analysis"],
+    tools: ["Microsoft Excel", "ATS Reporting", "Data Analysis"],
   },
   {
     id: "tools",
-    title: "Tools & Platforms",
+    title: "ServiceNow & AI Platforms",
     description:
-      "ServiceNow (platform exposure), Lovable, Figma, Notion, data and reporting tools.",
-    tags: ["ServiceNow", "Lovable", "Figma", "Notion"],
-    frameworks: ["No-Code/Low-Code", "ITSM Familiarity"],
-    tools: ["ServiceNow (domain)", "Lovable", "Figma", "Notion"],
+      "ServiceNow enterprise workflows, Salesforce Agentforce, ATS ecosystems, and generative AI tools.",
+    tags: ["ServiceNow", "Agentforce", "ATS", "Generative AI"],
+    frameworks: ["Enterprise Workflow", "Agentic AI"],
+    tools: ["ServiceNow", "Salesforce Agentforce", "JobDiva", "Ceipal", "Lovable"],
   },
 ];
 
@@ -120,64 +147,64 @@ export const projects = [
   {
     title: "AI-First Web Portfolio",
     category: "Rapid Prototyping",
-    period: "2025",
+    period: "2025 – Present",
     description:
-      "MVP portfolio deployed in 48 hours using AI-assisted development. Demonstrates product thinking and execution speed.",
-    tags: ["Lovable", "AI Tools", "Rapid Execution"],
+      "Responsive React portfolio designed and deployed in under 48 hours through an AI-assisted feedback loop.",
+    tags: ["Lovable", "React", "Tailwind CSS"],
     caseStudy: {
       problem:
         "Traditional development creates lag between product vision and execution. Needed to demonstrate both PM thinking and shipping ability.",
       solution:
-        "Used Lovable.dev and natural language prompting to build a production-ready portfolio. Owned information architecture, content strategy, and iterative refinement.",
+        "Used Lovable.dev, React, Tailwind CSS, and Vite to build the portfolio, iterating UI and content through a generative-AI feedback loop.",
       outcome:
         "Working product showcasing systems thinking, prioritization, and execution speed.",
     },
   },
   {
-    title: "Internal ATS Platform Ownership",
+    title: "SaaS/ATS Product Ownership",
     category: "Product Operations",
     period: "2021 – Present",
     description:
-      "End-to-end ownership of internal SaaS platform. User feedback loops, KPI definition, workflow optimization.",
-    tags: ["Platform Ownership", "Backlog", "Configuration"],
+      "Internal product ownership spanning user feedback, vendor enhancements, release validation, and data governance.",
+    tags: ["Product Operations", "Release Validation", "Data Governance"],
     caseStudy: {
       problem:
         "Operational bottlenecks and data inconsistencies. Users had workarounds bypassing the system.",
       solution:
-        "Took platform ownership, established feedback mechanisms, defined metrics aligning user behavior with business goals.",
+        "Gathered user feedback, prioritized enhancements with vendors, validated releases, and set data-governance standards.",
       outcome:
-        "Reliable data environment. Reduced workarounds by making the system work for users.",
+        "Improved forecasting accuracy and operational reporting through cleaner workflows and data.",
     },
   },
   {
-    title: "Revenue Intelligence Dashboards",
+    title: "Delivery KPI & Revenue Dashboards",
     category: "Data & Analytics",
     period: "2022 – Present",
     description:
-      "Built revenue reports and growth projections identifying leakages. Enabled proactive decision-making.",
-    tags: ["Dashboards", "KPIs", "Business Intelligence"],
+      "Built delivery and revenue dashboards tracking fill rate, ramp time, SLA adherence, leakage, and growth opportunities.",
+    tags: ["Delivery KPIs", "Revenue Analysis", "Leadership Reporting"],
     caseStudy: {
       problem:
         "Stakeholders lacked visibility into real-time trends. Revenue leakages undetected until quarter-end.",
       solution:
-        "Designed dynamic revenue reports with clear visualizations and projection matrices for proactive decisions.",
+        "Defined delivery KPIs and built revenue matrices, growth dashboards, and projection views for leadership.",
       outcome:
         "Leadership identified leakages in real-time and took corrective actions.",
     },
   },
   {
-    title: "Team Gamification & Retention",
-    category: "Behavioral Design",
-    period: "2021 – Present",
+    title: "ServiceNow SOW Delivery",
+    category: "Enterprise Delivery",
+    period: "2022 – Present",
     description:
-      "Designed incentive plans and retention roadmaps. Reduced attrition and drove performance metrics.",
-    tags: ["Incentive Design", "Retention", "Performance"],
+      "Translated fixed SOW outcomes into phased plans for niche ServiceNow roles across major workflow domains.",
+    tags: ["ServiceNow", "SOW", "Program Delivery"],
     caseStudy: {
       problem:
-        "Performance plateaus and attrition risk across the delivery team.",
+        "Niche ServiceNow requirements were taking up to 90 days to fill, creating delivery risk against fixed milestones.",
       solution:
-        "Designed gamified incentive structures and retention roadmaps tied to measurable delivery outcomes.",
-      outcome: "Improved performance metrics and lower attrition.",
+        "Scoped role requirements against deliverables and milestones, then converted scope into prioritized phased hiring plans.",
+      outcome: "Deployed 20+ consultants and reduced niche-role time-to-fill from 90 to 15 days.",
     },
   },
 ];

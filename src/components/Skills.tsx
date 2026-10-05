@@ -47,6 +47,7 @@ const skillCategories = [
     tags: ["Program Delivery", "SLAs", "Capacity", "Change Management"],
     visual: <IconWell><Settings className="w-8 h-8" /></IconWell>,
     details: {
+      philosophy:
         "Reliable delivery starts with clear scope, measurable commitments, and accountable ownership.",
       frameworks: [
         { name: "SLA Management", desc: "Connecting commitments to delivery controls" },
